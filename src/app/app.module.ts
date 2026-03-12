@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { App } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { LayoutComponent } from './layout/layout/layout.component';
+import { LayoutComponent } from './layout/layout.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
