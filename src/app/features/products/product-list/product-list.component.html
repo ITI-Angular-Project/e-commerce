@@ -1,1 +1,161 @@
-<p>product-list works!</p>
+<nav class="glass-nav fixed-top">
+  <div class="container-xl px-3">
+    <div class="d-flex align-items-center justify-content-between" style="height: 64px">
+
+      <a href="#" class="d-flex align-items-center gap-2 text-decoration-none">
+        <span class="fw-bold fs-4 lh-1" style="color: var(--color-primary)">⊞</span>
+        <span class="fw-bold" style="letter-spacing: -0.04em; font-size: 1.1rem; color: var(--color-text)">TECH-STORE</span>
+      </a>
+
+      <div class="d-none d-md-flex align-items-center gap-4">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link active">Shop</a>
+        <a href="#" class="nav-link">About</a>
+        <a href="#" class="nav-link">Blog</a>
+      </div>
+
+      <div class="d-flex align-items-center gap-1">
+        <button class="btn btn-link p-2" style="color: var(--color-muted); font-size: 1rem">♡</button>
+        <a routerLink="/cart" class="btn btn-link p-2 position-relative" style="color: var(--color-muted); font-size: 1rem; text-decoration: none">
+          🛒 <span class="cart-badge">{{ cartCount() }}</span>
+        </a>
+        <div
+          class="d-flex align-items-center justify-content-center rounded-circle ms-1"
+          style="width:34px;height:34px;background:#ede9fe;border:1px solid #ddd6fe"
+        >
+          <span style="font-size: 0.85rem">👤</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<main class="pt-5 mt-4 pb-5" style="min-height: 100vh">
+  <div class="container-xl px-3 px-md-4">
+
+    <div class="mb-4 mb-md-5 ps-3" style="border-left: 3px solid var(--color-primary)">
+      <p class="mb-1 fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.14em; color: var(--color-primary)">
+        Browse our collection
+      </p>
+      <h1 class="fw-bold mb-0" style="font-size: clamp(1.5rem, 4vw, 2.2rem); letter-spacing: -0.03em; color: var(--color-text)">
+        All Products
+      </h1>
+    </div>
+
+    <div class="row g-3 align-items-center mb-3">
+
+      <div class="col-12 col-md-5">
+        <div class="position-relative">
+          <span class="search-icon-wrap">🔍</span>
+          <input
+            type="text"
+            class="form-control rounded-3 search-input"
+            placeholder="Search products…"
+            [(ngModel)]="searchText"
+            (ngModelChange)="onSearchChange()"
+          />
+        </div>
+      </div>
+
+      <div class="col-12 col-md-7">
+        <div class="d-flex flex-wrap gap-2">
+          <button
+            *ngFor="let category of categories"
+            class="filter-pill"
+            [class.active]="selectedCategory === category"
+            (click)="onCategoryChange(category)"
+          >
+            {{ category }}
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="mb-4" style="font-size: 0.83rem; color: var(--color-muted)">
+      Showing <strong style="color: var(--color-text)">{{ filteredCount }}</strong>
+      {{ filteredCount === 1 ? 'product' : 'products' }}
+      <span *ngIf="selectedCategory !== 'All'">
+        in <strong style="color: var(--color-text)">{{ selectedCategory }}</strong>
+      </span>
+      <span *ngIf="searchText">
+        for "<strong style="color: var(--color-text)">{{ searchText }}</strong>"
+      </span>
+    </p>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 mb-4">
+      <div class="col" *ngFor="let product of displayedProducts">
+        <app-product-card
+          [product]="product"
+          (addToCartClicked)="addToCart($event)"
+        ></app-product-card>
+      </div>
+    </div>
+
+    <div *ngIf="displayedProducts.length === 0" class="text-center py-5">
+      <p class="mb-2" style="font-size: 2.5rem">🔎</p>
+      <h5 class="fw-bold" style="color: var(--color-text)">No products found</h5>
+      <p style="font-size: 0.9rem; color: var(--color-muted)">Try a different search term or category.</p>
+    </div>
+
+    <nav *ngIf="totalPages > 1" class="d-flex justify-content-center pb-5">
+      <ul class="pagination gap-1">
+
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <button class="page-link rounded-3" (click)="goToPage(currentPage - 1)">← Prev</button>
+        </li>
+
+        <li
+          class="page-item"
+          *ngFor="let page of pageNumbers"
+          [class.active]="currentPage === page"
+        >
+          <button class="page-link rounded-3" (click)="goToPage(page)">{{ page }}</button>
+        </li>
+
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+          <button class="page-link rounded-3" (click)="goToPage(currentPage + 1)">Next →</button>
+        </li>
+
+      </ul>
+    </nav>
+
+  </div>
+</main>
+
+<div *ngIf="showToast" class="toast-custom">
+  {{ toastMessage }}
+</div>
+
+<footer class="site-footer py-5">
+  <div class="container-xl px-3 px-md-4">
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
+
+      <a href="#" class="d-flex align-items-center gap-2 text-decoration-none">
+        <span class="fw-bold fs-5" style="color: var(--color-primary)">⊞</span>
+        <span class="fw-bold" style="letter-spacing: -0.04em; color: var(--color-text)">TECH-STORE</span>
+      </a>
+
+      <div class="d-flex gap-4 flex-wrap justify-content-center">
+        <div class="d-flex flex-column align-items-center gap-1" style="color: var(--color-muted)">
+          <span>🚚</span>
+          <span class="fw-bold text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.1em">Free Shipping</span>
+        </div>
+        <div class="d-flex flex-column align-items-center gap-1" style="color: var(--color-muted)">
+          <span>↩</span>
+          <span class="fw-bold text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.1em">30-Day Returns</span>
+        </div>
+        <div class="d-flex flex-column align-items-center gap-1" style="color: var(--color-muted)">
+          <span>🔒</span>
+          <span class="fw-bold text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.1em">Secure Payments</span>
+        </div>
+      </div>
+
+    </div>
+    <hr class="light-divider mt-4" />
+    <p class="text-center mb-0" style="font-size: 0.76rem; color: var(--color-muted)">
+      © 2024 TECH-STORE. Premium Audio Solutions Worldwide.
+    </p>
+  </div>
+</footer>
