@@ -1,0 +1,105 @@
+.cart-page-wrapper {
+  padding-top: 7rem;   
+  padding-bottom: 4rem;
+}
+
+.cart-page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.cart-page-count {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+/* =============================================
+   Cart Items Card
+   (wraps all app-cart-item host elements)
+   ============================================= */
+
+.cart-items-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  /* Each app-cart-item renders as a .cart-item flex row via its host class */
+}
+
+/* =============================================
+   Empty State
+   ============================================= */
+
+.cart-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  gap: 1rem;
+}
+
+.cart-empty-icon {
+  font-size: 3.5rem;
+  color: #cbd5e1;
+}
+
+.cart-empty-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* =============================================
+   Bottom Row: Continue Shopping + Coupon
+   ============================================= */
+
+.cart-bottom-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.cart-continue-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--bs-primary);
+  text-decoration: none;
+  transition: gap 0.2s ease, color 0.2s ease;
+  padding-top: 0.65rem; /* vertically align with coupon card */
+}
+
+.cart-continue-link:hover {
+  gap: 0.85rem;
+  color: #1d4ed8;
+}
+
+.cart-continue-link .material-symbols-outlined {
+  font-size: 1.2rem;
+}
+
+/* Coupon component fills available width on small screens */
+@media (max-width: 575.98px) {
+  .cart-bottom-row {
+    flex-direction: column;
+  }
+
+  .cart-continue-link {
+    padding-top: 0;
+  }
+
+  app-coupon {
+    width: 100%;
+  }
+}

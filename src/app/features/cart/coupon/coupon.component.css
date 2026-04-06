@@ -1,0 +1,28 @@
+
+  .coupon-card {
+    border-radius: 1rem;        /* rounded-2xl */
+    border-color: #f1f5f9;      /* border-slate-100 */
+    max-width: 24rem;           /* max-w-sm */
+  }
+
+  .coupon-input {
+    background-color: #f8fafc;  /* bg-slate-50 */
+    border-color: #f1f5f9;      /* border-slate-100 */
+    border-radius: 0.75rem;     /* rounded-xl */
+    font-size: 0.875rem;        /* text-sm */
+  }
+  .coupon-input:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 3px rgba(36, 99, 235, 0.15);
+    outline: none;
+  }
+
+  .btn-apply {
+    background-color: #0f172a;  /* slate-900 */
+    border-radius: 0.75rem;     /* rounded-xl */
+    font-size: 0.875rem;        /* text-sm */
+    transition: background-color 0.15s ease;
+  }
+  .btn-apply:hover {
+    background-color: #1e293b;  /* slate-800 */
+  }
