@@ -1,1 +1,29 @@
-<p>cart-item works!</p>
+<div class="cart-item">
+  <div class="cart-thumb rounded-4">
+    <img [alt]="item().ImageAlt" [src]="item().ImageSrc" />
+  </div>
+
+  <div class="cart-info">
+    <span class="cart-badge">{{ item().Category }}</span>
+    <h3 class="cart-title">{{ item().Title }}</h3>
+    <p class="cart-sub">{{ item().Subtitle }}</p>
+  </div>
+
+  <div class="qty-pill">
+    <button class="qty-btn" aria-label="Decrease quantity">
+      <span class="material-symbols-outlined">remove</span>
+    </button>
+    <span class="qty-value">{{ item().Amount }}</span>
+    <button class="qty-btn" aria-label="Increase quantity">
+      <span class="material-symbols-outlined">add</span>
+    </button>
+  </div>
+
+  <div class="cart-price">
+    <div class="cart-price-current">{{ item().Price }}</div>
+  </div>
+
+  <button class="btn-delete" aria-label="Remove item">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+</div>

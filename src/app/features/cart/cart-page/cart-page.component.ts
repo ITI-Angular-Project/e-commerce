@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CartService } from '../../../core/services/cart.service';
 
 @Component({
   selector: 'app-cart-page',
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './cart-page.component.html',
   styleUrl: './cart-page.component.css',
 })
-export class CartPageComponent {}
+export class CartPageComponent {
+  public cartService = inject(CartService);
+  public CartItems = this.cartService.Cart;
+}
