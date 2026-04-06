@@ -1,0 +1,23 @@
+.hero-gradient {
+    background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent), 
+                linear-gradient(to bottom, #F8F9FA, #FFFFFF);
+}
+.grid-pattern {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+.bg-hover{
+    transition: .5s ease;
+
+}
+.bg-hover:hover{
+    transform: scale(1.05);
+}
+
+
+.glass-morphism {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+

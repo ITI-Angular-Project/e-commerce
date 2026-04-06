@@ -13,10 +13,7 @@ import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [App, NavbarComponent, FooterComponent, LayoutComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
