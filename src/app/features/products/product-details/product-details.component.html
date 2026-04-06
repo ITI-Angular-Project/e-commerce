@@ -1,1 +1,116 @@
-<p>product-details works!</p>
+<div class="py-4 fade-in">
+  <div class="container-xl px-3 px-md-4">
+
+    <div class="mb-4">
+      <a routerLink="/products" class="back-link">← Back to Products</a>
+    </div>
+
+    <div *ngIf="notFound" class="text-center py-5">
+      <p style="font-size: 3rem">😕</p>
+      <h4 class="fw-bold mb-2" style="color: var(--color-text)">Product Not Found</h4>
+      <p style="color: var(--color-muted)">The product you're looking for doesn't exist.</p>
+      <a routerLink="/products" class="btn text-white fw-bold rounded-3 mt-2"
+         style="background: var(--color-primary)">Back to Shop</a>
+    </div>
+
+    <div *ngIf="product">
+
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb" style="font-size: 0.82rem">
+          <li class="breadcrumb-item">
+            <a routerLink="/products" style="color: var(--color-primary); text-decoration: none">Shop</a>
+          </li>
+          <li class="breadcrumb-item" style="color: var(--color-muted)">{{ product.category }}</li>
+          <li class="breadcrumb-item active" style="color: var(--color-text)">{{ product.name }}</li>
+        </ol>
+      </nav>
+
+      <div class="row g-5 align-items-start">
+
+        <div class="col-12 col-md-5">
+          <div class="details-img-box position-relative">
+            <img [src]="product.image" [alt]="product.name" />
+            <span
+              *ngIf="product.originalPrice"
+              class="badge bg-danger position-absolute top-0 end-0 m-3"
+              style="font-size: 0.75rem"
+            >
+              -{{ getDiscountPercent() }}%
+            </span>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7">
+
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="category-chip">{{ product.category }}</span>
+            <span *ngIf="product.badge" class="badge text-white"
+                  style="background: var(--color-primary); font-size: 0.65rem">
+              {{ product.badge }}
+            </span>
+          </div>
+
+          <h1 class="fw-bold mb-2"
+              style="font-size: clamp(1.4rem, 3vw, 2rem); color: var(--color-text)">
+            {{ product.name }}
+          </h1>
+
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="stars" style="font-size: 1rem">{{ getStars(product.rating) }}</span>
+            <span class="fw-bold" style="font-size: 0.88rem; color: var(--color-text)">{{ product.rating }}</span>
+            <span style="font-size: 0.82rem; color: var(--color-muted)">({{ product.reviews }} reviews)</span>
+          </div>
+
+          <p class="mb-4" style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.75">
+            {{ product.description }}
+          </p>
+
+          <ul class="feature-list mb-4">
+            <li>Free shipping on all orders</li>
+            <li>30-day hassle-free returns</li>
+            <li>2-year manufacturer warranty</li>
+            <li>24/7 customer support</li>
+          </ul>
+
+          <hr class="light-divider mb-4" />
+
+          <div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
+            <span class="fw-bold" style="font-size: 2rem; color: var(--color-primary)">
+              ${{ product.price.toFixed(2) }}
+            </span>
+            <span *ngIf="product.originalPrice" class="price-was" style="font-size: 1rem">
+              ${{ product.originalPrice!.toFixed(2) }}
+            </span>
+            <span *ngIf="product.originalPrice" class="saving-badge">
+              Save ${{ getSavings().toFixed(2) }}
+            </span>
+          </div>
+
+          <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
+            <div class="qty-control">
+              <button class="qty-btn" (click)="decreaseQty()">−</button>
+              <span class="qty-value">{{ quantity }}</span>
+              <button class="qty-btn" (click)="increaseQty()">+</button>
+            </div>
+            <button class="btn fw-bold text-white rounded-3 px-4 py-2 flex-grow-1"
+                    style="background: var(--color-primary)"
+                    (click)="addToCart()">
+              Add to Cart
+            </button>
+          </div>
+
+          <p style="font-size: 0.78rem; color: var(--color-muted)">
+            🔒 Secure checkout · SSL Encrypted · Official Partner
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="showToast" class="toast-custom">
+  {{ toastMessage }}
+</div>
