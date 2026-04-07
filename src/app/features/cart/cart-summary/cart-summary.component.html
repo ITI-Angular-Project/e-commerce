@@ -1,55 +1,51 @@
-  <h3 class="fs-5 fw-bold mb-4">Order Summary</h3>
+<h3 class="fs-5 fw-bold mb-4">Order Summary</h3>
 
-  <!-- Line items -->
-  <div class="space-y-4 mb-4">
-    <div class="d-flex justify-content-between align-items-center text-slate-500 fw-medium">
-      <span>Subtotal</span>
-      <span class="text-slate-900">$760.00</span>
-    </div>
-
-    <div class="d-flex justify-content-between align-items-center text-slate-500 fw-medium">
-      <span>Shipping</span>
-      <span class="text-green-500 fw-bold text-uppercase text-xs tracking-wider">Free</span>
-    </div>
-
-    <div class="d-flex justify-content-between align-items-center text-slate-500 fw-medium">
-      <span>Discount (TECH10)</span>
-      <span class="text-red-500">-$76.00</span>
-    </div>
+<!-- Line items -->
+<div class="space-y-4 mb-4">
+  <div class="d-flex justify-content-between align-items-center text-slate-500 fw-medium">
+    <span>Subtotal</span>
+    <span class="text-slate-900">${{subTotal()}}</span>
   </div>
 
-  <!-- Total -->
-  <div class="pt-3 border-top border-slate-100 mb-4">
-    <div class="d-flex justify-content-between align-items-center">
-      <span class="fs-6 fw-bold">Total</span>
-      <span class="fs-4 fw-bold text-slate-900">$684.00</span>
-    </div>
-    <p class="text-slate-400 text-xs mt-1">Tax calculated at checkout</p>
+  <div class="d-flex justify-content-between align-items-center text-slate-500 fw-medium">
+    <span>Shipping</span>
+    <span class="text-green-500 fw-bold text-uppercase text-xs tracking-wider">{{shipping||"Free"}}</span>
+  </div>
+  <!-- 
+  <div class="d-flex justify-content-between align-items-center text-slate-500 fw-medium">
+    <span>Discount (TECH10)</span>
+    <span class="text-red-500">-$76.00</span>
+  </div> -->
+</div>
+
+<!-- Total -->
+<div class="pt-3 border-top border-slate-100 mb-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <span class="fs-6 fw-bold">Total</span>
+    <span class="fs-4 fw-bold text-slate-900">${{subTotal()+shipping}}</span>
+  </div>
+  <p class="text-slate-400 text-xs mt-1">Tax calculated at checkout</p>
+</div>
+
+<!-- CTA Button -->
+<button class="btn btn-checkout w-100 text-white fw-bold d-flex align-items-center justify-content-center gap-3 mb-4">
+  Proceed to Checkout
+  <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+
+<!-- Trust Signals -->
+<div class="space-y-4 text-center">
+  <div class="d-flex align-items-center justify-content-center gap-3">
+    <span class="material-symbols-outlined text-green-500" style="font-size: 1.25rem">verified_user</span>
+    <span class="text-xs fw-medium text-slate-500">Secure checkout guaranteed</span>
   </div>
 
-  <!-- CTA Button -->
-  <button
-    class="btn btn-checkout w-100 text-white fw-bold d-flex align-items-center justify-content-center gap-3 mb-4"
-  >
-    Proceed to Checkout
-    <span class="material-symbols-outlined">arrow_forward</span>
-  </button>
+  <p class="text-10px text-slate-400 text-uppercase tracking-custom fw-bold">We accept</p>
 
-  <!-- Trust Signals -->
-  <div class="space-y-4 text-center">
-    <div class="d-flex align-items-center justify-content-center gap-3">
-      <span class="material-symbols-outlined text-green-500" style="font-size: 1.25rem"
-        >verified_user</span
-      >
-      <span class="text-xs fw-medium text-slate-500">Secure checkout guaranteed</span>
-    </div>
-
-    <p class="text-10px text-slate-400 text-uppercase tracking-custom fw-bold">We accept</p>
-
-    <div class="d-flex justify-content-center gap-4 grayscale-40">
-      <span class="material-symbols-outlined fs-4">payments</span>
-      <span class="material-symbols-outlined fs-4">credit_card</span>
-      <span class="material-symbols-outlined fs-4">account_balance_wallet</span>
-      <span class="material-symbols-outlined fs-4">contactless</span>
-    </div>
+  <div class="d-flex justify-content-center gap-4 grayscale-40">
+    <span class="material-symbols-outlined fs-4">payments</span>
+    <span class="material-symbols-outlined fs-4">credit_card</span>
+    <span class="material-symbols-outlined fs-4">account_balance_wallet</span>
+    <span class="material-symbols-outlined fs-4">contactless</span>
   </div>
+</div>

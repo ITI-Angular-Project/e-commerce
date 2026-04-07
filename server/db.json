@@ -1,0 +1,2007 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Samsung laptops 1",
+      "category": "laptops",
+      "price": 1478,
+      "brand": "Samsung",
+      "image": "https://cdn.myrapidtrack.com/products/images/1657354781217241941.jpg",
+      "rating": "3.5",
+      "stock": 12
+    },
+    {
+      "id": 2,
+      "title": "Dell accessories 2",
+      "category": "accessories",
+      "price": 780,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+2",
+      "rating": "4.7",
+      "stock": 16
+    },
+    {
+      "id": 3,
+      "title": "HP smartphones 3",
+      "category": "smartphones",
+      "price": 1383,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+3",
+      "rating": "3.3",
+      "stock": 0
+    },
+    {
+      "id": 4,
+      "title": "Lenovo laptops 4",
+      "category": "laptops",
+      "price": 649,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+4",
+      "rating": "4.9",
+      "stock": 4
+    },
+    {
+      "id": 5,
+      "title": "Asus accessories 5",
+      "category": "accessories",
+      "price": 1092,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+5",
+      "rating": "3.4",
+      "stock": 40
+    },
+    {
+      "id": 6,
+      "title": "Xiaomi smartphones 6",
+      "category": "smartphones",
+      "price": 1562,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+6",
+      "rating": "3.5",
+      "stock": 19
+    },
+    {
+      "id": 7,
+      "title": "Apple laptops 7",
+      "category": "laptops",
+      "price": 1396,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+7",
+      "rating": "4.7",
+      "stock": 42
+    },
+    {
+      "id": 8,
+      "title": "Samsung accessories 8",
+      "category": "accessories",
+      "price": 171,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+8",
+      "rating": "3.0",
+      "stock": 38
+    },
+    {
+      "id": 9,
+      "title": "Dell smartphones 9",
+      "category": "smartphones",
+      "price": 1563,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+9",
+      "rating": "3.2",
+      "stock": 32
+    },
+    {
+      "id": 10,
+      "title": "HP laptops 10",
+      "category": "laptops",
+      "price": 1572,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+10",
+      "rating": "3.2",
+      "stock": 15
+    },
+    {
+      "id": 11,
+      "title": "Lenovo accessories 11",
+      "category": "accessories",
+      "price": 514,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+11",
+      "rating": "3.4",
+      "stock": 28
+    },
+    {
+      "id": 12,
+      "title": "Asus smartphones 12",
+      "category": "smartphones",
+      "price": 1340,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+12",
+      "rating": "4.0",
+      "stock": 36
+    },
+    {
+      "id": 13,
+      "title": "Xiaomi laptops 13",
+      "category": "laptops",
+      "price": 840,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+13",
+      "rating": "4.2",
+      "stock": 10
+    },
+    {
+      "id": 14,
+      "title": "Apple accessories 14",
+      "category": "accessories",
+      "price": 169,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+14",
+      "rating": "3.2",
+      "stock": 42
+    },
+    {
+      "id": 15,
+      "title": "Samsung smartphones 15",
+      "category": "smartphones",
+      "price": 1592,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+15",
+      "rating": "3.4",
+      "stock": 31
+    },
+    {
+      "id": 16,
+      "title": "Dell laptops 16",
+      "category": "laptops",
+      "price": 938,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+16",
+      "rating": "3.1",
+      "stock": 43
+    },
+    {
+      "id": 17,
+      "title": "HP accessories 17",
+      "category": "accessories",
+      "price": 233,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+17",
+      "rating": "4.8",
+      "stock": 29
+    },
+    {
+      "id": 18,
+      "title": "Lenovo smartphones 18",
+      "category": "smartphones",
+      "price": 203,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+18",
+      "rating": "3.8",
+      "stock": 4
+    },
+    {
+      "id": 19,
+      "title": "Asus laptops 19",
+      "category": "laptops",
+      "price": 1207,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+19",
+      "rating": "3.4",
+      "stock": 9
+    },
+    {
+      "id": 20,
+      "title": "Xiaomi accessories 20",
+      "category": "accessories",
+      "price": 1199,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+20",
+      "rating": "3.9",
+      "stock": 2
+    },
+    {
+      "id": 21,
+      "title": "Apple smartphones 21",
+      "category": "smartphones",
+      "price": 357,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+21",
+      "rating": "4.3",
+      "stock": 6
+    },
+    {
+      "id": 22,
+      "title": "Samsung laptops 22",
+      "category": "laptops",
+      "price": 923,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+22",
+      "rating": "4.6",
+      "stock": 16
+    },
+    {
+      "id": 23,
+      "title": "Dell accessories 23",
+      "category": "accessories",
+      "price": 641,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+23",
+      "rating": "3.7",
+      "stock": 28
+    },
+    {
+      "id": 24,
+      "title": "HP smartphones 24",
+      "category": "smartphones",
+      "price": 1105,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+24",
+      "rating": "3.7",
+      "stock": 37
+    },
+    {
+      "id": 25,
+      "title": "Lenovo laptops 25",
+      "category": "laptops",
+      "price": 1582,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+25",
+      "rating": "4.6",
+      "stock": 48
+    },
+    {
+      "id": 26,
+      "title": "Asus accessories 26",
+      "category": "accessories",
+      "price": 925,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+26",
+      "rating": "3.6",
+      "stock": 2
+    },
+    {
+      "id": 27,
+      "title": "Xiaomi smartphones 27",
+      "category": "smartphones",
+      "price": 545,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+27",
+      "rating": "3.7",
+      "stock": 38
+    },
+    {
+      "id": 28,
+      "title": "Apple laptops 28",
+      "category": "laptops",
+      "price": 156,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+28",
+      "rating": "4.9",
+      "stock": 32
+    },
+    {
+      "id": 29,
+      "title": "Samsung accessories 29",
+      "category": "accessories",
+      "price": 327,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+29",
+      "rating": "3.6",
+      "stock": 33
+    },
+    {
+      "id": 30,
+      "title": "Dell smartphones 30",
+      "category": "smartphones",
+      "price": 192,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+30",
+      "rating": "3.3",
+      "stock": 45
+    },
+    {
+      "id": 31,
+      "title": "HP laptops 31",
+      "category": "laptops",
+      "price": 1528,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+31",
+      "rating": "3.4",
+      "stock": 24
+    },
+    {
+      "id": 32,
+      "title": "Lenovo accessories 32",
+      "category": "accessories",
+      "price": 241,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+32",
+      "rating": "4.5",
+      "stock": 46
+    },
+    {
+      "id": 33,
+      "title": "Asus smartphones 33",
+      "category": "smartphones",
+      "price": 703,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+33",
+      "rating": "4.7",
+      "stock": 40
+    },
+    {
+      "id": 34,
+      "title": "Xiaomi laptops 34",
+      "category": "laptops",
+      "price": 673,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+34",
+      "rating": "3.1",
+      "stock": 12
+    },
+    {
+      "id": 35,
+      "title": "Apple accessories 35",
+      "category": "accessories",
+      "price": 462,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+35",
+      "rating": "3.9",
+      "stock": 31
+    },
+    {
+      "id": 36,
+      "title": "Samsung smartphones 36",
+      "category": "smartphones",
+      "price": 800,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+36",
+      "rating": "5.0",
+      "stock": 10
+    },
+    {
+      "id": 37,
+      "title": "Dell laptops 37",
+      "category": "laptops",
+      "price": 607,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+37",
+      "rating": "4.7",
+      "stock": 38
+    },
+    {
+      "id": 38,
+      "title": "HP accessories 38",
+      "category": "accessories",
+      "price": 899,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+38",
+      "rating": "4.4",
+      "stock": 10
+    },
+    {
+      "id": 39,
+      "title": "Lenovo smartphones 39",
+      "category": "smartphones",
+      "price": 564,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+39",
+      "rating": "4.4",
+      "stock": 37
+    },
+    {
+      "id": 40,
+      "title": "Asus laptops 40",
+      "category": "laptops",
+      "price": 892,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+40",
+      "rating": "4.2",
+      "stock": 40
+    },
+    {
+      "id": 41,
+      "title": "Xiaomi accessories 41",
+      "category": "accessories",
+      "price": 504,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+41",
+      "rating": "4.2",
+      "stock": 39
+    },
+    {
+      "id": 42,
+      "title": "Apple smartphones 42",
+      "category": "smartphones",
+      "price": 660,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+42",
+      "rating": "4.1",
+      "stock": 12
+    },
+    {
+      "id": 43,
+      "title": "Samsung laptops 43",
+      "category": "laptops",
+      "price": 1291,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+43",
+      "rating": "3.2",
+      "stock": 5
+    },
+    {
+      "id": 44,
+      "title": "Dell accessories 44",
+      "category": "accessories",
+      "price": 1598,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+44",
+      "rating": "3.2",
+      "stock": 6
+    },
+    {
+      "id": 45,
+      "title": "HP smartphones 45",
+      "category": "smartphones",
+      "price": 364,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+45",
+      "rating": "3.1",
+      "stock": 45
+    },
+    {
+      "id": 46,
+      "title": "Lenovo laptops 46",
+      "category": "laptops",
+      "price": 1063,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+46",
+      "rating": "4.8",
+      "stock": 2
+    },
+    {
+      "id": 47,
+      "title": "Asus accessories 47",
+      "category": "accessories",
+      "price": 829,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+47",
+      "rating": "4.6",
+      "stock": 19
+    },
+    {
+      "id": 48,
+      "title": "Xiaomi smartphones 48",
+      "category": "smartphones",
+      "price": 1219,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+48",
+      "rating": "4.6",
+      "stock": 43
+    },
+    {
+      "id": 49,
+      "title": "Apple laptops 49",
+      "category": "laptops",
+      "price": 1464,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+49",
+      "rating": "4.5",
+      "stock": 38
+    },
+    {
+      "id": 50,
+      "title": "Samsung accessories 50",
+      "category": "accessories",
+      "price": 121,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+50",
+      "rating": "4.9",
+      "stock": 38
+    },
+    {
+      "id": 51,
+      "title": "Dell smartphones 51",
+      "category": "smartphones",
+      "price": 516,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+51",
+      "rating": "3.8",
+      "stock": 8
+    },
+    {
+      "id": 52,
+      "title": "HP laptops 52",
+      "category": "laptops",
+      "price": 472,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+52",
+      "rating": "4.5",
+      "stock": 2
+    },
+    {
+      "id": 53,
+      "title": "Lenovo accessories 53",
+      "category": "accessories",
+      "price": 308,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+53",
+      "rating": "4.6",
+      "stock": 1
+    },
+    {
+      "id": 54,
+      "title": "Asus smartphones 54",
+      "category": "smartphones",
+      "price": 1075,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+54",
+      "rating": "4.1",
+      "stock": 32
+    },
+    {
+      "id": 55,
+      "title": "Xiaomi laptops 55",
+      "category": "laptops",
+      "price": 1357,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+55",
+      "rating": "4.5",
+      "stock": 2
+    },
+    {
+      "id": 56,
+      "title": "Apple accessories 56",
+      "category": "accessories",
+      "price": 1377,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+56",
+      "rating": "3.3",
+      "stock": 32
+    },
+    {
+      "id": 57,
+      "title": "Samsung smartphones 57",
+      "category": "smartphones",
+      "price": 989,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+57",
+      "rating": "4.4",
+      "stock": 24
+    },
+    {
+      "id": 58,
+      "title": "Dell laptops 58",
+      "category": "laptops",
+      "price": 995,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+58",
+      "rating": "4.0",
+      "stock": 23
+    },
+    {
+      "id": 59,
+      "title": "HP accessories 59",
+      "category": "accessories",
+      "price": 858,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+59",
+      "rating": "4.7",
+      "stock": 2
+    },
+    {
+      "id": 60,
+      "title": "Lenovo smartphones 60",
+      "category": "smartphones",
+      "price": 217,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+60",
+      "rating": "3.9",
+      "stock": 10
+    },
+    {
+      "id": 61,
+      "title": "Asus laptops 61",
+      "category": "laptops",
+      "price": 415,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+61",
+      "rating": "3.1",
+      "stock": 41
+    },
+    {
+      "id": 62,
+      "title": "Xiaomi accessories 62",
+      "category": "accessories",
+      "price": 696,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+62",
+      "rating": "4.6",
+      "stock": 11
+    },
+    {
+      "id": 63,
+      "title": "Apple smartphones 63",
+      "category": "smartphones",
+      "price": 1526,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+63",
+      "rating": "3.3",
+      "stock": 4
+    },
+    {
+      "id": 64,
+      "title": "Samsung laptops 64",
+      "category": "laptops",
+      "price": 1246,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+64",
+      "rating": "3.7",
+      "stock": 36
+    },
+    {
+      "id": 65,
+      "title": "Dell accessories 65",
+      "category": "accessories",
+      "price": 864,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+65",
+      "rating": "4.4",
+      "stock": 7
+    },
+    {
+      "id": 66,
+      "title": "HP smartphones 66",
+      "category": "smartphones",
+      "price": 1169,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+66",
+      "rating": "3.9",
+      "stock": 8
+    },
+    {
+      "id": 67,
+      "title": "Lenovo laptops 67",
+      "category": "laptops",
+      "price": 1226,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+67",
+      "rating": "5.0",
+      "stock": 30
+    },
+    {
+      "id": 68,
+      "title": "Asus accessories 68",
+      "category": "accessories",
+      "price": 965,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+68",
+      "rating": "5.0",
+      "stock": 22
+    },
+    {
+      "id": 69,
+      "title": "Xiaomi smartphones 69",
+      "category": "smartphones",
+      "price": 399,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+69",
+      "rating": "3.9",
+      "stock": 17
+    },
+    {
+      "id": 70,
+      "title": "Apple laptops 70",
+      "category": "laptops",
+      "price": 1503,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+70",
+      "rating": "3.7",
+      "stock": 23
+    },
+    {
+      "id": 71,
+      "title": "Samsung accessories 71",
+      "category": "accessories",
+      "price": 284,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+71",
+      "rating": "3.9",
+      "stock": 10
+    },
+    {
+      "id": 72,
+      "title": "Dell smartphones 72",
+      "category": "smartphones",
+      "price": 713,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+72",
+      "rating": "4.1",
+      "stock": 24
+    },
+    {
+      "id": 73,
+      "title": "HP laptops 73",
+      "category": "laptops",
+      "price": 823,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+73",
+      "rating": "3.7",
+      "stock": 21
+    },
+    {
+      "id": 74,
+      "title": "Lenovo accessories 74",
+      "category": "accessories",
+      "price": 1546,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+74",
+      "rating": "3.3",
+      "stock": 9
+    },
+    {
+      "id": 75,
+      "title": "Asus smartphones 75",
+      "category": "smartphones",
+      "price": 1528,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+75",
+      "rating": "3.6",
+      "stock": 20
+    },
+    {
+      "id": 76,
+      "title": "Xiaomi laptops 76",
+      "category": "laptops",
+      "price": 1035,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+76",
+      "rating": "3.1",
+      "stock": 12
+    },
+    {
+      "id": 77,
+      "title": "Apple accessories 77",
+      "category": "accessories",
+      "price": 356,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+77",
+      "rating": "4.7",
+      "stock": 36
+    },
+    {
+      "id": 78,
+      "title": "Samsung smartphones 78",
+      "category": "smartphones",
+      "price": 187,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+78",
+      "rating": "3.1",
+      "stock": 20
+    },
+    {
+      "id": 79,
+      "title": "Dell laptops 79",
+      "category": "laptops",
+      "price": 956,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+79",
+      "rating": "3.6",
+      "stock": 0
+    },
+    {
+      "id": 80,
+      "title": "HP accessories 80",
+      "category": "accessories",
+      "price": 1440,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+80",
+      "rating": "4.8",
+      "stock": 18
+    },
+    {
+      "id": 81,
+      "title": "Lenovo smartphones 81",
+      "category": "smartphones",
+      "price": 1222,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+81",
+      "rating": "4.9",
+      "stock": 35
+    },
+    {
+      "id": 82,
+      "title": "Asus laptops 82",
+      "category": "laptops",
+      "price": 940,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+82",
+      "rating": "3.7",
+      "stock": 36
+    },
+    {
+      "id": 83,
+      "title": "Xiaomi accessories 83",
+      "category": "accessories",
+      "price": 425,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+83",
+      "rating": "4.7",
+      "stock": 45
+    },
+    {
+      "id": 84,
+      "title": "Apple smartphones 84",
+      "category": "smartphones",
+      "price": 775,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+84",
+      "rating": "3.5",
+      "stock": 23
+    },
+    {
+      "id": 85,
+      "title": "Samsung laptops 85",
+      "category": "laptops",
+      "price": 603,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+85",
+      "rating": "5.0",
+      "stock": 2
+    },
+    {
+      "id": 86,
+      "title": "Dell accessories 86",
+      "category": "accessories",
+      "price": 1224,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+86",
+      "rating": "3.3",
+      "stock": 48
+    },
+    {
+      "id": 87,
+      "title": "HP smartphones 87",
+      "category": "smartphones",
+      "price": 758,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+87",
+      "rating": "3.6",
+      "stock": 1
+    },
+    {
+      "id": 88,
+      "title": "Lenovo laptops 88",
+      "category": "laptops",
+      "price": 1324,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+88",
+      "rating": "5.0",
+      "stock": 38
+    },
+    {
+      "id": 89,
+      "title": "Asus accessories 89",
+      "category": "accessories",
+      "price": 997,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+89",
+      "rating": "4.2",
+      "stock": 18
+    },
+    {
+      "id": 90,
+      "title": "Xiaomi smartphones 90",
+      "category": "smartphones",
+      "price": 1575,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+90",
+      "rating": "3.6",
+      "stock": 17
+    },
+    {
+      "id": 91,
+      "title": "Apple laptops 91",
+      "category": "laptops",
+      "price": 1252,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+91",
+      "rating": "3.6",
+      "stock": 7
+    },
+    {
+      "id": 92,
+      "title": "Samsung accessories 92",
+      "category": "accessories",
+      "price": 740,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+92",
+      "rating": "4.4",
+      "stock": 18
+    },
+    {
+      "id": 93,
+      "title": "Dell smartphones 93",
+      "category": "smartphones",
+      "price": 670,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+93",
+      "rating": "4.9",
+      "stock": 38
+    },
+    {
+      "id": 94,
+      "title": "HP laptops 94",
+      "category": "laptops",
+      "price": 739,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+94",
+      "rating": "4.8",
+      "stock": 30
+    },
+    {
+      "id": 95,
+      "title": "Lenovo accessories 95",
+      "category": "accessories",
+      "price": 548,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+95",
+      "rating": "3.6",
+      "stock": 48
+    },
+    {
+      "id": 96,
+      "title": "Asus smartphones 96",
+      "category": "smartphones",
+      "price": 619,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+96",
+      "rating": "3.1",
+      "stock": 1
+    },
+    {
+      "id": 97,
+      "title": "Xiaomi laptops 97",
+      "category": "laptops",
+      "price": 1389,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+97",
+      "rating": "4.6",
+      "stock": 24
+    },
+    {
+      "id": 98,
+      "title": "Apple accessories 98",
+      "category": "accessories",
+      "price": 384,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+98",
+      "rating": "4.3",
+      "stock": 30
+    },
+    {
+      "id": 99,
+      "title": "Samsung smartphones 99",
+      "category": "smartphones",
+      "price": 847,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+99",
+      "rating": "3.8",
+      "stock": 9
+    },
+    {
+      "id": 100,
+      "title": "Dell laptops 100",
+      "category": "laptops",
+      "price": 512,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+100",
+      "rating": "3.9",
+      "stock": 21
+    },
+    {
+      "id": 101,
+      "title": "HP accessories 101",
+      "category": "accessories",
+      "price": 1225,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+101",
+      "rating": "3.9",
+      "stock": 35
+    },
+    {
+      "id": 102,
+      "title": "Lenovo smartphones 102",
+      "category": "smartphones",
+      "price": 780,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+102",
+      "rating": "4.4",
+      "stock": 26
+    },
+    {
+      "id": 103,
+      "title": "Asus laptops 103",
+      "category": "laptops",
+      "price": 461,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+103",
+      "rating": "4.9",
+      "stock": 45
+    },
+    {
+      "id": 104,
+      "title": "Xiaomi accessories 104",
+      "category": "accessories",
+      "price": 1335,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+104",
+      "rating": "4.9",
+      "stock": 31
+    },
+    {
+      "id": 105,
+      "title": "Apple smartphones 105",
+      "category": "smartphones",
+      "price": 576,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+105",
+      "rating": "4.5",
+      "stock": 2
+    },
+    {
+      "id": 106,
+      "title": "Samsung laptops 106",
+      "category": "laptops",
+      "price": 583,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+106",
+      "rating": "4.4",
+      "stock": 44
+    },
+    {
+      "id": 107,
+      "title": "Dell accessories 107",
+      "category": "accessories",
+      "price": 346,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+107",
+      "rating": "3.8",
+      "stock": 34
+    },
+    {
+      "id": 108,
+      "title": "HP smartphones 108",
+      "category": "smartphones",
+      "price": 393,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+108",
+      "rating": "3.7",
+      "stock": 28
+    },
+    {
+      "id": 109,
+      "title": "Lenovo laptops 109",
+      "category": "laptops",
+      "price": 373,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+109",
+      "rating": "3.6",
+      "stock": 33
+    },
+    {
+      "id": 110,
+      "title": "Asus accessories 110",
+      "category": "accessories",
+      "price": 944,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+110",
+      "rating": "4.4",
+      "stock": 14
+    },
+    {
+      "id": 111,
+      "title": "Xiaomi smartphones 111",
+      "category": "smartphones",
+      "price": 362,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+111",
+      "rating": "4.1",
+      "stock": 0
+    },
+    {
+      "id": 112,
+      "title": "Apple laptops 112",
+      "category": "laptops",
+      "price": 713,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+112",
+      "rating": "3.3",
+      "stock": 3
+    },
+    {
+      "id": 113,
+      "title": "Samsung accessories 113",
+      "category": "accessories",
+      "price": 1166,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+113",
+      "rating": "4.2",
+      "stock": 43
+    },
+    {
+      "id": 114,
+      "title": "Dell smartphones 114",
+      "category": "smartphones",
+      "price": 585,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+114",
+      "rating": "3.1",
+      "stock": 35
+    },
+    {
+      "id": 115,
+      "title": "HP laptops 115",
+      "category": "laptops",
+      "price": 1410,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+115",
+      "rating": "3.0",
+      "stock": 40
+    },
+    {
+      "id": 116,
+      "title": "Lenovo accessories 116",
+      "category": "accessories",
+      "price": 1299,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+116",
+      "rating": "4.4",
+      "stock": 31
+    },
+    {
+      "id": 117,
+      "title": "Asus smartphones 117",
+      "category": "smartphones",
+      "price": 922,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+117",
+      "rating": "4.6",
+      "stock": 20
+    },
+    {
+      "id": 118,
+      "title": "Xiaomi laptops 118",
+      "category": "laptops",
+      "price": 1007,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+118",
+      "rating": "4.4",
+      "stock": 21
+    },
+    {
+      "id": 119,
+      "title": "Apple accessories 119",
+      "category": "accessories",
+      "price": 161,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+119",
+      "rating": "3.5",
+      "stock": 20
+    },
+    {
+      "id": 120,
+      "title": "Samsung smartphones 120",
+      "category": "smartphones",
+      "price": 371,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+120",
+      "rating": "3.8",
+      "stock": 35
+    },
+    {
+      "id": 121,
+      "title": "Dell laptops 121",
+      "category": "laptops",
+      "price": 168,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+121",
+      "rating": "4.3",
+      "stock": 45
+    },
+    {
+      "id": 122,
+      "title": "HP accessories 122",
+      "category": "accessories",
+      "price": 534,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+122",
+      "rating": "4.4",
+      "stock": 48
+    },
+    {
+      "id": 123,
+      "title": "Lenovo smartphones 123",
+      "category": "smartphones",
+      "price": 174,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+123",
+      "rating": "3.3",
+      "stock": 5
+    },
+    {
+      "id": 124,
+      "title": "Asus laptops 124",
+      "category": "laptops",
+      "price": 1427,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+124",
+      "rating": "3.9",
+      "stock": 11
+    },
+    {
+      "id": 125,
+      "title": "Xiaomi accessories 125",
+      "category": "accessories",
+      "price": 313,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+125",
+      "rating": "3.5",
+      "stock": 47
+    },
+    {
+      "id": 126,
+      "title": "Apple smartphones 126",
+      "category": "smartphones",
+      "price": 999,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+126",
+      "rating": "4.0",
+      "stock": 43
+    },
+    {
+      "id": 127,
+      "title": "Samsung laptops 127",
+      "category": "laptops",
+      "price": 494,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+127",
+      "rating": "3.6",
+      "stock": 36
+    },
+    {
+      "id": 128,
+      "title": "Dell accessories 128",
+      "category": "accessories",
+      "price": 457,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+128",
+      "rating": "3.8",
+      "stock": 41
+    },
+    {
+      "id": 129,
+      "title": "HP smartphones 129",
+      "category": "smartphones",
+      "price": 848,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+129",
+      "rating": "3.9",
+      "stock": 41
+    },
+    {
+      "id": 130,
+      "title": "Lenovo laptops 130",
+      "category": "laptops",
+      "price": 295,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+130",
+      "rating": "3.5",
+      "stock": 43
+    },
+    {
+      "id": 131,
+      "title": "Asus accessories 131",
+      "category": "accessories",
+      "price": 1322,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+131",
+      "rating": "3.1",
+      "stock": 5
+    },
+    {
+      "id": 132,
+      "title": "Xiaomi smartphones 132",
+      "category": "smartphones",
+      "price": 1151,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+132",
+      "rating": "3.8",
+      "stock": 48
+    },
+    {
+      "id": 133,
+      "title": "Apple laptops 133",
+      "category": "laptops",
+      "price": 607,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+133",
+      "rating": "3.4",
+      "stock": 18
+    },
+    {
+      "id": 134,
+      "title": "Samsung accessories 134",
+      "category": "accessories",
+      "price": 1580,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+134",
+      "rating": "4.9",
+      "stock": 38
+    },
+    {
+      "id": 135,
+      "title": "Dell smartphones 135",
+      "category": "smartphones",
+      "price": 332,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+135",
+      "rating": "4.8",
+      "stock": 34
+    },
+    {
+      "id": 136,
+      "title": "HP laptops 136",
+      "category": "laptops",
+      "price": 1493,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+136",
+      "rating": "3.9",
+      "stock": 32
+    },
+    {
+      "id": 137,
+      "title": "Lenovo accessories 137",
+      "category": "accessories",
+      "price": 1573,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+137",
+      "rating": "4.3",
+      "stock": 37
+    },
+    {
+      "id": 138,
+      "title": "Asus smartphones 138",
+      "category": "smartphones",
+      "price": 1486,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+138",
+      "rating": "4.2",
+      "stock": 34
+    },
+    {
+      "id": 139,
+      "title": "Xiaomi laptops 139",
+      "category": "laptops",
+      "price": 317,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+139",
+      "rating": "3.9",
+      "stock": 45
+    },
+    {
+      "id": 140,
+      "title": "Apple accessories 140",
+      "category": "accessories",
+      "price": 521,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+140",
+      "rating": "4.9",
+      "stock": 28
+    },
+    {
+      "id": 141,
+      "title": "Samsung smartphones 141",
+      "category": "smartphones",
+      "price": 514,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+141",
+      "rating": "4.3",
+      "stock": 19
+    },
+    {
+      "id": 142,
+      "title": "Dell laptops 142",
+      "category": "laptops",
+      "price": 458,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+142",
+      "rating": "4.3",
+      "stock": 21
+    },
+    {
+      "id": 143,
+      "title": "HP accessories 143",
+      "category": "accessories",
+      "price": 1409,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+143",
+      "rating": "3.9",
+      "stock": 35
+    },
+    {
+      "id": 144,
+      "title": "Lenovo smartphones 144",
+      "category": "smartphones",
+      "price": 320,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+144",
+      "rating": "3.1",
+      "stock": 23
+    },
+    {
+      "id": 145,
+      "title": "Asus laptops 145",
+      "category": "laptops",
+      "price": 1331,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+145",
+      "rating": "3.5",
+      "stock": 17
+    },
+    {
+      "id": 146,
+      "title": "Xiaomi accessories 146",
+      "category": "accessories",
+      "price": 538,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+146",
+      "rating": "4.9",
+      "stock": 12
+    },
+    {
+      "id": 147,
+      "title": "Apple smartphones 147",
+      "category": "smartphones",
+      "price": 1343,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+147",
+      "rating": "3.6",
+      "stock": 10
+    },
+    {
+      "id": 148,
+      "title": "Samsung laptops 148",
+      "category": "laptops",
+      "price": 1378,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+148",
+      "rating": "4.7",
+      "stock": 26
+    },
+    {
+      "id": 149,
+      "title": "Dell accessories 149",
+      "category": "accessories",
+      "price": 1181,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+149",
+      "rating": "4.8",
+      "stock": 9
+    },
+    {
+      "id": 150,
+      "title": "HP smartphones 150",
+      "category": "smartphones",
+      "price": 1073,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+150",
+      "rating": "4.6",
+      "stock": 12
+    },
+    {
+      "id": 151,
+      "title": "Lenovo laptops 151",
+      "category": "laptops",
+      "price": 1261,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+151",
+      "rating": "4.3",
+      "stock": 23
+    },
+    {
+      "id": 152,
+      "title": "Asus accessories 152",
+      "category": "accessories",
+      "price": 1004,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+152",
+      "rating": "3.3",
+      "stock": 13
+    },
+    {
+      "id": 153,
+      "title": "Xiaomi smartphones 153",
+      "category": "smartphones",
+      "price": 1012,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+153",
+      "rating": "4.8",
+      "stock": 4
+    },
+    {
+      "id": 154,
+      "title": "Apple laptops 154",
+      "category": "laptops",
+      "price": 287,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+154",
+      "rating": "4.3",
+      "stock": 43
+    },
+    {
+      "id": 155,
+      "title": "Samsung accessories 155",
+      "category": "accessories",
+      "price": 417,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+155",
+      "rating": "3.1",
+      "stock": 39
+    },
+    {
+      "id": 156,
+      "title": "Dell smartphones 156",
+      "category": "smartphones",
+      "price": 395,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+156",
+      "rating": "4.9",
+      "stock": 16
+    },
+    {
+      "id": 157,
+      "title": "HP laptops 157",
+      "category": "laptops",
+      "price": 228,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+157",
+      "rating": "4.9",
+      "stock": 16
+    },
+    {
+      "id": 158,
+      "title": "Lenovo accessories 158",
+      "category": "accessories",
+      "price": 1434,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+158",
+      "rating": "4.4",
+      "stock": 38
+    },
+    {
+      "id": 159,
+      "title": "Asus smartphones 159",
+      "category": "smartphones",
+      "price": 952,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+159",
+      "rating": "3.7",
+      "stock": 8
+    },
+    {
+      "id": 160,
+      "title": "Xiaomi laptops 160",
+      "category": "laptops",
+      "price": 642,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+160",
+      "rating": "4.9",
+      "stock": 9
+    },
+    {
+      "id": 161,
+      "title": "Apple accessories 161",
+      "category": "accessories",
+      "price": 1087,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+161",
+      "rating": "3.4",
+      "stock": 28
+    },
+    {
+      "id": 162,
+      "title": "Samsung smartphones 162",
+      "category": "smartphones",
+      "price": 1054,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+162",
+      "rating": "4.7",
+      "stock": 10
+    },
+    {
+      "id": 163,
+      "title": "Dell laptops 163",
+      "category": "laptops",
+      "price": 651,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+163",
+      "rating": "3.2",
+      "stock": 5
+    },
+    {
+      "id": 164,
+      "title": "HP accessories 164",
+      "category": "accessories",
+      "price": 828,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+164",
+      "rating": "4.9",
+      "stock": 42
+    },
+    {
+      "id": 165,
+      "title": "Lenovo smartphones 165",
+      "category": "smartphones",
+      "price": 225,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+165",
+      "rating": "3.3",
+      "stock": 34
+    },
+    {
+      "id": 166,
+      "title": "Asus laptops 166",
+      "category": "laptops",
+      "price": 776,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+166",
+      "rating": "4.9",
+      "stock": 37
+    },
+    {
+      "id": 167,
+      "title": "Xiaomi accessories 167",
+      "category": "accessories",
+      "price": 750,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+167",
+      "rating": "3.1",
+      "stock": 37
+    },
+    {
+      "id": 168,
+      "title": "Apple smartphones 168",
+      "category": "smartphones",
+      "price": 531,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+168",
+      "rating": "3.5",
+      "stock": 35
+    },
+    {
+      "id": 169,
+      "title": "Samsung laptops 169",
+      "category": "laptops",
+      "price": 136,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+169",
+      "rating": "4.3",
+      "stock": 26
+    },
+    {
+      "id": 170,
+      "title": "Dell accessories 170",
+      "category": "accessories",
+      "price": 1303,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+170",
+      "rating": "4.4",
+      "stock": 44
+    },
+    {
+      "id": 171,
+      "title": "HP smartphones 171",
+      "category": "smartphones",
+      "price": 1506,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+171",
+      "rating": "4.6",
+      "stock": 48
+    },
+    {
+      "id": 172,
+      "title": "Lenovo laptops 172",
+      "category": "laptops",
+      "price": 745,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+172",
+      "rating": "3.4",
+      "stock": 49
+    },
+    {
+      "id": 173,
+      "title": "Asus accessories 173",
+      "category": "accessories",
+      "price": 462,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+173",
+      "rating": "4.2",
+      "stock": 29
+    },
+    {
+      "id": 174,
+      "title": "Xiaomi smartphones 174",
+      "category": "smartphones",
+      "price": 1021,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+174",
+      "rating": "3.3",
+      "stock": 43
+    },
+    {
+      "id": 175,
+      "title": "Apple laptops 175",
+      "category": "laptops",
+      "price": 1452,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+175",
+      "rating": "4.9",
+      "stock": 7
+    },
+    {
+      "id": 176,
+      "title": "Samsung accessories 176",
+      "category": "accessories",
+      "price": 309,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+176",
+      "rating": "4.5",
+      "stock": 5
+    },
+    {
+      "id": 177,
+      "title": "Dell smartphones 177",
+      "category": "smartphones",
+      "price": 1598,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+177",
+      "rating": "4.6",
+      "stock": 22
+    },
+    {
+      "id": 178,
+      "title": "HP laptops 178",
+      "category": "laptops",
+      "price": 867,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+178",
+      "rating": "4.7",
+      "stock": 40
+    },
+    {
+      "id": 179,
+      "title": "Lenovo accessories 179",
+      "category": "accessories",
+      "price": 321,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+179",
+      "rating": "3.4",
+      "stock": 46
+    },
+    {
+      "id": 180,
+      "title": "Asus smartphones 180",
+      "category": "smartphones",
+      "price": 1045,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+180",
+      "rating": "4.8",
+      "stock": 34
+    },
+    {
+      "id": 181,
+      "title": "Xiaomi laptops 181",
+      "category": "laptops",
+      "price": 186,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+181",
+      "rating": "3.6",
+      "stock": 36
+    },
+    {
+      "id": 182,
+      "title": "Apple accessories 182",
+      "category": "accessories",
+      "price": 529,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+182",
+      "rating": "3.2",
+      "stock": 27
+    },
+    {
+      "id": 183,
+      "title": "Samsung smartphones 183",
+      "category": "smartphones",
+      "price": 567,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+183",
+      "rating": "3.1",
+      "stock": 47
+    },
+    {
+      "id": 184,
+      "title": "Dell laptops 184",
+      "category": "laptops",
+      "price": 1071,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+184",
+      "rating": "3.7",
+      "stock": 8
+    },
+    {
+      "id": 185,
+      "title": "HP accessories 185",
+      "category": "accessories",
+      "price": 755,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+185",
+      "rating": "4.3",
+      "stock": 11
+    },
+    {
+      "id": 186,
+      "title": "Lenovo smartphones 186",
+      "category": "smartphones",
+      "price": 1297,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+186",
+      "rating": "3.9",
+      "stock": 16
+    },
+    {
+      "id": 187,
+      "title": "Asus laptops 187",
+      "category": "laptops",
+      "price": 183,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+187",
+      "rating": "3.8",
+      "stock": 20
+    },
+    {
+      "id": 188,
+      "title": "Xiaomi accessories 188",
+      "category": "accessories",
+      "price": 1224,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+188",
+      "rating": "4.2",
+      "stock": 41
+    },
+    {
+      "id": 189,
+      "title": "Apple smartphones 189",
+      "category": "smartphones",
+      "price": 1144,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+189",
+      "rating": "3.2",
+      "stock": 31
+    },
+    {
+      "id": 190,
+      "title": "Samsung laptops 190",
+      "category": "laptops",
+      "price": 857,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+190",
+      "rating": "4.3",
+      "stock": 28
+    },
+    {
+      "id": 191,
+      "title": "Dell accessories 191",
+      "category": "accessories",
+      "price": 270,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+191",
+      "rating": "3.3",
+      "stock": 42
+    },
+    {
+      "id": 192,
+      "title": "HP smartphones 192",
+      "category": "smartphones",
+      "price": 1561,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+192",
+      "rating": "4.9",
+      "stock": 11
+    },
+    {
+      "id": 193,
+      "title": "Lenovo laptops 193",
+      "category": "laptops",
+      "price": 454,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+193",
+      "rating": "4.8",
+      "stock": 5
+    },
+    {
+      "id": 194,
+      "title": "Asus accessories 194",
+      "category": "accessories",
+      "price": 826,
+      "brand": "Asus",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Asus+194",
+      "rating": "4.6",
+      "stock": 20
+    },
+    {
+      "id": 195,
+      "title": "Xiaomi smartphones 195",
+      "category": "smartphones",
+      "price": 1435,
+      "brand": "Xiaomi",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Xiaomi+195",
+      "rating": "4.1",
+      "stock": 16
+    },
+    {
+      "id": 196,
+      "title": "Apple laptops 196",
+      "category": "laptops",
+      "price": 1125,
+      "brand": "Apple",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Apple+196",
+      "rating": "4.6",
+      "stock": 30
+    },
+    {
+      "id": 197,
+      "title": "Samsung accessories 197",
+      "category": "accessories",
+      "price": 1463,
+      "brand": "Samsung",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Samsung+197",
+      "rating": "4.1",
+      "stock": 12
+    },
+    {
+      "id": 198,
+      "title": "Dell smartphones 198",
+      "category": "smartphones",
+      "price": 155,
+      "brand": "Dell",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Dell+198",
+      "rating": "4.1",
+      "stock": 39
+    },
+    {
+      "id": 199,
+      "title": "HP laptops 199",
+      "category": "laptops",
+      "price": 211,
+      "brand": "HP",
+      "image": "https://dummyimage.com/300x300/000/fff&text=HP+199",
+      "rating": "3.4",
+      "stock": 46
+    },
+    {
+      "id": 200,
+      "title": "Lenovo accessories 200",
+      "category": "accessories",
+      "price": 1373,
+      "brand": "Lenovo",
+      "image": "https://dummyimage.com/300x300/000/fff&text=Lenovo+200",
+      "rating": "4.4",
+      "stock": 40
+    }
+  ],
+  "users": [],
+  "cart": [],
+  "orders": []
+}
