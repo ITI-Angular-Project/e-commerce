@@ -4,6 +4,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
 ];
 @NgModule({
   declarations: [ProductListComponent, ProductCardComponent, ProductDetailsComponent ],
-  imports: [CommonModule , RouterModule.forChild(routes)],
+  imports: [CommonModule , FormsModule , RouterModule.forChild(routes)],
     exports: [RouterModule]
 
 })
