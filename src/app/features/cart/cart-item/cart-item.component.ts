@@ -5,7 +5,7 @@ import { ICartItem } from '../../../core/Models/Cart/CartItem';
   selector: 'app-cart-item',
   standalone: false,
   templateUrl: './cart-item.component.html',
-  styleUrl: './cart-item.component.css',
+  styleUrls: ['./cart-item.component.css'],
   host: {
     class: "cart-item"
   },

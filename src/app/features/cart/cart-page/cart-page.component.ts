@@ -5,12 +5,7 @@ import { CartService } from '../../../core/services/cart.service';
   selector: 'app-cart-page',
   standalone: false,
   templateUrl: './cart-page.component.html',
-  styleUrl: './cart-page.component.css',
-  // host: {
-  //   class: `
-  //     cart-page-wrapper
-  //   `,
-  // },
+  styleUrls: ['./cart-page.component.css'],
 })
 export class CartPageComponent {
   public cartService = inject(CartService);
