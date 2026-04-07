@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { CartService } from '../../../core/services/cart.service';
 
 @Component({
@@ -10,4 +10,7 @@ import { CartService } from '../../../core/services/cart.service';
 export class CartPageComponent {
   public cartService = inject(CartService);
   public CartItems = this.cartService.Cart;
+  public subTotal = computed(() =>
+    this.CartItems().reduce((sum, item) => sum + item.Price * item.Amount, 0),
+  );
 }

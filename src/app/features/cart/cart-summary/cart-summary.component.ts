@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-cart-summary',
@@ -11,4 +11,7 @@ import { Component } from '@angular/core';
     `,
   },
 })
-export class CartSummaryComponent {}
+export class CartSummaryComponent {
+  public subTotal = input.required<number>();
+  public shipping = 0;
+}

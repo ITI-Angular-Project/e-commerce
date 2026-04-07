@@ -1,0 +1,27 @@
+.btn-close-modal {
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.07);
+  border: none;
+  font-size: 0.85rem;
+  z-index: 10;
+}
+
+.btn-close-modal:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff !important;
+}
+
+.modal-price {
+  font-size: 1.8rem;
+  color: #a78bfa;
+}
+
+.btn-add-cart {
+  background: var(--color-primary);
+  letter-spacing: 0.03em;
+}
+
+.btn-add-cart:hover {
+  background: #5b21b6;
+}
