@@ -11,8 +11,14 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
 
+
 @NgModule({
-  declarations: [App, NavbarComponent, FooterComponent, LayoutComponent],
+  declarations: [
+    App,
+    NavbarComponent,
+    FooterComponent,
+    LayoutComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [
     provideBrowserGlobalErrorListeners(),
