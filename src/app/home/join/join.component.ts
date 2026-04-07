@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-join',
   standalone: false,
   templateUrl: './join.component.html',
-  styleUrl: './join.component.css',
+  styleUrls: ['./join.component.css'],
 })
 export class Join {}

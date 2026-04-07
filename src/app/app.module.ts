@@ -10,10 +10,11 @@ import { App } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
+// import { CheckoutComponent } from './features/checkout page/checkout.component';
 
 @NgModule({
   declarations: [App, NavbarComponent, FooterComponent, LayoutComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule ],
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),

@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-product-details',
   standalone: false,
   templateUrl: './product-details.component.html',
-  styleUrl: './product-details.component.css',
+  styleUrls: ['./product-details.component.css'],
 })
 export class ProductDetailsComponent {}

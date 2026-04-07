@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-experience',
   standalone: false,
   templateUrl: './experience.component.html',
-  styleUrl: './experience.component.css',
+  styleUrls: ['./experience.component.css'],
 })
 export class Experience {}

@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-coupon',
   standalone: false,
   templateUrl: './coupon.component.html',
-  styleUrl: './coupon.component.css',
+  styleUrls: ['./coupon.component.css'],
   host:{
     class:`
       bg-white p-3 border shadow-sm coupon-card 
