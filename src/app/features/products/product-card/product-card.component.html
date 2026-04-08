@@ -1,22 +1,16 @@
-<p>product-card works!</p>
+<!-- <p>product-card works!</p> -->
 <div class="card surface border-0 rounded-4 h-100 product-card overflow-hidden">
 
   <div class="product-img-wrapper position-relative">
     <img [src]="product.image" [alt]="product.name" class="product-img" />
 
-    <span
-      *ngIf="product.badge"
-      class="badge position-absolute top-0 start-0 m-2 text-white"
-      style="background: var(--color-primary); font-size: 0.65rem"
-    >
+    <span *ngIf="product.badge" class="badge position-absolute top-0 start-0 m-2 text-white"
+      style="background: var(--color-primary); font-size: 0.65rem">
       {{ product.badge }}
     </span>
 
-    <span
-      *ngIf="product.originalPrice"
-      class="badge bg-danger position-absolute top-0 end-0 m-2"
-      style="font-size: 0.65rem"
-    >
+    <span *ngIf="product.originalPrice" class="badge bg-danger position-absolute top-0 end-0 m-2"
+      style="font-size: 0.65rem">
       -{{ getDiscountPercent() }}%
     </span>
   </div>
@@ -48,17 +42,11 @@
 
     <div class="d-flex gap-2">
 
-      <a
-        class="btn btn-sm flex-grow-1 fw-semibold rounded-3 btn-details"
-        [routerLink]="['/products', product.id]"
-      >
+      <a class="btn btn-sm flex-grow-1 fw-semibold rounded-3 btn-details" [routerLink]="['/products', product.id]">
         Details
       </a>
 
-      <button
-        class="btn btn-sm flex-grow-1 fw-semibold rounded-3 btn-cart"
-        (click)="onAddToCartClick()"
-      >
+      <button class="btn btn-sm flex-grow-1 fw-semibold rounded-3 btn-cart" (click)="onAddToCartClick()">
         Add to Cart
       </button>
 

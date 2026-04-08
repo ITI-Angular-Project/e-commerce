@@ -2,15 +2,15 @@ import { Component, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ProductService } from '../../../core/services/product.service';
 import { Product } from '../../../core/Models/Cart/product.model';
+import { CartService } from '../../../core/services/cart.service';
 
 @Component({
   selector: 'app-product-list',
   standalone: false,
   templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css'
+  styleUrl: './product-list.component.css',
 })
 export class ProductListComponent implements OnInit {
-
   allProducts: Product[] = [];
 
   categories: string[] = [];
@@ -32,11 +32,14 @@ export class ProductListComponent implements OnInit {
   showToast: boolean = false;
   toastTimer: any;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private cartSerivce: CartService,
+  ) {}
 
   ngOnInit() {
     this.allProducts = this.productService.getAllProducts();
-    this.categories  = this.productService.getCategories();
+    this.categories = this.productService.getCategories();
     this.updateDisplayedProducts();
   }
 
@@ -59,7 +62,10 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(product: Product) {
-    this.cartCount.update(count => count + 1);
+    console.log('hiiii');
+
+    this.cartCount.update((count) => count + 1);
+    this.cartSerivce.addToCart(product).subscribe();
     this.showToastMessage(`✓  "${product.name}" added to cart!`);
   }
 
@@ -67,27 +73,30 @@ export class ProductListComponent implements OnInit {
     this.toastMessage = message;
     this.showToast = true;
     if (this.toastTimer) clearTimeout(this.toastTimer);
-    this.toastTimer = setTimeout(() => { this.showToast = false; }, 3000);
+    this.toastTimer = setTimeout(() => {
+      this.showToast = false;
+    }, 3000);
   }
 
   updateDisplayedProducts() {
     let filtered = this.allProducts;
 
     if (this.selectedCategory !== 'All') {
-      filtered = filtered.filter(p => p.category === this.selectedCategory);
+      filtered = filtered.filter((p) => p.category === this.selectedCategory);
     }
 
     const query = this.searchText.toLowerCase().trim();
     if (query) {
-      filtered = filtered.filter(p =>
-        p.name.toLowerCase().includes(query) ||
-        p.category.toLowerCase().includes(query) ||
-        p.description.toLowerCase().includes(query)
+      filtered = filtered.filter(
+        (p) =>
+          p.name.toLowerCase().includes(query) ||
+          p.category.toLowerCase().includes(query) ||
+          p.description.toLowerCase().includes(query),
       );
     }
 
     this.filteredCount = filtered.length;
-    this.totalPages    = Math.ceil(filtered.length / this.productsPerPage);
+    this.totalPages = Math.ceil(filtered.length / this.productsPerPage);
 
     this.pageNumbers = [];
     for (let i = 1; i <= this.totalPages; i++) {

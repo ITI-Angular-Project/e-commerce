@@ -1,5 +1,5 @@
 import { Component, input, output } from '@angular/core';
-import { ICartItem } from '../../../core/Models/Cart/CartItem';
+import { CartItem } from '../../../core/Models/Cart/cart-item.model';
 
 @Component({
   selector: 'app-cart-item',
@@ -7,7 +7,7 @@ import { ICartItem } from '../../../core/Models/Cart/CartItem';
   templateUrl: './cart-item.component.html',
   styleUrls: ['./cart-item.component.css'],
   host: {
-    class: "cart-item"
+    class: 'cart-item',
   },
 })
 export class CartItemComponent {
@@ -19,6 +19,7 @@ export class CartItemComponent {
   // public Amount = input.required();
   // public Price = input.required();
   // public OriginalPrice = input.required();
-  public item = input.required<ICartItem>();
-  public productUpdated = output<ICartItem>();
+  public item = input.required<CartItem>();
+  public productUpdated = output<CartItem>();
+  public productDeleted = output<number>();
 }
