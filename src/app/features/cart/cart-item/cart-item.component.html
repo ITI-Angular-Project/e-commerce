@@ -1,29 +1,31 @@
 <div class="cart-item">
   <div class="cart-thumb rounded-4">
-    <img [alt]="item().ImageAlt" [src]="item().ImageSrc" />
+    <img [alt]="item().imageAlt" [src]="item().imageSrc" />
   </div>
 
   <div class="cart-info">
-    <span class="cart-badge">{{ item().Category }}</span>
-    <h3 class="cart-title">{{ item().Title }}</h3>
-    <p class="cart-sub">{{ item().Subtitle }}</p>
+    <span class="cart-badge">{{ item().category }}</span>
+    <h3 class="cart-title">{{ item().title }}</h3>
+    <p class="cart-sub">{{ item().subtitle }}</p>
   </div>
 
   <div class="qty-pill">
-    <button class="qty-btn" aria-label="Decrease quantity">
+    <button class="qty-btn" aria-label="Decrease quantity"
+      (click)="item().amount=item().amount+1;productUpdated.emit(item())">
       <span class="material-symbols-outlined">remove</span>
     </button>
-    <span class="qty-value">{{ item().Amount }}</span>
-    <button class="qty-btn" aria-label="Increase quantity">
+    <span class="qty-value">{{ item().amount }}</span>
+    <button class="qty-btn" aria-label="Increase quantity"
+      (click)="item().amount=item().amount-1;productUpdated.emit(item())">
       <span class="material-symbols-outlined">add</span>
     </button>
   </div>
 
   <div class="cart-price">
-    <div class="cart-price-current">${{ item().Price }}</div>
+    <div class="cart-price-current">${{ item().price }}</div>
   </div>
 
-  <button class="btn-delete" aria-label="Remove item">
+  <button class="btn-delete" aria-label="Remove item" (click)="productDeleted.emit(item().id!)">
     <span class="material-symbols-outlined">close</span>
   </button>
 </div>
