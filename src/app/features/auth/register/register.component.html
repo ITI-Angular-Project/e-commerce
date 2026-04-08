@@ -1,1 +1,90 @@
-<p>register works!</p>
+
+
+<div class="register-container">
+  <div class="register-card">
+ 
+   <div class="text-center mb-4">
+
+
+  <div class="logo-wrapper mb-3">
+    <span class="material-symbols-outlined logo-icon">grid_view</span>
+    <h1 class="logo-text">TECH-STORE</h1>
+  </div>
+
+
+  <h2 class="mb-2">Create an Account</h2>
+  <p class="text-muted small mb-0">Join 50,000+ tech enthusiasts</p>
+
+</div>
+  
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+ 
+      <div class="row g-3 mb-3">
+        <div class="col-6">
+          <input type="text" class="form-control" placeholder="First name"
+                 formControlName="firstName"/>
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control" placeholder="Last name"
+                 formControlName="lastName"/>
+        </div>
+      </div>
+ 
+      <div class="mb-3">
+        <input type="email" class="form-control" placeholder="Email"
+               formControlName="email"/>
+      </div>
+ 
+     
+ 
+      <div class="mb-3 pw-wrap">
+        <input [type]="showPw ? 'text' : 'password'" class="form-control"
+               placeholder="Password" formControlName="password"/>
+        <button class="pw-toggle" type="button" (click)="showPw = !showPw">
+          <span class="material-symbols-outlined">{{ showPw ? 'visibility_off' : 'visibility' }}</span>
+        </button>
+      </div>
+ 
+     
+ 
+      <div class="mb-4 d-flex flex-column gap-2">
+        <div class="form-check d-flex align-items-start gap-2 ps-0">
+          <input class="form-check-input ms-0" type="checkbox" id="agreeTerms"
+                 formControlName="agreeTerms"/>
+          <label class="form-check-label" for="agreeTerms">
+            I agree to the <a href="#" class="register-link">Terms of Service</a>
+            and <a href="#" class="register-link">Privacy Policy</a>.
+          </label>
+        </div>
+
+      </div>
+ 
+      <button type="submit" class="btn btn-primary w-100"
+              [disabled]="registerForm.invalid">Register</button>
+    </form>
+ 
+    <div class="mt-4 text-center">
+      <p class="text-muted fw-medium sign-in-text">
+        Already have an account?
+        <a class="fw-bold ms-1 sign-in-link" routerLink="/login">Sign In</a>
+      </p>
+    </div>
+ 
+  </div>
+ 
+  
+  <div class="badge-row">
+    <div class="badge-item">
+      <span class="material-symbols-outlined">verified_user</span>
+      <span class="badge-label">Secure</span>
+    </div>
+    <div class="badge-item">
+      <span class="material-symbols-outlined">mail_lock</span>
+      <span class="badge-label">No Spam</span>
+    </div>
+    <div class="badge-item">
+      <span class="material-symbols-outlined">local_shipping</span>
+      <span class="badge-label">Free Delivery</span>
+    </div>
+  </div>
+</div>
