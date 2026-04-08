@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { OrderService } from '../../core/services/order.service';
+import { OrderService } from '../../../core/services/order.service';
 
 @Component({
   selector: 'app-checkout',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  standalone: false,
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.scss']
 
