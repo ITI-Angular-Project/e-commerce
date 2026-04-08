@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "username": "salma.amr",
+      "email": "salmaeskander7@gmail.com",
+      "password": "1234567",
+      "id": "pIMC2_DCWpk"
+    },
+    {
+      "username": "salma.amr",
+      "email": "salmaeskander7@gmail.com",
+      "password": "1234567",
+      "id": "ZopTLMxhaxw"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

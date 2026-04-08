@@ -1,18 +1,44 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {map, Observable} from 'rxjs';
 import { Router } from '@angular/router';
- 
+import { User} from '../models/user';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://fakestoreapi.com/users';
+
   constructor(private http: HttpClient, private router: Router) { }
 
-  register(username: string, password: string, email: string): Observable<any> {
-    const body = { username, password, email };
-    return this.http.post(this.apiUrl, body);
+  
+ 
+ 
+  login(email: string, password: string): Observable<User> {
+  return this.http.get<User[]>('http://localhost:3000/users').pipe(
+    map(users => {
+      const user = users.find(u => {
+       return (
+          u.email.trim() === email.trim() && u.password.trim() === password.trim()
+        );
+      });
+
+      if (user) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        return user;
+      } else {
+        throw new Error('wrong email or password');
+      }
+    })
+  );
+}
+
+  register(username: string, email: string, password: string): Observable<User> {
+    const body = { username, email, password };
+    return this.http.post<User>('http://localhost:3000/users', body);
   }
 }
+
+
