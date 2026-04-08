@@ -1,97 +1,167 @@
-<main class="pt-5 mt-4 pb-5" style="min-height: 100vh">
+@if (loading) {
+  <main class="pt-5 mt-4 pb-5" style="min-height:100vh; background:#f8fafc; color:#0f172a;">
+    <div class="container-xl px-3 px-md-4">
+      <div class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-2 text-muted">Loading products...</p>
+      </div>
+    </div>
+  </main>
+} @else if (error) {
+  <main class="pt-5 mt-4 pb-5" style="min-height:100vh; background:#f8fafc; color:#0f172a;">
+    <div class="container-xl px-3 px-md-4">
+      <div class="alert alert-danger text-center">
+        ⚠️ {{ error }}
+      </div>
+    </div>
+  </main>
+} @else {
+
+<main class="pt-5 mt-4 pb-5" style="min-height:100vh; background:#f8fafc; color:#0f172a;">
   <div class="container-xl px-3 px-md-4">
 
-    <div class="mb-4 mb-md-5 ps-3" style="border-left: 3px solid var(--color-primary)">
-      <p class="mb-1 fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.14em; color: var(--color-primary)">
+
+
+    <div class="mb-4 mb-md-5 ps-3" style="border-left: 3px solid #2563eb">
+      <p class="mb-1 fw-bold text-uppercase" style="font-size:0.7rem; letter-spacing:0.14em; color:#2563eb">
         Browse our collection
       </p>
-      <h1 class="fw-bold mb-0" style="font-size: clamp(1.5rem, 4vw, 2.2rem); letter-spacing: -0.03em; color: var(--color-text)">
+      <h1 class="fw-bold mb-0" style="font-size:clamp(1.5rem,4vw,2.2rem); letter-spacing:-0.03em; color:#0f172a">
         All Products
       </h1>
     </div>
 
+
     <div class="row g-3 align-items-center mb-3">
+
 
       <div class="col-12 col-md-5">
         <div class="position-relative">
-          <span class="search-icon-wrap">🔍</span>
+          <span class="position-absolute" style="left:0.8rem; top:50%; transform:translateY(-50%); color:#94a3b8; pointer-events:none; font-size:0.85rem;">🔍</span>
           <input
             type="text"
-            class="form-control rounded-3 search-input"
+            class="form-control rounded-3"
             placeholder="Search products…"
             [(ngModel)]="searchText"
             (ngModelChange)="onSearchChange()"
+            style="background:#fff; border-color:#e2e8f0; color:#0f172a; padding-left:2.4rem;"
           />
         </div>
       </div>
 
+
+
       <div class="col-12 col-md-7">
         <div class="d-flex flex-wrap gap-2">
-          <button
-            *ngFor="let category of categories"
-            class="filter-pill"
-            [class.active]="selectedCategory === category"
-            (click)="onCategoryChange(category)"
-          >
-            {{ category }}
-          </button>
+          @for (category of categories; track category) {
+            <button
+              class="border fw-semibold"
+              [style]="selectedCategory === category
+                ? 'background:#2563eb; border-color:#2563eb; color:#fff; font-size:0.78rem; font-weight:600; border-radius:50px; padding:5px 16px; cursor:pointer; white-space:nowrap;'
+                : 'background:#fff; border-color:#e2e8f0; color:#64748b; font-size:0.78rem; font-weight:600; border-radius:50px; padding:5px 16px; cursor:pointer; white-space:nowrap;'"
+              (click)="onCategoryChange(category)"
+            >
+              {{ category }}
+            </button>
+          }
         </div>
       </div>
 
     </div>
 
-    <p class="mb-4" style="font-size: 0.83rem; color: var(--color-muted)">
-      Showing <strong style="color: var(--color-text)">{{ filteredCount }}</strong>
-      {{ filteredCount === 1 ? 'product' : 'products' }}
-      <span *ngIf="selectedCategory !== 'All'">
-        in <strong style="color: var(--color-text)">{{ selectedCategory }}</strong>
-      </span>
-      <span *ngIf="searchText">
-        for "<strong style="color: var(--color-text)">{{ searchText }}</strong>"
-      </span>
-    </p>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <p class="mb-0" style="font-size:0.83rem; color:#64748b">
+        Showing <strong style="color:#0f172a">{{ filteredCount }}</strong>
+        {{ filteredCount === 1 ? 'product' : 'products' }}
+        @if (selectedCategory !== 'All') {
+          <span>in <strong style="color:#0f172a">{{ selectedCategory }}</strong></span>
+        }
+        @if (searchText) {
+          <span>for "<strong style="color:#0f172a">{{ searchText }}</strong>"</span>
+        }
+      </p>
+      
+      <select 
+        class="form-select form-select-sm rounded-3" 
+        [(ngModel)]="sortBy"
+        (ngModelChange)="onSortChange()"
+        style="width: auto; border-color:#e2e8f0; font-size:0.85rem;">
+        <option value="default">Default</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+      </select>
+    </div>
+
+
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 mb-4">
-      <div class="col" *ngFor="let product of displayedProducts">
-        <app-product-card
-          [product]="product"
-          (addToCartClicked)="addToCart($event)"
-        ></app-product-card>
+      @for (product of displayedProducts; track $index) {
+        <div class="col">
+          <app-product-card
+            [product]="product"
+            (addToCartClicked)="addToCart($event)"
+          ></app-product-card>
+        </div>
+      }
+    </div>
+
+
+
+    @if (displayedProducts.length === 0) {
+      <div class="text-center py-5">
+        <p class="mb-2" style="font-size:2.5rem">🔎</p>
+        <h5 class="fw-bold" style="color:#0f172a">No products found</h5>
+        <p style="font-size:0.9rem; color:#64748b">Try a different search term or category.</p>
       </div>
-    </div>
+    }
 
-    <div *ngIf="displayedProducts.length === 0" class="text-center py-5">
-      <p class="mb-2" style="font-size: 2.5rem">🔎</p>
-      <h5 class="fw-bold" style="color: var(--color-text)">No products found</h5>
-      <p style="font-size: 0.9rem; color: var(--color-muted)">Try a different search term or category.</p>
-    </div>
 
-    <nav *ngIf="totalPages > 1" class="d-flex justify-content-center pb-5">
-      <ul class="pagination gap-1">
 
-        <li class="page-item" [class.disabled]="currentPage === 1">
-          <button class="page-link rounded-3" (click)="goToPage(currentPage - 1)">← Prev</button>
-        </li>
+    @if (totalPages > 1) {
+      <nav class="d-flex justify-content-center pb-5">
+        <ul class="pagination gap-1">
 
-        <li
-          class="page-item"
-          *ngFor="let page of pageNumbers"
-          [class.active]="currentPage === page"
-        >
-          <button class="page-link rounded-3" (click)="goToPage(page)">{{ page }}</button>
-        </li>
+          <li class="page-item" [class.disabled]="currentPage === 1">
+            <button class="page-link rounded-3 fw-semibold"
+                    style="background:#fff; border-color:#e2e8f0; color:#64748b; font-size:0.82rem;"
+                    (click)="goToPage(currentPage - 1)">← Prev</button>
+          </li>
 
-        <li class="page-item" [class.disabled]="currentPage === totalPages">
-          <button class="page-link rounded-3" (click)="goToPage(currentPage + 1)">Next →</button>
-        </li>
+          @for (page of pageNumbers; track page) {
+            @if (page === -1) {
+              <li class="page-item disabled">
+                <span class="page-link rounded-3 fw-semibold" style="font-size:0.82rem; border:none; background:transparent;">...</span>
+              </li>
+            } @else {
+              <li class="page-item" [class.active]="currentPage === page">
+                <button class="page-link rounded-3 fw-semibold"
+                        style="font-size:0.82rem;"
+                        (click)="goToPage(page)">{{ page }}</button>
+              </li>
+            }
+          }
 
-      </ul>
-    </nav>
+          <li class="page-item" [class.disabled]="currentPage === totalPages">
+            <button class="page-link rounded-3 fw-semibold"
+                    style="background:#fff; border-color:#e2e8f0; color:#64748b; font-size:0.82rem;"
+                    (click)="goToPage(currentPage + 1)">Next →</button>
+          </li>
+
+        </ul>
+      </nav>
+    }
 
   </div>
 </main>
 
-<div *ngIf="showToast" class="toast-custom">
-  {{ toastMessage }}
-</div>
+}
 
+@if (showToast) {
+  <div
+    class="position-fixed rounded-3 fw-semibold"
+    style="bottom:20px; right:16px; left:16px; max-width:360px; background:#fff; border:1px solid #e2e8f0; border-left:3px solid #2563eb; color:#0f172a; padding:12px 16px; font-size:0.87rem; font-weight:600; z-index:2000; box-shadow:0 8px 32px rgba(0,0,0,0.08);">
+    {{ toastMessage }}
+  </div>
+}

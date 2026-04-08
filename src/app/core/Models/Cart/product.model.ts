@@ -9,4 +9,6 @@ export interface Product {
   rating: number;
   reviews: number;
   badge?: string;
+    brand?: string;
+  stock?: number;
 }
