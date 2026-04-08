@@ -1,1 +1,52 @@
-<p>login works!</p>
+<div class="login-container">
+  <div class="login-card">
+ <div class="text-center mb-4">
+      <div class="logo-wrapper mb-3">
+        <span class="material-symbols-outlined logo-icon">grid_view</span>
+        <h1 class="logo-text">TECH-STORE</h1>
+      </div>
+      <h2 class="mb-2">Welcome Back</h2>
+      <p class="text-muted small mb-0">Sign in to your account</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <div class="mb-3">
+        <input type="email" class="form-control" placeholder="Email"
+               formControlName="email"/>
+      </div>
+
+      <div class="mb-4 pw-wrap">
+        <input [type]="showPw ? 'text' : 'password'" class="form-control" placeholder="Password" formControlName="password"/>
+        <button class="pw-toggle" type="button" (click)="showPw = !showPw">
+          <span class="material-symbols-outlined"></span>
+        </button>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100"
+              [disabled]="loginForm.invalid">Sign In</button>
+    </form>
+
+    <div class="mt-4 text-center">
+      <p class="text-muted fw-medium sign-in-text">
+        Don't have an account?
+        <a class="fw-bold ms-1 sign-in-link" routerLink="/auth/register">Create one</a>
+      </p>
+    </div>
+
+  </div>
+  <div class="badge-row">
+    <div class="badge-item">
+      <span class="material-symbols-outlined">verified_user</span>
+      <span class="badge-label">Secure</span>
+    </div>
+    <div class="badge-item">
+      <span class="material-symbols-outlined">lock</span>
+      <span class="badge-label">Private</span>
+    </div>
+    <div class="badge-item">
+      <span class="material-symbols-outlined">support_agent</span>
+      <span class="badge-label">24/7 Support</span>
+    </div>
+  </div>
+</div>
