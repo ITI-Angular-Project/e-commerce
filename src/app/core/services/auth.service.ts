@@ -13,9 +13,9 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  
- 
- 
+
+
+
   login(email: string, password: string): Observable<User> {
   return this.http.get<User[]>('http://localhost:3000/users').pipe(
     map(users => {
@@ -39,6 +39,19 @@ export class AuthService {
     const body = { username, email, password };
     return this.http.post<User>('http://localhost:3000/users', body);
   }
+
+
+checkEmailExists(email: string): Observable<boolean> {
+  return this.http.get<User[]>(`http://localhost:3000/users?email=${email}`).pipe(
+    map(users => users.length > 0)
+  );
 }
+
+
+
+
+
+}
+
 
 
