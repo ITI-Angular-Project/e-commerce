@@ -1,9 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject, OnInit, signal, Signal } from '@angular/core';
+import { CartService } from '../../../core/services/cart.service';
+import { CartItem } from '../../../core/Models/Cart/cart-item.model';
 
 @Component({
   selector: 'app-cart-page',
   standalone: false,
   templateUrl: './cart-page.component.html',
-  styleUrl: './cart-page.component.css',
+  styleUrls: ['./cart-page.component.css'],
 })
-export class CartPageComponent {}
+export class CartPageComponent implements OnInit {
+  public cartService = inject(CartService);
+  public CartItems = signal<CartItem[]>([]);
+  public subTotal = computed(() =>
+    this.CartItems().reduce((sum, item) => sum + item.price * item.amount, 0),
+  );
+  ngOnInit(): void {
+    this.cartService.getCart().subscribe({
+      next: (value) => {
+        this.CartItems.set(value);
+      },
+    });
+  }
+
+  updateItemQuantity(item: CartItem) {
+    this.cartService.changeQuantity(item.id!, item.amount).subscribe({
+      next: (value) => {
+        console.log(value);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+  deleteProdcut(id: number) {
+    this.cartService.deleteItemFromCart(id).subscribe({
+      next: (value) => {
+        console.log(value);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+}

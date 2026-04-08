@@ -1,0 +1,15 @@
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.img-hover div{
+    transition: .5s ease;
+    background:none;
+    transform: rotate(12deg)  translate(3rem, -2rem);
+}
+.img-hover:hover div{
+    transform: rotate(12deg)  translate(3rem, -2rem) scale(1.05);
+}

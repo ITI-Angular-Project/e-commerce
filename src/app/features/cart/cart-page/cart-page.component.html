@@ -1,1 +1,41 @@
-<p>cart-page works!</p>
+<div class="cart-page-wrapper">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-12 col-lg-8 ">
+        <h2 class=" cart-page-title mb-4">
+          Your Cart
+          <span class="cart-page-count ms-2">({{ CartItems().length }} items)</span>
+        </h2>
+
+        <div class="cart-items-card">
+          @for (cartItem of CartItems(); track cartItem) {
+          <app-cart-item [item]="cartItem" (quantityUpdated)="cartItem" (productDeleted)="cartItem.id" />
+
+          } @empty {
+          <div class="cart-empty-state">
+            <span class="material-symbols-outlined cart-empty-icon">shopping_cart</span>
+            <p class="cart-empty-text">Your cart is empty</p>
+            <a routerLink="/" class="btn btn-primary rounded-3 px-4 py-2 fw-bold">
+              Start Shopping
+            </a>
+          </div>
+          }
+        </div>
+
+        <!-- Bottom row: continue shopping + coupon -->
+        <div class="cart-bottom-row mt-4">
+          <a routerLink="../products" class="cart-continue-link">
+            <span class="material-symbols-outlined">west</span>
+            Continue Shopping
+          </a>
+          <app-coupon class="col-6 rounded-2" />
+        </div>
+      </div>
+
+      <!-- ===== RIGHT COLUMN: Order Summary ===== -->
+      <div class="col-12 col-lg-4 order-summary-card p-4">
+        <app-cart-summary [subTotal]="subTotal()" />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,360 @@
+
+<!-- Main Content -->
+<main class="checkout-main">
+  <div class="container">
+    <form [formGroup]="checkoutForm" class="checkout-grid">
+      <div class="row g-4">
+        <!-- Left Column - Forms -->
+        <div class="col-lg-8">
+          <!-- Contact Information Card -->
+          <div class="card checkout-card">
+            <div class="card-header">
+              <i class="bi bi-info-circle-fill"></i>
+              <h5 class="card-title">Contact Information</h5>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Email Address</label>
+                  <input
+                    type="email"
+                    class="form-control checkout-input"
+                    placeholder="alex@example.com"
+                    formControlName="email"
+                    [class.is-invalid]="checkoutForm.get('email')?.invalid && checkoutForm.get('email')?.touched"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Phone Number</label>
+                  <input
+                    type="tel"
+                    class="form-control checkout-input"
+                    placeholder="+1 (555) 000-0000"
+                    formControlName="phone"
+                    [class.is-invalid]="checkoutForm.get('phone')?.invalid && checkoutForm.get('phone')?.touched"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shipping Address Card -->
+          <div class="card checkout-card">
+            <div class="card-header">
+              <i class="bi bi-map-fill"></i>
+              <h5 class="card-title">Shipping Address</h5>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control checkout-input"
+                    placeholder="Alex Johnson"
+                    formControlName="fullName"
+                  />
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Address Line 1</label>
+                  <input
+                    type="text"
+                    class="form-control checkout-input"
+                    placeholder="123 Tech Avenue"
+                    formControlName="addressLine1"
+                  />
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Address Line 2 (Optional)</label>
+                  <input
+                    type="text"
+                    class="form-control checkout-input"
+                    placeholder="Suite 404"
+                    formControlName="addressLine2"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">City</label>
+                  <input
+                    type="text"
+                    class="form-control checkout-input"
+                    placeholder="San Francisco"
+                    formControlName="city"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">State / Province</label>
+                  <input
+                    type="text"
+                    class="form-control checkout-input"
+                    placeholder="California"
+                    formControlName="stateProvince"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">ZIP / Postal Code</label>
+                  <input
+                    type="text"
+                    class="form-control checkout-input"
+                    placeholder="94025"
+                    formControlName="zipPostalCode"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Country</label>
+                  <select class="form-select checkout-input" formControlName="country">
+                    <option value="">Select Country</option>
+                    <option value="us">United States</option>
+                    <option value="ca">Canada</option>
+                    <option value="it">Egypt</option>
+                    <option value="mx">Mexico</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="de">Germany</option>
+                    <option value="fr">France</option>
+                    <option value="es">Spain</option>
+                    <option value="it">Italy</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delivery Method Card -->
+          <div class="card checkout-card">
+            <div class="card-header">
+              <i class="bi bi-truck"></i>
+              <h5 class="card-title">Delivery Method</h5>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <!-- Standard Shipping -->
+                <div class="col-md-6">
+                  <div
+                    class="delivery-option"
+                    [class.active]="selectedDeliveryMethod === 'standard'"
+                    (click)="selectDeliveryMethod('standard')"
+                  >
+                    <div class="delivery-radio">
+                      <i class="bi bi-check-circle-fill" *ngIf="selectedDeliveryMethod === 'standard'"></i>
+                    </div>
+                    <div class="delivery-content">
+                      <h6 class="delivery-title">Standard Shipping</h6>
+                      <p class="delivery-duration">4-7 Business Days</p>
+                    </div>
+                    <div class="delivery-cost">
+                      <span class="cost-free">FREE</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Express Delivery -->
+                <div class="col-md-6">
+                  <div
+                    class="delivery-option"
+                    [class.active]="selectedDeliveryMethod === 'express'"
+                    (click)="selectDeliveryMethod('express')"
+                  >
+                    <div class="delivery-radio">
+                      <i class="bi bi-check-circle" *ngIf="selectedDeliveryMethod === 'express'"></i>
+                    </div>
+                    <div class="delivery-content">
+                      <h6 class="delivery-title">Express Delivery</h6>
+                      <p class="delivery-duration">1-2 Business Days</p>
+                    </div>
+                    <div class="delivery-cost">
+                      <span class="cost-amount">$9.99</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Details Card -->
+          <div class="card checkout-card">
+            <div class="card-header">
+              <i class="bi bi-credit-card-fill"></i>
+              <h5 class="card-title">Payment Details</h5>
+            </div>
+            <div class="card-body">
+              <!-- Payment Method Tabs -->
+              <div class="payment-tabs">
+                <button
+                  type="button"
+                  class="payment-tab"
+                  [class.active]="selectedPaymentMethod === 'credit-card'"
+                  (click)="selectPaymentMethod('credit-card')"
+                >
+                  Credit Card
+                </button>
+                <button
+                  type="button"
+                  class="payment-tab"
+                  [class.active]="selectedPaymentMethod === 'paypal'"
+                  (click)="selectPaymentMethod('paypal')"
+                >
+                  PayPal
+                </button>
+                <button
+                  type="button"
+                  class="payment-tab"
+                  [class.active]="selectedPaymentMethod === 'apple-pay'"
+                  (click)="selectPaymentMethod('apple-pay')"
+                >
+                  Apple Pay
+                </button>
+              </div>
+
+              <!-- Credit Card Form -->
+              <div *ngIf="selectedPaymentMethod === 'credit-card'" class="payment-form-content">
+                <div class="row g-3 mt-2">
+                  <div class="col-12">
+                    <label class="form-label">Cardholder Name</label>
+                    <input
+                      type="text"
+                      class="form-control checkout-input"
+                      placeholder="Alex Johnson"
+                      formControlName="cardholderName"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Card Number</label>
+                    <div class="input-group card-input-group">
+                      <input
+                        type="text"
+                        class="form-control checkout-input"
+                        placeholder="0000 0000 0000 0000"
+                        formControlName="cardNumber"
+                      />
+                      <span class="input-group-text card-icon-group">
+                        <i class="bi bi-credit-card"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Expiry Date</label>
+                    <input
+                      type="text"
+                      class="form-control checkout-input"
+                      placeholder="MM / YY"
+                      formControlName="expiryDate"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">CVV</label>
+                    <input
+                      type="text"
+                      class="form-control checkout-input"
+                      placeholder="•••"
+                      formControlName="cvv"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- PayPal Form -->
+              <div *ngIf="selectedPaymentMethod === 'paypal'" class="payment-form-content mt-3">
+                <p class="text-muted">Redirect to PayPal payment gateway</p>
+              </div>
+
+              <!-- Apple Pay Form -->
+              <div *ngIf="selectedPaymentMethod === 'apple-pay'" class="payment-form-content mt-3">
+                <p class="text-muted">Redirect to Apple Pay payment gateway</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Order Summary -->
+        <div class="col-lg-4">
+          <!-- Order Summary Card -->
+          <div class="card order-summary-card">
+            <div class="card-body">
+              <h5 class="order-summary-title">Order Summary</h5>
+
+              <!-- Order Items -->
+              <div class="order-items">
+                <div *ngFor="let item of orderItems" class="order-item">
+                  <div class="item-image-placeholder">
+                    <img [src]="item.image" [alt]="item.name" />
+                  </div>
+                  <div class="item-details">
+                    <h6 class="item-name">{{ item.name }}</h6>
+                    <p class="item-subtitle">{{ item.subtitle }}</p>
+                  </div>
+                  <div class="item-qty">
+                    <small>Qty: {{ item.quantity }}</small>
+                  </div>
+                  <div class="item-price">
+                    <strong>${{ item.price | number: '1.2-2' }}</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Divider -->
+              <hr class="my-3" />
+
+              <!-- Price Calculation -->
+              <div class="order-calculation">
+                <div class="calc-row">
+                  <span>Subtotal</span>
+                  <span>${{ orderSummary.subtotal | number: '1.2-2' }}</span>
+                </div>
+                <div class="calc-row">
+                  <span>Shipping</span>
+                  <span class="text-success">FREE</span>
+                </div>
+                <div class="calc-row">
+                  <span>Discount (TECH40)</span>
+                  <span class="text-danger">${{ Math.abs(orderSummary.discount) | number: '1.2-2' }}</span>
+                </div>
+              </div>
+
+              <!-- Divider -->
+              <hr class="my-3" />
+
+              <!-- Order Total -->
+              <div class="order-total">
+                <span>Order Total</span>
+                <span class="total-amount">${{ orderSummary.total | number: '1.2-2' }}</span>
+              </div>
+
+              <!-- Place Order Button -->
+              <button
+                type="button"
+                class="btn btn-primary btn-place-order w-100 mt-3"
+                (click)="placeOrder()"
+              >
+                Place Order
+              </button>
+
+              <!-- Secure Checkout Info -->
+              <div class="secure-checkout mt-3">
+                <i class="bi bi-lock-fill"></i>
+                <span>SECURE CHECKOUT</span>
+              </div>
+
+              <!-- Features Row -->
+              <div class="features-row mt-4">
+                <div class="feature-item">
+                  <i class="bi bi-shield-check"></i>
+                  <small>2Y WARRANTY</small>
+                </div>
+                <div class="feature-item">
+                  <i class="bi bi-arrow-counterclockwise"></i>
+                  <small>30D RETURNS</small>
+                </div>
+                <div class="feature-item">
+                  <i class="bi bi-headset"></i>
+                  <small>24/7 SUPPORT</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+

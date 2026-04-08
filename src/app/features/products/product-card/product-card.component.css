@@ -1,0 +1,30 @@
+.product-description {
+  font-size: 0.76rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.btn-details {
+  border: 1px solid var(--color-primary);
+  color: #c4b5fd;
+  background: transparent;
+  font-size: 0.78rem;
+}
+
+.btn-details:hover {
+  background: rgba(109, 40, 217, 0.1);
+  color: #c4b5fd;
+  border-color: var(--color-primary);
+}
+
+.btn-cart {
+  background: var(--color-primary);
+  font-size: 0.78rem;
+}
+
+.btn-cart:hover {
+  background: #5b21b6;
+}
