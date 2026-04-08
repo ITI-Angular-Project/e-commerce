@@ -33,7 +33,7 @@ onSubmit(): void {
     this.authService.login(email, password).subscribe({
       next: (res: any) => {
         console.log('Login successful:', res);
-        this.router.navigate(['/products']);
+        this.router.navigate(['/home']);
       },
       error: (err: any) => {
         console.error('Login failed:', err);
