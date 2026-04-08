@@ -5281,7 +5281,24 @@
       "Image URL": "https://eg.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/70/662004/1.jpg?7154"
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "email": "bassel@email.com",
+      "password": "$2a$10$ZGE.IBhwL7ZgCfdx6XeD/uEoK4KP0Fj3HB8pkl9zF0N4QgFv0bOnO",
+      "id": 1
+    },
+    {
+      "email": "basel@email.com",
+      "password": "$2a$10$KlK2tW0xf9c2RcetxaEhwuEEpZIyAj0OZgJD8aklHFg8blHQkCKNa",
+      "id": 2
+    },
+    {
+      "email": "Bassel@gmail.com",
+      "password": "$2a$10$ccSQETuK10/PlWwo/VDL9uVhUsAPqZbNrR.KdEff6Soq/F2YhWOzi",
+      "username": "bassel.raafat",
+      "id": 3
+    }
+  ],
   "cart": [
     {
       "category": "Headphones",

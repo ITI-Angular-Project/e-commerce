@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { map, Observable, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from '../Models/user';
 
@@ -13,26 +13,33 @@ export class AuthService {
     private router: Router,
   ) {}
 
-  login(email: string, password: string): Observable<User> {
-    return this.http.get<User[]>('http://localhost:3000/users').pipe(
-      map((users) => {
-        const user = users.find((u) => {
-          return u.email.trim() === email.trim() && u.password.trim() === password.trim();
-        });
+  login(email: string, password: string) {
+    return this.http.post<any>('http://localhost:3000/login', { email, password }).pipe(
+      tap((res) => {
+        // this.token = res.token;
+        // this.currentUserSubject.next(res.user);
 
-        if (user) {
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          return user;
-        } else {
-          throw new Error('wrong email or password');
-        }
+        // optional persistence
+        localStorage.setItem('token', res.accessToken);
+        localStorage.setItem('user', JSON.stringify(res.user));
       }),
+      map((res) => res.user),
     );
   }
 
   register(username: string, email: string, password: string): Observable<User> {
     const body = { username, email, password };
-    return this.http.post<User>('http://localhost:3000/users', body);
+    return this.http.post<any>('http://localhost:3000/register', body).pipe(
+      tap((res) => {
+        // this.token = res.token;
+        // this.currentUserSubject.next(res.user);
+
+        // optional persistence
+        localStorage.setItem('token', res.accessToken);
+        localStorage.setItem('user', JSON.stringify(res.user));
+      }),
+      map((res) => res.user),
+    );
   }
 
   checkEmailExists(email: string): Observable<boolean> {
