@@ -10,14 +10,15 @@ import { CartItem } from '../../../core/Models/Cart/cart-item.model';
 })
 export class CartPageComponent implements OnInit {
   public cartService = inject(CartService);
-  public CartItems = signal<CartItem[]>([]);
+  // public CartItems = signal<CartItem[]>([]);
   public subTotal = computed(() =>
-    this.CartItems().reduce((sum, item) => sum + item.price * item.amount, 0),
+    this.cartService.Cart().reduce((sum, item) => sum + item.price * item.amount, 0),
   );
   ngOnInit(): void {
     this.cartService.getCart().subscribe({
       next: (value) => {
-        this.CartItems.set(value);
+        this.cartService.Cart.set(value);
+        // this.CartItems.set(value);
       },
     });
   }
@@ -32,11 +33,14 @@ export class CartPageComponent implements OnInit {
       },
     });
   }
+
   deleteProdcut(id: number) {
     this.cartService.deleteItemFromCart(id).subscribe({
       next: (value) => {
-        console.log(value);
+        const test = this.cartService.Cart().findIndex((i) => i.id == id);
+        if (test != -1) this.cartService.Cart().splice(test, 1);
       },
+
       error: (err) => {
         console.log(err);
       },

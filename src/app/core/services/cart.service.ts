@@ -2,6 +2,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { CartItem } from '../Models/Cart/cart-item.model';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../Models/Cart/product.model';
+import { CreateCartRequest } from '../Models/Cart/create-cart-item.model';
 
 @Injectable({
   providedIn: 'root',
@@ -57,8 +58,7 @@ export class CartService {
     if (!user) {
     }
 
-    let item: CartItem = {
-      id: undefined,
+    let item: CreateCartRequest = {
       category: product.category,
       title: product.name,
       subtitle: product.description.substring(0, 20),
@@ -69,18 +69,19 @@ export class CartService {
       productId: product.id,
       // userId:user.id
     };
-    return this.httpClient.post(`${this.baseUrl}/cart`, item);
+    return this.httpClient.post<CreateCartRequest>(`${this.baseUrl}/cart`, item);
   }
   deleteAllCart(cartId: number) {
     this.httpClient.delete(`${this.baseUrl}/cart/${cartId}`);
     // this.httpClient.delete(`${this.baseUrl}/cart?userId=${user.id}`);
   }
   changeQuantity(cartItemId: number, newQuantity: number) {
-    return this.httpClient.patch(`${this.baseUrl}/cart/${cartItemId}`, {
-      quantity: newQuantity,
+    console.log(newQuantity);
+    return this.httpClient.patch<CartItem>(`${this.baseUrl}/cart/${cartItemId}`, {
+      amount: newQuantity,
     });
   }
-  deleteItemFromCart(cartItemId: number) {
-    return this.httpClient.delete(`${this.baseUrl}/cart/${cartItemId}`);
+  deleteItemFromCart(id: number) {
+    return this.httpClient.delete(`${this.baseUrl}/cart/${id}`);
   }
 }
