@@ -28,3 +28,9 @@
 .btn-cart:hover {
   background: #5b21b6;
 }
+
+.card { transition: transform 0.2s, box-shadow 0.2s; }
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(109,40,217,0.12);
+}
