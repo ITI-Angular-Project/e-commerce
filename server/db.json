@@ -5305,6 +5305,43 @@
       "id": 4
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "category": "Earbuds",
+      "title": "Elite Pods Pro",
+      "subtitle": "True wireless earbud",
+      "imageSrc": "https://lh3.googleusercontent.com/aida-public/AB6AXuAqJFOmNxHmwQgfeR4i7cMISDZ4Q8uR_77-_e1q5Zgc_qrh2aBQymeGhVEjo1SXfrBoV89HI6S30hfFIh5oAIGQhcTE_hl1obSwFne6BzUQyDRC-lvgt3NfPiVXKqwEwlLqNwlrZI5bvaBdhsRXPvvzM4dZA7zAMHrT3eqXR_HPeAi0KNTHOTtkeZbeb1spZxGau9LjJ26FU9B924md0dOySsddjJx9aNT1sU8aR2Aq6yQlWVyX-pQ_ZjlhHxIlXfeiE6oU47L2dJSm",
+      "amount": 1,
+      "price": 199,
+      "imageAlt": "Elite Pods Pro",
+      "productId": 2,
+      "id": 6,
+      "userId": 4
+    },
+    {
+      "category": "Speakers",
+      "title": "SoundBox Portable",
+      "subtitle": "IP67 waterproof port",
+      "imageSrc": "https://lh3.googleusercontent.com/aida-public/AB6AXuBmBodwUBzHvdyNZSxOB-eNq4NnDsK5jdmjZV9Okhy4u8vXjUn-L2ekMCuDWfq4KVqO225jNr0GaUpf8qLvmcKaw4e2HinYop6faxo-8jThKcu7bY0ZtC9Tpt5-g2X6F0AEZV4Hg8gcCzOe-dnn4sZjET0e970LDoVjnlQq0l0HWY9jtZoExOMDBcQbNJgHvr5q-NkrlmTwOvCKpfRTLdMDxJ__KGVZT7SvD8yRqfak9A9pb_xrbZcwjQY5QBMhoBTnXdgTx-ES8Y9t",
+      "amount": 1,
+      "price": 149,
+      "imageAlt": "SoundBox Portable",
+      "productId": 3,
+      "id": 7,
+      "userId": 4
+    },
+    {
+      "category": "Speakers",
+      "title": "SoundBox Portable",
+      "subtitle": "IP67 waterproof port",
+      "imageSrc": "https://lh3.googleusercontent.com/aida-public/AB6AXuBmBodwUBzHvdyNZSxOB-eNq4NnDsK5jdmjZV9Okhy4u8vXjUn-L2ekMCuDWfq4KVqO225jNr0GaUpf8qLvmcKaw4e2HinYop6faxo-8jThKcu7bY0ZtC9Tpt5-g2X6F0AEZV4Hg8gcCzOe-dnn4sZjET0e970LDoVjnlQq0l0HWY9jtZoExOMDBcQbNJgHvr5q-NkrlmTwOvCKpfRTLdMDxJ__KGVZT7SvD8yRqfak9A9pb_xrbZcwjQY5QBMhoBTnXdgTx-ES8Y9t",
+      "amount": 1,
+      "price": 149,
+      "imageAlt": "SoundBox Portable",
+      "productId": 3,
+      "id": 8,
+      "userId": 4
+    }
+  ],
   "orders": []
 }
