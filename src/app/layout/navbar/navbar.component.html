@@ -1,50 +1,32 @@
 <nav class="navbar navbar-expand-lg sticky-top px-4">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+  <div class="container-fluid"> <a class="navbar-brand" href="#">
       <h1 class="h4 font-weight-bold text-dark" routerLink="home"><i class="bi bi-microsoft text-primary"></i>
         TECH-STORE</h1>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span
+        class="navbar-toggler-icon"></span> </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="home" routerLinkActive="fw-bold" routerLink="home"
-            routerLinkActive="fw-bold">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="products" routerLinkActive="fw-bold">Shop</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="about" routerLinkActive="fw-bold">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="contact" routerLinkActive="fw-bold">Contact Us</a>
-        </li>
-
+        <li class="nav-item ms-4"> <a class="nav-link active" aria-current="page" routerLink="home"
+            routerLinkActive="fw-bold" routerLink="home" routerLinkActive="fw-bold">Home</a> </li>
+        <li class="nav-item ms-4"> <a class="nav-link active" aria-current="page" routerLink="products"
+            routerLinkActive="fw-bold">Shop</a> </li>
+        <li class="nav-item ms-4"> <a class="nav-link active" aria-current="page" routerLink="about"
+            routerLinkActive="fw-bold">About</a> </li>
       </ul>
-    <div class="d-flex align-items-center gap-4">
-      <button class="btn rounded-circle p-2 position-relative" routerLink="cart" style="color: #111827;">
-        <i class="bi bi-cart3"></i>
-        @if (cartCount() > 0) {
-          <span
+      <div class="d-flex align-items-center gap-4 "> <button class="btn rounded-circle p-2 position-relative"
+          routerLink="cart" style="color: #111827;"> <i class="bi bi-cart3"></i> @if (cartCount() > 0) { <span
             class="position-absolute translate-middle badge rounded-pill bg-primary text-white">{{ cartCount() }}</span>
-        }
-      </button>
-      <div
-        class="rounded-circle bg-primary bg-opacity-10 border border-primary/20 d-flex align-items-center justify-content-center"
-        style="width: 40px; height: 40px;">
-        <i (click)="toglle()" class="bi bi-person text-primary btn fs-3"></i>
+          } </button>
+        <div
+          class="rounded-circle bg-primary bg-opacity-10 border border-primary/20 d-flex align-items-center justify-content-center"
+          style="width: 40px; height: 40px;"> <i (click)="toglle()" class="bi bi-person text-primary btn fs-3"></i>
+        </div> @if(show){ <div class="position-absolute auth "> @if( this.AuthService.isLoggedIn()){ <div
+            class="d-flex flex-column bg-primary-subtle p-2 rounded-3 ">
+            <p class="badge text-bg-primary p-2">{{userName}}</p> <button class="btn btn-danger" (click)="logout()"
+              routerLink="home">logout</button>
+          </div> }@else { <button class="btn btn-primary" routerLink="auth/login">login</button> } </div> }
       </div>
-      @if(show){
-        <div class="position-absolute auth ">
-          <button class="btn btn-primary" routerLink="auth/login">login</button>
-        </div>
-
-      }
     </div>
   </div>
-</div>
 </nav>
