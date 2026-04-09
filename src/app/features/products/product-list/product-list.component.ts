@@ -84,10 +84,17 @@ export class ProductListComponent implements OnInit {
     this.updateDisplayedProducts();
   }
 
-  onSortChange() {
+ onSortChange() {
     this.currentPage = 1;
     this.updateDisplayedProducts();
   }
+
+  get pageTitle(): string {
+    return this.selectedCategory === 'All'
+      ? 'All Products'
+      : this.selectedCategory;
+  }
+
 
   updateDisplayedProducts() {
     let filtered = this.allProducts;
