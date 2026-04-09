@@ -3,7 +3,8 @@
      onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 16px 40px rgba(109,40,217,0.12)'"
      onmouseleave="this.style.transform=''; this.style.boxShadow='0 1px 4px rgba(0,0,0,0.05)'">
 
-  <div class="position-relative overflow-hidden" style="height:200px; background:#f1f5f9;">
+
+     <div class="position-relative overflow-hidden" style="aspect-ratio:4/3; background:#f1f5f9;">
     <img [src]="product.image" [alt]="product.name"
          class="d-block"
          style="width:100%; height:100%; object-fit:cover; transition:opacity 0.2s;" />
@@ -26,19 +27,19 @@
   <div class="card-body d-flex flex-column p-3">
 
     <span class="fw-bold text-uppercase d-inline-block mb-2"
-          style="font-size:0.68rem; letter-spacing:0.1em; color:#2563eb; background:#ede9fe; padding:2px 8px; border-radius:4px;">
+          style="font-size:0.68rem; letter-spacing:0.1em; color:#2563eb; background:#ede9fe; padding:2px 8px; border-radius:4px; width:fit-content;">
       {{ product.category }}
     </span>
 
-    <h6 class="fw-bold mb-1" style="font-size:0.95rem; color:#0f172a">
+    <h6 class="fw-bold mb-1" style="font-size:0.95rem; color:#0f172a; line-height:1.35;">
       {{ product.name }}
     </h6>
 
-    <p class="mb-2" style="color:#64748b; font-size:0.83rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
+    <p class="mb-2" style="color:#64748b; font-size:0.83rem; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis; line-height:1.5;">
       {{ product.description }}
     </p>
 
-    <div class="d-flex align-items-center gap-2 mb-3">
+    <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
       <span style="color:#f59e0b; font-size:0.8rem;">{{ getStars(product.rating) }}</span>
       <span class="fw-semibold" style="font-size:0.78rem; color:#0f172a">{{ product.rating }}</span>
       @if (product.reviews) {
@@ -46,8 +47,8 @@
       }
     </div>
 
-    <div class="d-flex align-items-center gap-2 mt-auto mb-3">
-      <span style="color:#2563eb; font-weight:800; font-size:1.15rem;">${{ product.price.toFixed(2) }}</span>
+    <div class="d-flex align-items-center gap-2 mt-auto mb-3 flex-wrap">
+      <span style="color:#2563eb; font-weight:800; font-size:1.1rem;">${{ product.price.toFixed(2) }}</span>
       @if (product.originalPrice) {
         <span style="color:#94a3b8; font-size:0.82rem; text-decoration:line-through;">
           ${{ product.originalPrice.toFixed(2) }}
@@ -55,16 +56,16 @@
       }
     </div>
 
-    <div class="d-flex gap-2">
+    <div class="d-flex flex-column flex-sm-row gap-2">
 
-      <a class="btn btn-sm flex-grow-1 fw-semibold rounded-3"
-         style="border:1px solid #2563eb; color:#2563eb; background:transparent; font-size:0.78rem; font-weight:600;"
+      <a class="btn btn-sm fw-semibold rounded-3 flex-fill"
+         style="border:1px solid #2563eb; color:#2563eb; background:transparent; font-size:0.78rem; font-weight:600; white-space:nowrap;"
          [routerLink]="['/products', product.id]">
         Details
       </a>
 
-      <button class="btn btn-sm flex-grow-1 fw-semibold rounded-3 text-white"
-              style="background:#2563eb; font-size:0.78rem; font-weight:600;"
+      <button class="btn btn-sm fw-semibold rounded-3 text-white flex-fill"
+              style="background:#2563eb; font-size:0.78rem; font-weight:600; white-space:nowrap;"
               (click)="onAddToCartClick()">
         Add to Cart
       </button>
