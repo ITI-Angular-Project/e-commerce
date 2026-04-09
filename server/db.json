@@ -5311,7 +5311,6 @@
       "id": 5
     }
   ],
-<<<<<<< HEAD
   "cart": [
     {
       "category": "Speakers",
@@ -5362,9 +5361,6 @@
       "id": 10
     }
   ],
-=======
-  "cart": [],
->>>>>>> main
   "orders": [
     {
       "id": "1",
@@ -5418,7 +5414,6 @@
       ]
     },
     {
-<<<<<<< HEAD
       "orderNumber": "#TS-647080",
       "datePlaced": "Apr 9, 2026",
       "totalAmount": 347.9,
@@ -5445,27 +5440,6 @@
         }
       ],
       "id": "flRblLJ"
-=======
-      "orderNumber": "#TS-979552",
-      "datePlaced": "Apr 9, 2026",
-      "totalAmount": 448.2,
-      "status": "Processing",
-      "items": [
-        {
-          "name": "Pro Wireless X10",
-          "quantity": 1,
-          "price": 299,
-          "imageUrl": "/images/pro-wireless-x10.jpg"
-        },
-        {
-          "name": "Elite Pods Pro",
-          "quantity": 1,
-          "price": 199,
-          "imageUrl": "/images/elite-pods-pro.jpg"
-        }
-      ],
-      "id": "8uA1JP0"
->>>>>>> main
     }
   ]
 }

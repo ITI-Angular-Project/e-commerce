@@ -10,5 +10,5 @@ export const redirectOnlyGuard: CanActivateFn = (route, state) => {
 
     return true;
   }
-  return false;
+  return router.createUrlTree(['/home']);
 };
