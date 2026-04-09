@@ -8,5 +8,5 @@ export interface CreateCartRequest {
   price: number;
   // product?: Product;
   productId: number;
-  // userId: number;
+  userId: number | undefined;
 }

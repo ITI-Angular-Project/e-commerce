@@ -1,16 +1,15 @@
-import { Component, OnInit, signal, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, signal, ChangeDetectorRef, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../../core/services/product.service';
 import { Product } from '../../../core/Models/Cart/product.model';
 import { CartService } from '../../../core/services/cart.service';
-
-
+import { AuthActionService } from '../../../core/services/auth-action.service';
 
 @Component({
   selector: 'app-product-details',
   standalone: false,
   templateUrl: './product-details.component.html',
-  styleUrl: './product-details.component.css'
+  styleUrl: './product-details.component.css',
 })
 export class ProductDetailsComponent implements OnInit {
   product: Product | null = null;
@@ -20,20 +19,21 @@ export class ProductDetailsComponent implements OnInit {
   toastMessage: string = '';
   showToast: boolean = false;
   toastTimer: any;
+  authActionServices = inject(AuthActionService);
 
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-        private cartService: CartService,
-    private cdr: ChangeDetectorRef
+    private cartService: CartService,
+    private cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit() {
     const idParam = this.route.snapshot.paramMap.get('id');
     const id = Number(idParam);
-    
+
     console.log('Product ID from route:', id);
-    
+
     if (!id || isNaN(id)) {
       this.notFound = true;
       this.loading = false;
@@ -54,7 +54,7 @@ export class ProductDetailsComponent implements OnInit {
         this.notFound = true;
         this.loading = false;
         this.cdr.detectChanges();
-      }
+      },
     });
   }
 
@@ -90,27 +90,29 @@ export class ProductDetailsComponent implements OnInit {
       this.quantity--;
     }
   }
-addToCart() {
+  addToCart() {
     if (!this.product) return;
 
-    this.cartService.addToCart(this.product, this.quantity).subscribe({
-      next: () => {
-        this.toastMessage = `${this.quantity} x ${this.product!.name} added to cart!`;
-        this.showToast = true;
+    this.authActionServices.requireAuth(() => {
+      this.cartService.addToCart(this.product!, this.quantity).subscribe({
+        next: () => {
+          this.toastMessage = `${this.quantity} x ${this.product!.name} added to cart!`;
+          this.showToast = true;
 
-        if (this.toastTimer) {
-          clearTimeout(this.toastTimer);
-        }
+          if (this.toastTimer) {
+            clearTimeout(this.toastTimer);
+          }
 
-        this.toastTimer = setTimeout(() => {
-          this.showToast = false;
-        }, 3000);
-      },
-      error: (err) => {
-        console.error('Add to cart failed:', err);
-        this.toastMessage = `Could not add ${this.product!.name} to cart.`;
-        this.showToast = true;
-      }
+          this.toastTimer = setTimeout(() => {
+            this.showToast = false;
+          }, 3000);
+        },
+        error: (err) => {
+          console.error('Add to cart failed:', err);
+          this.toastMessage = `Could not add ${this.product!.name} to cart.`;
+          this.showToast = true;
+        },
+      });
     });
   }
 }

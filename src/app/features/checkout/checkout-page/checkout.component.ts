@@ -1,8 +1,9 @@
-import { Component, inject, Inject, OnInit } from '@angular/core';
+import { Component, computed, inject, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OrderService } from '../../../core/services/order.service';
 import { CartService } from '../../../core/services/cart.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-checkout',
@@ -12,40 +13,17 @@ import { Router } from '@angular/router';
 })
 export class CheckoutComponent implements OnInit {
   checkoutForm!: FormGroup;
-  cartService: CartService = inject(CartService);
+  cartService = inject(CartService);
+  authService = inject(AuthService);
+  Math = Math;
+  orderSummary: any;
+  router = inject(Router);
   selectedDeliveryMethod: string = 'standard';
   selectedPaymentMethod: string = 'credit-card';
-  Math = Math;
-  orderSummmary: any;
-  router = inject(Router);
 
-  // Order Summary Data
-  orderItems = [
-    {
-      id: 1,
-      name: 'Pro Wireless X10',
-      subtitle: 'Silver, AM83',
-      quantity: 1,
-      price: 299.0,
-      image: '/images/pro-wireless-x10.jpg',
-    },
-    {
-      id: 2,
-      name: 'Elite Pods Pro',
-      subtitle: 'White, H115',
-      quantity: 1,
-      price: 199.0,
-      image: '/images/elite-pods-pro.jpg',
-    },
-  ];
-
-  orderSummary = {
-    subtotal: 498.0,
-    shipping: 0,
-    discount: -49.8,
-    total: 448.2,
-  };
-
+  public subTotal = computed(() =>
+    this.cartService.Cart().reduce((sum, item) => sum + item.price * item.amount, 0),
+  );
   deliveryOptions = [
     {
       id: 'standard',
@@ -67,16 +45,12 @@ export class CheckoutComponent implements OnInit {
     private fb: FormBuilder,
     private orderService: OrderService,
   ) {
-    this.orderSummmary = this.router.currentNavigation()?.extras.state?.['orderSummary'];
+    this.orderSummary = this.router.currentNavigation()?.extras.state?.['orderSummary'];
   }
 
   ngOnInit(): void {
     this.initializeForm();
-    this.cartService.getCart().subscribe({
-      next: (value) => {
-        this.cartService.Cart.set(value);
-      },
-    });
+    this.cartService.getCart().subscribe();
   }
 
   initializeForm(): void {
@@ -119,28 +93,36 @@ export class CheckoutComponent implements OnInit {
   placeOrder(): void {
     if (this.checkoutForm.valid) {
       console.log('Form Data:', this.checkoutForm.value);
-      
+
       const payload = {
         orderNumber: `#TS-${Math.floor(100000 + Math.random() * 900000)}`,
-        datePlaced: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        datePlaced: new Date().toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric',
+        }),
         totalAmount: this.orderSummary.total,
+        userId: this.authService.currentUser?.id,
         status: 'Processing',
-        items: this.orderItems.map(item => ({
-          name: item.name,
-          quantity: item.quantity,
+        items: this.cartService.Cart().map((item) => ({
+          name: item.title,
+          quantity: item.amount,
           price: item.price,
-          imageUrl: item.image
-        }))
+          imageUrl: item.imageSrc,
+        })),
       };
 
       this.orderService.placeOrder(payload).subscribe({
         next: (response) => {
           console.log('Order created successfully!', response);
-          this.router.navigate(['/orders']); // Redirect to orders history
+          this.cartService.deleteAllCart(this.authService.currentUser?.id).subscribe();
+          this.router.navigate(['/orders'], {
+            replaceUrl: true,
+          }); // Redirect to orders history
         },
         error: (err) => {
           console.error('Failed to create order', err);
-        }
+        },
       });
     } else {
       this.checkoutForm.markAllAsTouched();

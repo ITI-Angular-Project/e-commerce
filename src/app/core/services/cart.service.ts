@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Product } from '../Models/Cart/product.model';
 import { CreateCartRequest } from '../Models/Cart/create-cart-item.model';
 import { Observable, of, switchMap, tap } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -14,17 +15,22 @@ export class CartService {
   private readonly baseUrl = 'http://localhost:3000';
   private readonly httpClient = inject(HttpClient);
   private cartLoaded = false;
+  private authService = inject(AuthService);
 
   getCart(forceRefresh = false): Observable<CartItem[]> {
     if (this.cartLoaded && !forceRefresh) {
       return of(this.Cart());
     }
-    return this.httpClient.get<CartItem[]>(`${this.baseUrl}/cart`).pipe(
-      tap((items) => {
-        this.Cart.set(items);
-        this.cartLoaded = true;
-      }),
-    );
+    console.log(this.authService.currentUser?.id);
+
+    return this.httpClient
+      .get<CartItem[]>(`${this.baseUrl}/cart?userId=${this.authService.currentUser?.id}`)
+      .pipe(
+        tap((items) => {
+          this.Cart.set(items);
+          this.cartLoaded = true;
+        }),
+      );
   }
   addToCart(product: Product, quantity = 1): Observable<CartItem> {
     const item: CreateCartRequest = {
@@ -36,6 +42,7 @@ export class CartService {
       price: product.price,
       imageAlt: product.name,
       productId: product.id,
+      userId: this.authService.currentUser?.id,
     };
 
     return this.getCart().pipe(
@@ -55,8 +62,8 @@ export class CartService {
     );
   }
 
-  deleteAllCart(cartId: number) {
-    return this.httpClient.delete(`${this.baseUrl}/cart/${cartId}`).pipe(
+  deleteAllCart(userId: number | undefined) {
+    return this.httpClient.delete(`${this.baseUrl}/cart?${userId}`).pipe(
       tap(() => {
         this.Cart.set([]);
       }),
