@@ -5311,7 +5311,41 @@
       "id": 5
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "category": "Phones & Tablets",
+      "title": "Samsung Galaxy A07 ,4G ,8GB RAM , 256GB ,Dual-SIM Light Violet",
+      "subtitle": "Discover the premium",
+      "imageSrc": "https://eg.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/22/4381431/1.jpg?5479",
+      "amount": 1,
+      "price": 11470,
+      "imageAlt": "Samsung Galaxy A07 ,4G ,8GB RAM , 256GB ,Dual-SIM Light Violet",
+      "productId": 43,
+      "id": 1
+    },
+    {
+      "category": "Computing",
+      "title": "Metal Portable Tablet & Laptop Stand Foldable  -  Multi  Angles Height Adjustment",
+      "subtitle": "Discover the premium",
+      "imageSrc": "https://eg.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/96/421723/1.jpg?5013",
+      "amount": 3,
+      "price": 139,
+      "imageAlt": "Metal Portable Tablet & Laptop Stand Foldable  -  Multi  Angles Height Adjustment",
+      "productId": 161,
+      "id": 2
+    },
+    {
+      "category": "Phones & Tablets",
+      "title": "4*1 Charging Cable USB A/USB C To Type-C & Lightning 65W Fast & Turbo Charging Cable",
+      "subtitle": "Discover the premium",
+      "imageSrc": "https://eg.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/94/1421031/1.jpg?1905",
+      "amount": 4,
+      "price": 49.9,
+      "imageAlt": "4*1 Charging Cable USB A/USB C To Type-C & Lightning 65W Fast & Turbo Charging Cable",
+      "productId": 2,
+      "id": 3
+    }
+  ],
   "orders": [
     {
       "id": "1",
