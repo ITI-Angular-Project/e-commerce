@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CartService } from '../../core/services/cart.service';
+import { AuthService } from './../../core/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +10,9 @@ import { CartService } from '../../core/services/cart.service';
 })
 export class NavbarComponent implements OnInit {
   private cartService = inject(CartService);
+  public AuthService = inject(AuthService);
+  userName = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")!).username : "";
+  loggedIn = false;
   show = false;
   cartCount = this.cartService.cartItemCount;
 
@@ -23,5 +27,8 @@ export class NavbarComponent implements OnInit {
   toglle(){
     this.show = !this.show;
     
+  }
+  logout(){
+    this.AuthService.logOut();
   }
 }
