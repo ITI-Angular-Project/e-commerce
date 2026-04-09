@@ -1,0 +1,35 @@
+<main class="min-vh-100 py-5 bg-light order-bg">
+  <div class="container py-4" style="max-width: 900px">
+    <!-- Header Section -->
+    <header class="text-center mb-5">
+      <h1 class="display-5 fw-bold mb-3" style="color: #111827; letter-spacing: -0.025em">
+        Order History
+      </h1>
+      <p class="mx-auto" style="color: #6b7280; max-width: 36rem">
+        Manage your recent tech acquisitions, track shipments, and view detailed order summaries for
+        all your devices.
+      </p>
+    </header>
+
+    <!-- Filters -->
+    <app-order-filters (filterChanged)="onFilterChanged($event)"></app-order-filters>
+
+    <!-- Orders Grid/List -->
+    <div class="d-flex flex-column gap-4">
+      <app-order-card *ngFor="let order of filteredOrders" [order]="order"></app-order-card>
+
+      <div *ngIf="filteredOrders.length === 0" class="text-center py-5 text-muted">
+        No orders found.
+      </div>
+    </div>
+
+    <!-- Footer / Archive -->
+    <!-- <div class="mt-5 pt-5 border-top d-flex flex-column align-items-center justify-content-center gap-3">
+      <p class="fw-medium mb-0" style="color: #6B7280;">Looking for older orders?</p>
+      <a class="d-flex align-items-center gap-2 fw-bold text-primary text-decoration-none view-archive-link" href="javascript:void(0)">
+        View Archive
+        <span class="material-symbols-outlined" style="font-size: 1.25rem;">arrow_forward</span>
+      </a>
+    </div> -->
+  </div>
+</main>
