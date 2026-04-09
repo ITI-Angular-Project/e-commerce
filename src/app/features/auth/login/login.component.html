@@ -11,41 +11,54 @@
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
       @if (errorMessage) {
-      <div class="alert alert-danger py-2 mb-3" role="alert">
-        <span class="material-symbols-outlined align-middle me-1" style="font-size:18px">error</span>
-        {{ errorMessage }}
-      </div>
+        <div class="alert alert-danger py-2 mb-3" role="alert">
+          <span class="material-symbols-outlined align-middle me-1" style="font-size: 18px"
+            >error</span
+          >
+          {{ errorMessage }}
+        </div>
       }
       <div class="mb-3">
-        <input type="email" class="form-control" [class.is-invalid]="email?.invalid && email?.touched"
-          placeholder="Email" formControlName="email" />
+        <input
+          type="email"
+          class="form-control"
+          [class.is-invalid]="email?.invalid && email?.touched"
+          placeholder="Email"
+          formControlName="email"
+        />
         @if (email?.touched) {
-        @if (email?.hasError('required')) {
-        <div class="invalid-feedback">Email is required.</div>
-        } @else if (email?.hasError('email')) {
-        <div class="invalid-feedback">Enter a valid email address.</div>
-        }
+          @if (email?.hasError('required')) {
+            <div class="invalid-feedback">Email is required.</div>
+          } @else if (email?.hasError('email')) {
+            <div class="invalid-feedback">Enter a valid email address.</div>
+          }
         }
       </div>
 
       <div class="mb-4 pw-wrap">
-        <input [type]="showPw ? 'text' : 'password'" class="form-control"
-          [class.is-invalid]="password?.invalid && password?.touched" placeholder="Password"
-          formControlName="password" />
+        <input
+          [type]="showPw ? 'text' : 'password'"
+          class="form-control"
+          [class.is-invalid]="password?.invalid && password?.touched"
+          placeholder="Password"
+          formControlName="password"
+        />
         <button class="pw-toggle" type="button" (click)="showPw = !showPw">
-          <span class="material-symbols-outlined">{{ showPw ? 'visibility_off' : 'visibility' }}</span>
+          <span class="material-symbols-outlined">{{
+            showPw ? 'visibility_off' : 'visibility'
+          }}</span>
         </button>
         @if (password?.touched) {
-        @if (password?.hasError('required')) {
-        <div class="invalid-feedback">Password is required.</div>
-        } @else if (password?.hasError('minlength')) {
-        <div class="invalid-feedback">Password must be at least 6 characters.</div>
-        }
+          @if (password?.hasError('required')) {
+            <div class="invalid-feedback">Password is required.</div>
+          } @else if (password?.hasError('minlength')) {
+            <div class="invalid-feedback">Password must be at least 6 characters.</div>
+          }
         }
       </div>
       <button type="submit" class="btn btn-primary w-100" [disabled]="isLoading">
         @if (isLoading) {
-        <span class="spinner-border spinner-border-sm me-2"></span>
+          <span class="spinner-border spinner-border-sm me-2"></span>
         }
         {{ isLoading ? 'Signing in...' : 'Sign In' }}
       </button>
@@ -57,7 +70,6 @@
         <a class="fw-bold ms-1 sign-in-link" routerLink="/auth/register">Create one</a>
       </p>
     </div>
-
   </div>
   <div class="badge-row">
     <div class="badge-item">
