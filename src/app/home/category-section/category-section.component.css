@@ -5,11 +5,16 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-.img-hover div{
+.category-image{
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    opacity: 0.4;
+}
+.img-hover .category-image{
     transition: .5s ease;
-    background:none;
     transform: rotate(12deg)  translate(3rem, -2rem);
 }
-.img-hover:hover div{
+.img-hover:hover .category-image{
     transform: rotate(12deg)  translate(3rem, -2rem) scale(1.05);
 }

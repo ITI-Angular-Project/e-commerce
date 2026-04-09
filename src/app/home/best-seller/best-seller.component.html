@@ -2,70 +2,35 @@
   <div class="container mx-auto px-3">
     <h2 class="display-4 fw-bold mb-5 text-dark">Best Sellers</h2>
     <div class="row">
-      <!-- Sale Item 1 -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="bg-white hover-shadow-lg rounded rounded-3 p-2 transition-all border border-slate-100 position-relative">
-          <div class="position-absolute ">
-            <span class="badge bg-danger text-white text-uppercase px-2 py-1">Sale</span>
-          </div>
-          <div class="bg-hover bg-light rounded overflow-hidden mb-3" style="aspect-ratio: 1;">
-            <div class="w-100 h-100 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuLLp52-1BexFeJNR0356iQcwqm5FA2_Dp3cnvDBo4YLBNWFZkVFYAFwEw7mjMHO5Qs1a1TIqoxuUU6MNN8nGsZmsn3R-s_wqmjPqFJf8fwf6O2-b0Wwdav2AZ7Wy3MlcCN3oy2oc0dBfQS6Jizw65QlEVmvRf2GS4L5Dz8_c5suMqe2mgWQu-eLCvtwFrUuOENoWC5evDh4H3eH0pFiP_wFkW16-fXWf-wxaatiLvvTCFh7JCwwNVpDuKonEiIwR8rhmhk8cTT9Yq')"></div>
-          </div>
-          <h4 class="fw-bold mb-1 text-dark">Classic Studio X</h4>
-          <p class="text-muted small mb-2">High-fidelity Audio</p>
-          <div class="d-flex align-items-center">
-            <span class="h5 fw-bold text-dark">$159.00</span>
-            <span class="text-muted small  text-decoration-line-through ms-2">$229.00</span>
-          </div>
-        </div>
-      </div>
-      <!-- Sale Item 2 -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="bg-white hover-shadow-lg rounded rounded-3 p-2 transition-all border border-slate-100 position-relative">
-          <div class="position-absolute ">
-            <span class="badge bg-danger text-white text-uppercase px-2 py-1">Sale</span>
-          </div>
-          <div class="bg-hover bg-light rounded overflow-hidden mb-3" style="aspect-ratio: 1;">
-            <div class="w-100 h-100 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIC8dgFVmzzdj-fNK-iqOT_HJ1HL88DhGdE5y3OMA36gUYJMbB2LfQNxDVuHLFZTYPEiNVo5bZIHEcIYU3wNhbS5kCbbhSiihgW4vEk18m_-Uw__tUTrJRUCeCCnSXFUYw5Bnh1BhdXgWVckcPZsfl-zFDN9zT5ddiew9T1dfenQgnMEyB5FUIqNRjI6bXVtHOvzPlw8gvoOVryU7L3ZJ5ee48D0xy4_627KDpTe3MuKP2vuNjx3UtJpluvCQq4KIgztP1wPVqV5FG')"></div>
-          </div>
-          <h4 class="fw-bold mb-1 text-dark">Stealth ANC</h4>
-          <p class="text-muted small mb-2">Noise Cancelling</p>
-          <div class="d-flex align-items-center">
-            <span class="h5 fw-bold text-dark">$210.00</span>
-            <span class="text-muted small text-decoration-line-through ms-2">$350.00</span>
+      @for (product of bestSellers; track product.id) {
+        <div class="col-12 col-sm-6 col-lg-3 mb-4">
+          <div
+            class="bg-white hover-shadow-lg rounded rounded-3 p-2 transition-all border border-slate-100 position-relative best-seller-card"
+            [routerLink]="['/products', product.id]"
+          >
+            @if (getOriginalPrice(product)) {
+              <div class="position-absolute">
+                <span class="badge bg-danger text-white text-uppercase px-2 py-1">Top Rated</span>
+              </div>
+            }
+            <div class="bg-hover bg-light rounded overflow-hidden mb-3" style="aspect-ratio: 1;">
+              <img
+                [src]="product.image"
+                [alt]="product.name"
+                class="best-seller-image w-100 h-100"
+              />
+            </div>
+            <h4 class="fw-bold mb-1 text-dark">{{ product.name }}</h4>
+            <p class="text-muted small mb-2">{{ product.category }}</p>
+            <div class="d-flex align-items-center">
+              <span class="h5 fw-bold text-dark">${{ product.price.toFixed(2) }}</span>
+              @if (getOriginalPrice(product); as originalPrice) {
+                <span class="text-muted small text-decoration-line-through ms-2">${{ originalPrice.toFixed(2) }}</span>
+              }
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Sale Item 3 -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="bg-white hover-shadow-lg rounded rounded-3 p-2 transition-all border border-slate-100">
-          <div class="bg-hover bg-light rounded overflow-hidden mb-3" style="aspect-ratio: 1;">
-            <div class="w-100 h-100 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEN99e7LDho26pw001WOWqGhOdEXcCvzksTm6i81iJNgZYjVqdh1kobOa8yRR5eimcZNhyY5EW7VOzpWPtWsA4NXspgUt0Y08_aK-9KBaNTxL2y2wZYgTO0SK-XQBG1QpRqzo6GBcZqtLUZHOs5b7XKVAARJMzS-zL0aMsMi6hZ2Bq_USAPhislU9Lbqw9ismGWjfPJe9RMVDt0idtbjnj_qFmD96d_6TOemnF80dYgxX4aSlc0dx8230BwqjyhiD7NfSsdI-DfZij')"></div>
-          </div>
-          <h4 class="fw-bold mb-1 text-dark">Premium Stand</h4>
-          <p class="text-muted small mb-2">Aluminum Accessory</p>
-          <div class="d-flex align-items-center">
-            <span class="h5 fw-bold text-dark">$89.00</span>
-          </div>
-        </div>
-      </div>
-      <!-- Sale Item 4 -->
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="bg-white hover-shadow-lg rounded rounded-3 p-2 transition-all border border-slate-100 position-relative">
-          <div class="position-absolute ">
-            <span class="badge bg-danger text-white text-uppercase px-2 py-1">Sale</span>
-          </div>
-          <div class="bg-hover bg-light rounded overflow-hidden mb-3" style="aspect-ratio: 1;">
-            <div class="w-100 h-100 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBII6J0FUYZOy5puggbkyiFsdxV_MKJ4s5qqeoh9EeWgASCssMWPXLfrGTbfIPlWHjGrbPfj8t2g82xV_GJ-Xg9N7GXI30bV4DVVw5q6YyvixZGQGQgv28Zh22H3jqBb80Oe7XIzoo-XfQ8D-Y2J8SF_wFGBrQsvroQ9LnyH7bO0FoIS1mv9jPKKowd37QiZMov6YDT11y_EKIfASfF8C6e-f_00wRATZhY0g0NKMfsW8oVsAc5DsBC1h-yLSTPd9IUsEEaioiyR108')"></div>
-          </div>
-          <h4 class="fw-bold mb-1 text-dark">Wall Mount Pro</h4>
-          <p class="text-muted small mb-2">Studio Setup</p>
-          <div class="d-flex align-items-center">
-            <span class="h5 fw-bold text-dark">$35.00</span>
-            <span class="text-muted small text-decoration-line-through ms-2">$49.00</span>
-          </div>
-        </div>
-      </div>
+      }
     </div>
   </div>
 </section>
