@@ -119,9 +119,31 @@ export class CheckoutComponent implements OnInit {
   placeOrder(): void {
     if (this.checkoutForm.valid) {
       console.log('Form Data:', this.checkoutForm.value);
-      // Here you would typically call a service to submit the order
-      // this.orderService.placeOrder(this.checkoutForm.value).subscribe(...);
+      
+      const payload = {
+        orderNumber: `#TS-${Math.floor(100000 + Math.random() * 900000)}`,
+        datePlaced: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        totalAmount: this.orderSummary.total,
+        status: 'Processing',
+        items: this.orderItems.map(item => ({
+          name: item.name,
+          quantity: item.quantity,
+          price: item.price,
+          imageUrl: item.image
+        }))
+      };
+
+      this.orderService.placeOrder(payload).subscribe({
+        next: (response) => {
+          console.log('Order created successfully!', response);
+          this.router.navigate(['/orders']); // Redirect to orders history
+        },
+        error: (err) => {
+          console.error('Failed to create order', err);
+        }
+      });
     } else {
+      this.checkoutForm.markAllAsTouched();
       console.log('Form is invalid');
     }
   }
