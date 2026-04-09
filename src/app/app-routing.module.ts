@@ -7,10 +7,10 @@ const routes: Routes = [
           loadChildren: () =>
           import('./home/home.module').then((m) => m.HomeModule), },
       {
-        path: 'products',
-        loadChildren: () =>
-          import('./features/products/products.module').then((m) => m.ProductsModule),
-      },
+    path: 'products',
+    loadChildren: () =>
+      import('./features/products/products.module').then((m) => m.ProductsModule),
+  },
       {
         path: 'cart',
         loadChildren: () => import('./features/cart/cart.module').then((m) => m.CartModule),

@@ -4,13 +4,13 @@
       <div class="col-12 col-lg-8 ">
         <h2 class=" cart-page-title mb-4">
           Your Cart
-          <span class="cart-page-count ms-2">({{ CartItems().length }} items)</span>
+          <span class="cart-page-count ms-2">({{ cartService.Cart().length }} items)</span>
         </h2>
 
         <div class="cart-items-card">
-          @for (cartItem of CartItems(); track cartItem) {
-          <app-cart-item [item]="cartItem" (quantityUpdated)="cartItem" (productDeleted)="cartItem.id" />
-
+          @for (cartItem of cartService.Cart(); track cartItem) {
+          <app-cart-item [item]="cartItem" (productUpdated)="updateItemQuantity($event)"
+            (productDeleted)="deleteProdcut($event)" />
           } @empty {
           <div class="cart-empty-state">
             <span class="material-symbols-outlined cart-empty-icon">shopping_cart</span>

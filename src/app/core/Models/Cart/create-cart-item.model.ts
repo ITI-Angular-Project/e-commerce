@@ -1,5 +1,4 @@
-export interface CartItem {
-  id: number | undefined;
+export interface CreateCartRequest {
   imageSrc: string;
   imageAlt: string;
   category: string;
