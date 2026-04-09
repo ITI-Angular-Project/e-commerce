@@ -1,6 +1,11 @@
-export interface OrderItem {
-  name: string;
-  quantity: number;
-  price: number;
-  imageUrl: string;
+import { OrderItem } from './order-item.model';
+
+export interface Order {
+  id: string;
+  orderNumber: string;
+  datePlaced: string;
+  totalAmount: number;
+  status: string;
+  items: OrderItem[];
+  userId: number | undefined;
 }

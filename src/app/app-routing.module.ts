@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
+import { redirectOnlyGuard } from './core/guards/redirect-only.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,7 +18,7 @@ const routes: Routes = [
   {
     path: 'checkout',
     loadChildren: () => import('./features/checkout/checkout.module').then((m) => m.CheckoutModule),
-    canActivate: [authGuard],
+    canActivate: [authGuard, redirectOnlyGuard],
   },
   {
     path: 'auth',
