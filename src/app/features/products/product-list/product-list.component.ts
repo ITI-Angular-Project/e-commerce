@@ -16,7 +16,7 @@ export class ProductListComponent implements OnInit {
   searchText: string = '';
   selectedCategory: string = 'All';
   currentPage: number = 1;
-  productsPerPage: number = 6;
+  productsPerPage: number = 12;
   totalPages: number = 1;
   pageNumbers: number[] = [];
   filteredCount: number = 0;
