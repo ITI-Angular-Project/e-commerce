@@ -126,6 +126,11 @@ export class CheckoutComponent implements OnInit {
     }
   }
 
+  isInvalid(controlName: string): boolean {
+    const control = this.checkoutForm.get(controlName);
+    return !!control && control.invalid && control.touched;
+  }
+
   getCountries(): string[] {
     return [
       'United States',
