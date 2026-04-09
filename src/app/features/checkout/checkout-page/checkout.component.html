@@ -22,9 +22,7 @@
                     formControlName="email"
                     [class.is-invalid]="isInvalid('email')"
                   />
-                  <div class="invalid-feedback">
-                    Please enter a valid email address.
-                  </div>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label">Phone Number</label>
@@ -35,9 +33,7 @@
                     formControlName="phone"
                     [class.is-invalid]="isInvalid('phone')"
                   />
-                  <div class="invalid-feedback">
-                    Phone number is required.
-                  </div>
+                  <div class="invalid-feedback">Phone number is required.</div>
                 </div>
               </div>
             </div>
@@ -60,9 +56,7 @@
                     formControlName="fullName"
                     [class.is-invalid]="isInvalid('fullName')"
                   />
-                  <div class="invalid-feedback">
-                    Full Name is required.
-                  </div>
+                  <div class="invalid-feedback">Full Name is required.</div>
                 </div>
                 <div class="col-12">
                   <label class="form-label">Address Line 1</label>
@@ -73,9 +67,7 @@
                     formControlName="addressLine1"
                     [class.is-invalid]="isInvalid('addressLine1')"
                   />
-                  <div class="invalid-feedback">
-                    Address is required.
-                  </div>
+                  <div class="invalid-feedback">Address is required.</div>
                 </div>
                 <div class="col-12">
                   <label class="form-label">Address Line 2 (Optional)</label>
@@ -95,9 +87,7 @@
                     formControlName="city"
                     [class.is-invalid]="isInvalid('city')"
                   />
-                  <div class="invalid-feedback">
-                    City is required.
-                  </div>
+                  <div class="invalid-feedback">City is required.</div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label">State / Province</label>
@@ -108,9 +98,7 @@
                     formControlName="stateProvince"
                     [class.is-invalid]="isInvalid('stateProvince')"
                   />
-                  <div class="invalid-feedback">
-                    State / Province is required.
-                  </div>
+                  <div class="invalid-feedback">State / Province is required.</div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label">ZIP / Postal Code</label>
@@ -121,13 +109,15 @@
                     formControlName="zipPostalCode"
                     [class.is-invalid]="isInvalid('zipPostalCode')"
                   />
-                  <div class="invalid-feedback">
-                    ZIP / Postal Code is required.
-                  </div>
+                  <div class="invalid-feedback">ZIP / Postal Code is required.</div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label">Country</label>
-                  <select class="form-select checkout-input" formControlName="country" [class.is-invalid]="isInvalid('country')">
+                  <select
+                    class="form-select checkout-input"
+                    formControlName="country"
+                    [class.is-invalid]="isInvalid('country')"
+                  >
                     <option value="">Select Country</option>
                     <option value="us">United States</option>
                     <option value="ca">Canada</option>
@@ -138,9 +128,7 @@
                     <option value="es">Spain</option>
                     <option value="it">Italy</option>
                   </select>
-                  <div class="invalid-feedback">
-                    Please select a country.
-                  </div>
+                  <div class="invalid-feedback">Please select a country.</div>
                 </div>
               </div>
             </div>
@@ -250,13 +238,14 @@
                       formControlName="cardholderName"
                       [class.is-invalid]="isInvalid('cardholderName')"
                     />
-                    <div class="invalid-feedback">
-                      Cardholder name is required.
-                    </div>
+                    <div class="invalid-feedback">Cardholder name is required.</div>
                   </div>
                   <div class="col-12">
                     <label class="form-label">Card Number</label>
-                    <div class="input-group card-input-group" [class.is-invalid]="isInvalid('cardNumber')">
+                    <div
+                      class="input-group card-input-group"
+                      [class.is-invalid]="isInvalid('cardNumber')"
+                    >
                       <input
                         type="text"
                         class="form-control checkout-input"
@@ -281,9 +270,7 @@
                       formControlName="expiryDate"
                       [class.is-invalid]="isInvalid('expiryDate')"
                     />
-                    <div class="invalid-feedback">
-                      Expiry date is required.
-                    </div>
+                    <div class="invalid-feedback">Expiry date is required.</div>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label">CVV</label>
@@ -294,9 +281,7 @@
                       formControlName="cvv"
                       [class.is-invalid]="isInvalid('cvv')"
                     />
-                    <div class="invalid-feedback">
-                      CVV is required.
-                    </div>
+                    <div class="invalid-feedback">CVV is required.</div>
                   </div>
                 </div>
               </div>
@@ -349,11 +334,11 @@
               <div class="order-calculation">
                 <div class="calc-row">
                   <span>Subtotal</span>
-                  <span>${{ orderSummmary.subtotal | number: '1.2-2' }}</span>
+                  <span>${{ orderSummary.subtotal | number: '1.2-2' }}</span>
                 </div>
                 <div class="calc-row">
                   <span>Shipping</span>
-                  <span class="text-success">{{ orderSummmary.delivery || 'FREE' }}</span>
+                  <span class="text-success">{{ orderSummary.delivery || 'FREE' }}</span>
                 </div>
                 <!-- <div class="calc-row">
                   <span>Discount (TECH40)</span>
@@ -369,7 +354,9 @@
               <!-- Order Total -->
               <div class="order-total">
                 <span>Order Total</span>
-                <span class="total-amount">${{ orderSummary.total | number: '1.2-2' }}</span>
+                <span class="total-amount"
+                  >${{ orderSummary.subTotal + orderSummary.shipping | number: '1.2-2' }}</span
+                >
               </div>
 
               <!-- Place Order Button -->

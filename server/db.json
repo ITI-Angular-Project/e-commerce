@@ -5311,7 +5311,60 @@
       "id": 5
     }
   ],
+<<<<<<< HEAD
+  "cart": [
+    {
+      "category": "Speakers",
+      "title": "SoundBox Portable",
+      "subtitle": "IP67 waterproof port",
+      "imageSrc": "https://lh3.googleusercontent.com/aida-public/AB6AXuBmBodwUBzHvdyNZSxOB-eNq4NnDsK5jdmjZV9Okhy4u8vXjUn-L2ekMCuDWfq4KVqO225jNr0GaUpf8qLvmcKaw4e2HinYop6faxo-8jThKcu7bY0ZtC9Tpt5-g2X6F0AEZV4Hg8gcCzOe-dnn4sZjET0e970LDoVjnlQq0l0HWY9jtZoExOMDBcQbNJgHvr5q-NkrlmTwOvCKpfRTLdMDxJ__KGVZT7SvD8yRqfak9A9pb_xrbZcwjQY5QBMhoBTnXdgTx-ES8Y9t",
+      "amount": 1,
+      "price": 149,
+      "imageAlt": "SoundBox Portable",
+      "productId": 3,
+      "id": 7,
+      "userId": 1
+    },
+    {
+      "category": "Speakers",
+      "title": "SoundBox Portable",
+      "subtitle": "IP67 waterproof port",
+      "imageSrc": "https://lh3.googleusercontent.com/aida-public/AB6AXuBmBodwUBzHvdyNZSxOB-eNq4NnDsK5jdmjZV9Okhy4u8vXjUn-L2ekMCuDWfq4KVqO225jNr0GaUpf8qLvmcKaw4e2HinYop6faxo-8jThKcu7bY0ZtC9Tpt5-g2X6F0AEZV4Hg8gcCzOe-dnn4sZjET0e970LDoVjnlQq0l0HWY9jtZoExOMDBcQbNJgHvr5q-NkrlmTwOvCKpfRTLdMDxJ__KGVZT7SvD8yRqfak9A9pb_xrbZcwjQY5QBMhoBTnXdgTx-ES8Y9t",
+      "amount": 1,
+      "price": 149,
+      "imageAlt": "SoundBox Portable",
+      "productId": 3,
+      "id": 8,
+      "userId": 1
+    },
+    {
+      "category": "Phones & Tablets",
+      "title": "4*1 Charging Cable USB A/USB C To Type-C & Lightning 65W Fast & Turbo Charging Cable",
+      "subtitle": "Discover the premium",
+      "imageSrc": "https://eg.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/94/1421031/1.jpg?1905",
+      "amount": 1,
+      "price": 49.9,
+      "imageAlt": "4*1 Charging Cable USB A/USB C To Type-C & Lightning 65W Fast & Turbo Charging Cable",
+      "productId": 2,
+      "id": 9,
+      "userId": 1
+    },
+    {
+      "category": "Phones & Tablets",
+      "title": "RichRipple Pro3 Bluetooth Headsets Wireless Pods Pro Earphones--Blue",
+      "subtitle": "Discover the premium",
+      "imageSrc": "https://eg.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/13/4556331/1.jpg?4797",
+      "amount": 1,
+      "price": 201.24,
+      "imageAlt": "RichRipple Pro3 Bluetooth Headsets Wireless Pods Pro Earphones--Blue",
+      "productId": 5,
+      "userId": 1,
+      "id": 10
+    }
+  ],
+=======
   "cart": [],
+>>>>>>> main
   "orders": [
     {
       "id": "1",
@@ -5365,6 +5418,34 @@
       ]
     },
     {
+<<<<<<< HEAD
+      "orderNumber": "#TS-647080",
+      "datePlaced": "Apr 9, 2026",
+      "totalAmount": 347.9,
+      "userId": 1,
+      "status": "Processing",
+      "items": [
+        {
+          "name": "SoundBox Portable",
+          "quantity": 1,
+          "price": 149,
+          "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuBmBodwUBzHvdyNZSxOB-eNq4NnDsK5jdmjZV9Okhy4u8vXjUn-L2ekMCuDWfq4KVqO225jNr0GaUpf8qLvmcKaw4e2HinYop6faxo-8jThKcu7bY0ZtC9Tpt5-g2X6F0AEZV4Hg8gcCzOe-dnn4sZjET0e970LDoVjnlQq0l0HWY9jtZoExOMDBcQbNJgHvr5q-NkrlmTwOvCKpfRTLdMDxJ__KGVZT7SvD8yRqfak9A9pb_xrbZcwjQY5QBMhoBTnXdgTx-ES8Y9t"
+        },
+        {
+          "name": "SoundBox Portable",
+          "quantity": 1,
+          "price": 149,
+          "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuBmBodwUBzHvdyNZSxOB-eNq4NnDsK5jdmjZV9Okhy4u8vXjUn-L2ekMCuDWfq4KVqO225jNr0GaUpf8qLvmcKaw4e2HinYop6faxo-8jThKcu7bY0ZtC9Tpt5-g2X6F0AEZV4Hg8gcCzOe-dnn4sZjET0e970LDoVjnlQq0l0HWY9jtZoExOMDBcQbNJgHvr5q-NkrlmTwOvCKpfRTLdMDxJ__KGVZT7SvD8yRqfak9A9pb_xrbZcwjQY5QBMhoBTnXdgTx-ES8Y9t"
+        },
+        {
+          "name": "4*1 Charging Cable USB A/USB C To Type-C & Lightning 65W Fast & Turbo Charging Cable",
+          "quantity": 1,
+          "price": 49.9,
+          "imageUrl": "https://eg.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/94/1421031/1.jpg?1905"
+        }
+      ],
+      "id": "flRblLJ"
+=======
       "orderNumber": "#TS-979552",
       "datePlaced": "Apr 9, 2026",
       "totalAmount": 448.2,
@@ -5384,6 +5465,7 @@
         }
       ],
       "id": "8uA1JP0"
+>>>>>>> main
     }
   ]
 }

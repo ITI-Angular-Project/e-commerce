@@ -19,6 +19,7 @@ export class CartSummaryComponent {
   navigateToCheckout() {
     this.router.navigate(['/checkout'], {
       state: {
+        fromRedirect: true,
         orderSummary: {
           subtotal: this.subTotal(),
           shipping: this.shipping,
