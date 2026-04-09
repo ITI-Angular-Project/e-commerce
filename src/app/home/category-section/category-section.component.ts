@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductListComponent } from '../../features/products/product-list/product-list.component';
 
 @Component({
   selector: 'app-category-section',

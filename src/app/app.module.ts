@@ -13,7 +13,6 @@ import { LayoutComponent } from './layout/layout.component';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptorInterceptor as authInterceptor } from './core/interceptors/auth-interceptor.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { CheckoutComponent } from './features/checkout page/checkout.component';
 
 @NgModule({
   declarations: [App, NavbarComponent, FooterComponent, LayoutComponent],
