@@ -1,14 +1,20 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { computed,inject, Injectable, signal } from '@angular/core';
 import { CartItem } from '../Models/Cart/cart-item.model';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../Models/Cart/product.model';
 import { CreateCartRequest } from '../Models/Cart/create-cart-item.model';
+import { Observable, of, switchMap, tap } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   public Cart = signal<CartItem[]>([]);
+
+  public cartItemCount = computed(() =>
+    this.Cart().reduce((sum, item) => sum + item.amount, 0)
+  );
   /* [
     {
       imageSrc:
@@ -44,44 +50,83 @@ export class CartService {
       // OriginalPrice: 349.00,
     },
   ] */
-  public user = localStorage.getItem('user');
-  private baseUrl = 'http://localhost:3000';
-  private httpClient = inject(HttpClient);
-  getCart() {
-    return this.httpClient.get<CartItem[]>(`${this.baseUrl}/cart`);
+  private readonly baseUrl = 'http://localhost:3000';
+  private readonly httpClient = inject(HttpClient);
+  private cartLoaded = false;
+
+  getCart(forceRefresh = false): Observable<CartItem[]> {
+    if (this.cartLoaded && !forceRefresh) {
+      return of(this.Cart());
+    }
+        return this.httpClient.get<CartItem[]>(`${this.baseUrl}/cart`).pipe(
+      tap((items) => {
+        this.Cart.set(items);
+        this.cartLoaded = true;
+      })
+    );
   }
   // AddToCart(item: CartItem) {
   //   this.httpClient.post(`${this.baseUrl}/cart`, item);
   // }
-  addToCart(product: Product) {
-    const user = localStorage.getItem('user');
-    if (!user) {
-    }
-
-    let item: CreateCartRequest = {
+  addToCart(product: Product, quantity = 1): Observable<CartItem> {
+    const item: CreateCartRequest = {
       category: product.category,
       title: product.name,
       subtitle: product.description.substring(0, 20),
       imageSrc: product.image,
-      amount: 1,
+      amount: Math.max(1, quantity),
       price: product.price,
       imageAlt: product.name,
       productId: product.id,
-      // userId:user.id
     };
-    return this.httpClient.post<CreateCartRequest>(`${this.baseUrl}/cart`, item);
+
+    return this.getCart().pipe(
+      switchMap((cartItems) => {
+        const existingItem = cartItems.find((cartItem) => cartItem.productId === product.id);
+
+        if (existingItem?.id != null) {
+          return this.changeQuantity(existingItem.id, existingItem.amount + item.amount);
+        }
+
+        return this.httpClient.post<CartItem>(`${this.baseUrl}/cart`, item).pipe(
+          tap((createdItem) => {
+            this.Cart.update((currentItems) => [...currentItems, createdItem]);
+          })
+        );
+      })
+    );
   }
-  deleteAllCart(cartId: number) {
-    this.httpClient.delete(`${this.baseUrl}/cart/${cartId}`);
-    // this.httpClient.delete(`${this.baseUrl}/cart?userId=${user.id}`);
+
+
+
+
+ deleteAllCart(cartId: number) {
+    return this.httpClient.delete(`${this.baseUrl}/cart/${cartId}`).pipe(
+      tap(() => {
+        this.Cart.set([]);
+      })
+    );
   }
-  changeQuantity(cartItemId: number, newQuantity: number) {
-    console.log(newQuantity);
-    return this.httpClient.patch<CartItem>(`${this.baseUrl}/cart/${cartItemId}`, {
-      amount: newQuantity,
-    });
+
+
+   changeQuantity(cartItemId: number, newQuantity: number): Observable<CartItem> {
+    return this.httpClient
+      .patch<CartItem>(`${this.baseUrl}/cart/${cartItemId}`, {
+        amount: newQuantity,
+      })
+      .pipe(
+        tap((updatedItem) => {
+          this.Cart.update((items) =>
+            items.map((item) => (item.id === cartItemId ? updatedItem : item))
+          );
+        })
+      );
   }
-  deleteItemFromCart(id: number) {
-    return this.httpClient.delete(`${this.baseUrl}/cart/${id}`);
+   deleteItemFromCart(id: number) {
+    return this.httpClient.delete(`${this.baseUrl}/cart/${id}`).pipe(
+      tap(() => {
+        this.Cart.update((items) => items.filter((item) => item.id !== id));
+      })
+    );
   }
 }

@@ -5303,8 +5303,37 @@
       "password": "$2a$10$0GiguKjHi36VfJECGv1eVO72b1zjtGdZ2G.12CnRb22NNgy0LJLfK",
       "username": "Bassel.Radwan",
       "id": 4
+    },
+    {
+      "email": "m7mdanwar0@gmail.com",
+      "password": "$2a$10$z2D6H4gLBPU5w4gP94n7EOkucvH4ZeCHvohuebkG717ai5RAJfR1q",
+      "username": "Mohamed.Anwar",
+      "id": 5
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "category": "Phones & Tablets",
+      "title": "Samsung Galaxy A07 - 6.7\" inch 256GB/8GB Dual SIM 4G Mobile Phone - Black",
+      "subtitle": "Discover the premium",
+      "imageSrc": "https://eg.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/40/3520431/1.jpg?3676",
+      "amount": 6,
+      "price": 11470,
+      "imageAlt": "Samsung Galaxy A07 - 6.7\" inch 256GB/8GB Dual SIM 4G Mobile Phone - Black",
+      "productId": 1,
+      "id": 1
+    },
+    {
+      "category": "Phones & Tablets",
+      "title": "4*1 Charging Cable USB A/USB C To Type-C & Lightning 65W Fast & Turbo Charging Cable",
+      "subtitle": "Discover the premium",
+      "imageSrc": "https://eg.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/94/1421031/1.jpg?1905",
+      "amount": 3,
+      "price": 49.9,
+      "imageAlt": "4*1 Charging Cable USB A/USB C To Type-C & Lightning 65W Fast & Turbo Charging Cable",
+      "productId": 2,
+      "id": 2
+    }
+  ],
   "orders": []
 }

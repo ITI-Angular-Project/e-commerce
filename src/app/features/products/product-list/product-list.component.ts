@@ -1,7 +1,7 @@
-import { Component, OnInit, signal, ChangeDetectorRef } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ProductService } from '../../../core/services/product.service';
 import { Product } from '../../../core/Models/Cart/product.model';
+import { CartService } from '../../../core/services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -28,15 +28,13 @@ export class ProductListComponent implements OnInit {
   selectedMinPrice: number = 0;
   selectedMaxPrice: number = 0;
   sortBy: string = 'default'; 
-
-
-  cartCount = signal(3);
   toastMessage: string = '';
   showToast: boolean = false;
   toastTimer: any;
 
   constructor(
     private productService: ProductService,
+    private cartService: CartService,
     private cdr: ChangeDetectorRef
   ) {}
 
@@ -49,7 +47,7 @@ export class ProductListComponent implements OnInit {
         
         const cats = products.map(p => p.category);
         this.categories = ['All', ...Array.from(new Set(cats))];
-        
+
         const prices = products.map(p => p.price);
         this.minPrice = Math.floor(Math.min(...prices));
         this.maxPrice = Math.ceil(Math.max(...prices));
@@ -168,17 +166,25 @@ export class ProductListComponent implements OnInit {
   }
 
   onAddToCart(product: Product) {
-    this.cartCount.update(count => count + 1);
-    this.toastMessage = `${product.name} added to cart!`;
-    this.showToast = true;
+    this.cartService.addToCart(product).subscribe({
+      next: () => {
+        this.toastMessage = `${product.name} added to cart!`;
+        this.showToast = true;
 
-    if (this.toastTimer) {
-      clearTimeout(this.toastTimer);
-    }
+        if (this.toastTimer) {
+          clearTimeout(this.toastTimer);
+        }
 
-    this.toastTimer = setTimeout(() => {
-      this.showToast = false;
-    }, 3000);
+        this.toastTimer = setTimeout(() => {
+          this.showToast = false;
+        }, 3000);
+      },
+      error: (err) => {
+        console.error('Add to cart failed:', err);
+        this.toastMessage = `Could not add ${product.name} to cart.`;
+        this.showToast = true;
+      }
+    });
   }
 
   addToCart(product: Product) {
