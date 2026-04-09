@@ -16,13 +16,13 @@ export class CartPageComponent implements OnInit {
   );
   ngOnInit(): void {
     this.cartService.getCart().subscribe({
-      next: (value) => {
-        this.cartService.Cart.set(value);
-        // this.CartItems.set(value);
+      next: () => {
+        // Shared cart signal is updated inside CartService.
       },
     });
   }
 
+  
   updateItemQuantity(item: CartItem) {
     this.cartService.changeQuantity(item.id!, item.amount).subscribe({
       next: (value) => {

@@ -2,6 +2,9 @@ import { Component, OnInit, signal, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../../core/services/product.service';
 import { Product } from '../../../core/Models/Cart/product.model';
+import { CartService } from '../../../core/services/cart.service';
+
+
 
 @Component({
   selector: 'app-product-details',
@@ -14,7 +17,6 @@ export class ProductDetailsComponent implements OnInit {
   notFound: boolean = false;
   loading: boolean = true;
   quantity: number = 1;
-  cartCount = signal(3);
   toastMessage: string = '';
   showToast: boolean = false;
   toastTimer: any;
@@ -22,6 +24,7 @@ export class ProductDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
+        private cartService: CartService,
     private cdr: ChangeDetectorRef
   ) {}
 
@@ -87,20 +90,27 @@ export class ProductDetailsComponent implements OnInit {
       this.quantity--;
     }
   }
-
-  addToCart() {
+addToCart() {
     if (!this.product) return;
 
-    this.cartCount.update(count => count + this.quantity);
-    this.toastMessage = `${this.quantity} x ${this.product.name} added to cart!`;
-    this.showToast = true;
+    this.cartService.addToCart(this.product, this.quantity).subscribe({
+      next: () => {
+        this.toastMessage = `${this.quantity} x ${this.product!.name} added to cart!`;
+        this.showToast = true;
 
-    if (this.toastTimer) {
-      clearTimeout(this.toastTimer);
-    }
+        if (this.toastTimer) {
+          clearTimeout(this.toastTimer);
+        }
 
-    this.toastTimer = setTimeout(() => {
-      this.showToast = false;
-    }, 3000);
+        this.toastTimer = setTimeout(() => {
+          this.showToast = false;
+        }, 3000);
+      },
+      error: (err) => {
+        console.error('Add to cart failed:', err);
+        this.toastMessage = `Could not add ${this.product!.name} to cart.`;
+        this.showToast = true;
+      }
+    });
   }
 }
