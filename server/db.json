@@ -5313,6 +5313,31 @@
   ],
   "cart": [
     {
+<<<<<<< Updated upstream
+=======
+      "category": "Phones & Tablets",
+      "title": "Samsung Galaxy A07 ,4G ,8GB RAM , 256GB ,Dual-SIM Light Violet",
+      "subtitle": "Discover the premium",
+      "imageSrc": "https://eg.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/22/4381431/1.jpg?5479",
+      "amount": 1,
+      "price": 11470,
+      "imageAlt": "Samsung Galaxy A07 ,4G ,8GB RAM , 256GB ,Dual-SIM Light Violet",
+      "productId": 43,
+      "id": 1
+    },
+    {
+      "category": "Computing",
+      "title": "Metal Portable Tablet & Laptop Stand Foldable  -  Multi  Angles Height Adjustment",
+      "subtitle": "Discover the premium",
+      "imageSrc": "https://eg.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/96/421723/1.jpg?5013",
+      "amount": 3,
+      "price": 139,
+      "imageAlt": "Metal Portable Tablet & Laptop Stand Foldable  -  Multi  Angles Height Adjustment",
+      "productId": 161,
+      "id": 2
+    },
+    {
+>>>>>>> Stashed changes
       "category": "Speakers",
       "title": "SoundBox Portable",
       "subtitle": "IP67 waterproof port",
