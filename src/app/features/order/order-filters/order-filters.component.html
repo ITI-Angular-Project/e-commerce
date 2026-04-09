@@ -1,0 +1,11 @@
+<div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+  @for (filter of filters; track $index) {
+    <button
+      (click)="setFilter(filter)"
+      class="filter-btn px-4 py-2 rounded-pill border fw-medium"
+      [class.active]="activeFilter === filter"
+    >
+      {{ filter === 'All' ? 'All Orders' : filter }}
+    </button>
+  }
+</div>
