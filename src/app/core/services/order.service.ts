@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { OrderHistory } from '../Models/Order/order-history-item.model';
+import { Order } from '../Models/Order/order-item.model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,9 +13,9 @@ export class OrderService {
    * Get order history from json-server mock
    * @returns Observable with array of order history
    */
-  getOrderHistory(): Observable<OrderHistory[]> {
+  getOrderHistory(): Observable<Order[]> {
     // using json-server endpoint as requested
-    return this.http.get<OrderHistory[]>('http://localhost:3000/orders');
+    return this.http.get<Order[]>('http://localhost:3000/orders');
   }
 
   /**
@@ -23,7 +23,7 @@ export class OrderService {
    * @param orderData - The order data
    * @returns Observable with the created order
    */
-  placeOrder(orderData: Omit<OrderHistory, 'id'>): Observable<OrderHistory> {
-    return this.http.post<OrderHistory>('http://localhost:3000/orders', orderData);
+  placeOrder(orderData: Omit<Order, 'id'>): Observable<Order> {
+    return this.http.post<Order>('http://localhost:3000/orders', orderData);
   }
 }
