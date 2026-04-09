@@ -5311,43 +5311,7 @@
       "id": 5
     }
   ],
-  "cart": [
-    {
-      "category": "Speakers",
-      "title": "SoundBox Portable",
-      "subtitle": "IP67 waterproof port",
-      "imageSrc": "https://lh3.googleusercontent.com/aida-public/AB6AXuBmBodwUBzHvdyNZSxOB-eNq4NnDsK5jdmjZV9Okhy4u8vXjUn-L2ekMCuDWfq4KVqO225jNr0GaUpf8qLvmcKaw4e2HinYop6faxo-8jThKcu7bY0ZtC9Tpt5-g2X6F0AEZV4Hg8gcCzOe-dnn4sZjET0e970LDoVjnlQq0l0HWY9jtZoExOMDBcQbNJgHvr5q-NkrlmTwOvCKpfRTLdMDxJ__KGVZT7SvD8yRqfak9A9pb_xrbZcwjQY5QBMhoBTnXdgTx-ES8Y9t",
-      "amount": 1,
-      "price": 149,
-      "imageAlt": "SoundBox Portable",
-      "productId": 3,
-      "id": 7,
-      "userId": 4
-    },
-    {
-      "category": "Speakers",
-      "title": "SoundBox Portable",
-      "subtitle": "IP67 waterproof port",
-      "imageSrc": "https://lh3.googleusercontent.com/aida-public/AB6AXuBmBodwUBzHvdyNZSxOB-eNq4NnDsK5jdmjZV9Okhy4u8vXjUn-L2ekMCuDWfq4KVqO225jNr0GaUpf8qLvmcKaw4e2HinYop6faxo-8jThKcu7bY0ZtC9Tpt5-g2X6F0AEZV4Hg8gcCzOe-dnn4sZjET0e970LDoVjnlQq0l0HWY9jtZoExOMDBcQbNJgHvr5q-NkrlmTwOvCKpfRTLdMDxJ__KGVZT7SvD8yRqfak9A9pb_xrbZcwjQY5QBMhoBTnXdgTx-ES8Y9t",
-      "amount": 1,
-      "price": 149,
-      "imageAlt": "SoundBox Portable",
-      "productId": 3,
-      "id": 8,
-      "userId": 4
-    },
-    {
-      "category": "Electronics",
-      "title": "Evolve VLD32NA - 32 Inch HD LED Frameless TV",
-      "subtitle": "Discover the premium",
-      "imageSrc": "https://eg.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/80/8739121/1.jpg?2171",
-      "amount": 1,
-      "price": 4599,
-      "imageAlt": "Evolve VLD32NA - 32 Inch HD LED Frameless TV",
-      "productId": 325,
-      "id": 9
-    }
-  ],
+  "cart": [],
   "orders": [
     {
       "id": "1",
