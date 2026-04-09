@@ -1,0 +1,10 @@
+.order-bg {
+    background-color: #F8F9FA !important;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.view-archive-link:hover span {
+    transform: translateX(4px);
+}
+.view-archive-link span {
+    transition: transform 0.2s ease-in-out;
+}

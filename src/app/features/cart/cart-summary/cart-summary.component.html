@@ -4,12 +4,14 @@
 <div class="space-y-4 mb-4">
   <div class="d-flex justify-content-between align-items-center text-slate-500 fw-medium">
     <span>Subtotal</span>
-    <span class="text-slate-900">${{subTotal()}}</span>
+    <span class="text-slate-900">${{ subTotal() }}</span>
   </div>
 
   <div class="d-flex justify-content-between align-items-center text-slate-500 fw-medium">
     <span>Shipping</span>
-    <span class="text-green-500 fw-bold text-uppercase text-xs tracking-wider">{{shipping||"Free"}}</span>
+    <span class="text-green-500 fw-bold text-uppercase text-xs tracking-wider">{{
+      shipping || 'Free'
+    }}</span>
   </div>
   <!-- 
   <div class="d-flex justify-content-between align-items-center text-slate-500 fw-medium">
@@ -22,14 +24,16 @@
 <div class="pt-3 border-top border-slate-100 mb-4">
   <div class="d-flex justify-content-between align-items-center">
     <span class="fs-6 fw-bold">Total</span>
-    <span class="fs-4 fw-bold text-slate-900">${{subTotal()+shipping}}</span>
+    <span class="fs-4 fw-bold text-slate-900">${{ subTotal() + shipping }}</span>
   </div>
   <p class="text-slate-400 text-xs mt-1">Tax calculated at checkout</p>
 </div>
 
 <!-- CTA Button -->
-<button class="btn btn-checkout w-100 text-white fw-bold d-flex align-items-center justify-content-center gap-3 mb-4"
-routerLink="../checkout">
+<button
+  class="btn btn-checkout w-100 text-white fw-bold d-flex align-items-center justify-content-center gap-3 mb-4"
+  (click)="navigateToCheckout()"
+>
   Proceed to Checkout
   <span class="material-symbols-outlined">arrow_forward</span>
 </button>
@@ -37,7 +41,9 @@ routerLink="../checkout">
 <!-- Trust Signals -->
 <div class="space-y-4 text-center">
   <div class="d-flex align-items-center justify-content-center gap-3">
-    <span class="material-symbols-outlined text-green-500" style="font-size: 1.25rem">verified_user</span>
+    <span class="material-symbols-outlined text-green-500" style="font-size: 1.25rem"
+      >verified_user</span
+    >
     <span class="text-xs fw-medium text-slate-500">Secure checkout guaranteed</span>
   </div>
 

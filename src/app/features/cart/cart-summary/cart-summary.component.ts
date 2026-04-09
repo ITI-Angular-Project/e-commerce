@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart-summary',
@@ -14,4 +15,16 @@ import { Component, input } from '@angular/core';
 export class CartSummaryComponent {
   public subTotal = input.required<number>();
   public shipping = 0;
+  private router = inject(Router);
+  navigateToCheckout() {
+    this.router.navigate(['/checkout'], {
+      state: {
+        orderSummary: {
+          subtotal: this.subTotal(),
+          shipping: this.shipping,
+          total: this.subTotal() + this.shipping,
+        },
+      },
+    });
+  }
 }

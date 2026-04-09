@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { Component, inject, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OrderService } from '../../../core/services/order.service';
+import { CartService } from '../../../core/services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
   standalone: false,
   templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.scss']
-
+  styleUrls: ['./checkout.component.scss'],
 })
 export class CheckoutComponent implements OnInit {
   checkoutForm!: FormGroup;
+  cartService: CartService = inject(CartService);
   selectedDeliveryMethod: string = 'standard';
   selectedPaymentMethod: string = 'credit-card';
   Math = Math;
+  orderSummmary: any;
+  router = inject(Router);
 
   // Order Summary Data
   orderItems = [
@@ -23,24 +26,24 @@ export class CheckoutComponent implements OnInit {
       name: 'Pro Wireless X10',
       subtitle: 'Silver, AM83',
       quantity: 1,
-      price: 299.00,
-      image: '/images/pro-wireless-x10.jpg'
+      price: 299.0,
+      image: '/images/pro-wireless-x10.jpg',
     },
     {
       id: 2,
       name: 'Elite Pods Pro',
       subtitle: 'White, H115',
       quantity: 1,
-      price: 199.00,
-      image: '/images/elite-pods-pro.jpg'
-    }
+      price: 199.0,
+      image: '/images/elite-pods-pro.jpg',
+    },
   ];
 
   orderSummary = {
-    subtotal: 498.00,
+    subtotal: 498.0,
     shipping: 0,
-    discount: -49.80,
-    total: 448.20
+    discount: -49.8,
+    total: 448.2,
   };
 
   deliveryOptions = [
@@ -49,21 +52,31 @@ export class CheckoutComponent implements OnInit {
       name: 'Standard Shipping',
       duration: '4-7 Business Days',
       cost: 'FREE',
-      isPremium: false
+      isPremium: false,
     },
     {
       id: 'express',
       name: 'Express Delivery',
       duration: '1-2 Business Days',
       cost: '$9.99',
-      isPremium: false
-    }
+      isPremium: false,
+    },
   ];
 
-  constructor(private fb: FormBuilder, private orderService: OrderService) {}
+  constructor(
+    private fb: FormBuilder,
+    private orderService: OrderService,
+  ) {
+    this.orderSummmary = this.router.currentNavigation()?.extras.state?.['orderSummary'];
+  }
 
   ngOnInit(): void {
     this.initializeForm();
+    this.cartService.getCart().subscribe({
+      next: (value) => {
+        this.cartService.Cart.set(value);
+      },
+    });
   }
 
   initializeForm(): void {
@@ -89,7 +102,7 @@ export class CheckoutComponent implements OnInit {
       cardholderName: ['', Validators.required],
       cardNumber: ['', Validators.required],
       expiryDate: ['', Validators.required],
-      cvv: ['', Validators.required]
+      cvv: ['', Validators.required],
     });
   }
 
@@ -106,18 +119,63 @@ export class CheckoutComponent implements OnInit {
   placeOrder(): void {
     if (this.checkoutForm.valid) {
       console.log('Form Data:', this.checkoutForm.value);
-      // Here you would typically call a service to submit the order
-      // this.orderService.placeOrder(this.checkoutForm.value).subscribe(...);
+      
+      const payload = {
+        orderNumber: `#TS-${Math.floor(100000 + Math.random() * 900000)}`,
+        datePlaced: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        totalAmount: this.orderSummary.total,
+        status: 'Processing',
+        items: this.orderItems.map(item => ({
+          name: item.name,
+          quantity: item.quantity,
+          price: item.price,
+          imageUrl: item.image
+        }))
+      };
+
+      this.orderService.placeOrder(payload).subscribe({
+        next: (response) => {
+          console.log('Order created successfully!', response);
+          this.router.navigate(['/orders']); // Redirect to orders history
+        },
+        error: (err) => {
+          console.error('Failed to create order', err);
+        }
+      });
     } else {
+      this.checkoutForm.markAllAsTouched();
       console.log('Form is invalid');
     }
   }
 
+  isInvalid(controlName: string): boolean {
+    const control = this.checkoutForm.get(controlName);
+    return !!control && control.invalid && control.touched;
+  }
+
   getCountries(): string[] {
-    return ['United States', 'Canada', 'Mexico', 'United Kingdom', 'Germany', 'France', 'Spain', 'Italy'];
+    return [
+      'United States',
+      'Canada',
+      'Mexico',
+      'United Kingdom',
+      'Germany',
+      'France',
+      'Spain',
+      'Italy',
+    ];
   }
 
   getStatesList(): string[] {
-    return ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware'];
+    return [
+      'Alabama',
+      'Alaska',
+      'Arizona',
+      'Arkansas',
+      'California',
+      'Colorado',
+      'Connecticut',
+      'Delaware',
+    ];
   }
 }

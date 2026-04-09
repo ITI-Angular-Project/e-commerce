@@ -1,4 +1,3 @@
-
 <!-- Main Content -->
 <main class="checkout-main">
   <div class="container">
@@ -21,8 +20,11 @@
                     class="form-control checkout-input"
                     placeholder="alex@example.com"
                     formControlName="email"
-                    [class.is-invalid]="checkoutForm.get('email')?.invalid && checkoutForm.get('email')?.touched"
+                    [class.is-invalid]="isInvalid('email')"
                   />
+                  <div class="invalid-feedback">
+                    Please enter a valid email address.
+                  </div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label">Phone Number</label>
@@ -31,8 +33,11 @@
                     class="form-control checkout-input"
                     placeholder="+1 (555) 000-0000"
                     formControlName="phone"
-                    [class.is-invalid]="checkoutForm.get('phone')?.invalid && checkoutForm.get('phone')?.touched"
+                    [class.is-invalid]="isInvalid('phone')"
                   />
+                  <div class="invalid-feedback">
+                    Phone number is required.
+                  </div>
                 </div>
               </div>
             </div>
@@ -53,7 +58,11 @@
                     class="form-control checkout-input"
                     placeholder="Alex Johnson"
                     formControlName="fullName"
+                    [class.is-invalid]="isInvalid('fullName')"
                   />
+                  <div class="invalid-feedback">
+                    Full Name is required.
+                  </div>
                 </div>
                 <div class="col-12">
                   <label class="form-label">Address Line 1</label>
@@ -62,7 +71,11 @@
                     class="form-control checkout-input"
                     placeholder="123 Tech Avenue"
                     formControlName="addressLine1"
+                    [class.is-invalid]="isInvalid('addressLine1')"
                   />
+                  <div class="invalid-feedback">
+                    Address is required.
+                  </div>
                 </div>
                 <div class="col-12">
                   <label class="form-label">Address Line 2 (Optional)</label>
@@ -80,7 +93,11 @@
                     class="form-control checkout-input"
                     placeholder="San Francisco"
                     formControlName="city"
+                    [class.is-invalid]="isInvalid('city')"
                   />
+                  <div class="invalid-feedback">
+                    City is required.
+                  </div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label">State / Province</label>
@@ -89,7 +106,11 @@
                     class="form-control checkout-input"
                     placeholder="California"
                     formControlName="stateProvince"
+                    [class.is-invalid]="isInvalid('stateProvince')"
                   />
+                  <div class="invalid-feedback">
+                    State / Province is required.
+                  </div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label">ZIP / Postal Code</label>
@@ -98,15 +119,18 @@
                     class="form-control checkout-input"
                     placeholder="94025"
                     formControlName="zipPostalCode"
+                    [class.is-invalid]="isInvalid('zipPostalCode')"
                   />
+                  <div class="invalid-feedback">
+                    ZIP / Postal Code is required.
+                  </div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label">Country</label>
-                  <select class="form-select checkout-input" formControlName="country">
+                  <select class="form-select checkout-input" formControlName="country" [class.is-invalid]="isInvalid('country')">
                     <option value="">Select Country</option>
                     <option value="us">United States</option>
                     <option value="ca">Canada</option>
-                    <option value="it">Egypt</option>
                     <option value="mx">Mexico</option>
                     <option value="uk">United Kingdom</option>
                     <option value="de">Germany</option>
@@ -114,6 +138,9 @@
                     <option value="es">Spain</option>
                     <option value="it">Italy</option>
                   </select>
+                  <div class="invalid-feedback">
+                    Please select a country.
+                  </div>
                 </div>
               </div>
             </div>
@@ -135,7 +162,10 @@
                     (click)="selectDeliveryMethod('standard')"
                   >
                     <div class="delivery-radio">
-                      <i class="bi bi-check-circle-fill" *ngIf="selectedDeliveryMethod === 'standard'"></i>
+                      <i
+                        class="bi bi-check-circle-fill"
+                        *ngIf="selectedDeliveryMethod === 'standard'"
+                      ></i>
                     </div>
                     <div class="delivery-content">
                       <h6 class="delivery-title">Standard Shipping</h6>
@@ -155,7 +185,10 @@
                     (click)="selectDeliveryMethod('express')"
                   >
                     <div class="delivery-radio">
-                      <i class="bi bi-check-circle" *ngIf="selectedDeliveryMethod === 'express'"></i>
+                      <i
+                        class="bi bi-check-circle"
+                        *ngIf="selectedDeliveryMethod === 'express'"
+                      ></i>
                     </div>
                     <div class="delivery-content">
                       <h6 class="delivery-title">Express Delivery</h6>
@@ -215,20 +248,28 @@
                       class="form-control checkout-input"
                       placeholder="Alex Johnson"
                       formControlName="cardholderName"
+                      [class.is-invalid]="isInvalid('cardholderName')"
                     />
+                    <div class="invalid-feedback">
+                      Cardholder name is required.
+                    </div>
                   </div>
                   <div class="col-12">
                     <label class="form-label">Card Number</label>
-                    <div class="input-group card-input-group">
+                    <div class="input-group card-input-group" [class.is-invalid]="isInvalid('cardNumber')">
                       <input
                         type="text"
                         class="form-control checkout-input"
                         placeholder="0000 0000 0000 0000"
                         formControlName="cardNumber"
+                        [class.is-invalid]="isInvalid('cardNumber')"
                       />
                       <span class="input-group-text card-icon-group">
                         <i class="bi bi-credit-card"></i>
                       </span>
+                    </div>
+                    <div class="invalid-feedback" [class.d-block]="isInvalid('cardNumber')">
+                      Card number is required.
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -238,7 +279,11 @@
                       class="form-control checkout-input"
                       placeholder="MM / YY"
                       formControlName="expiryDate"
+                      [class.is-invalid]="isInvalid('expiryDate')"
                     />
+                    <div class="invalid-feedback">
+                      Expiry date is required.
+                    </div>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label">CVV</label>
@@ -247,7 +292,11 @@
                       class="form-control checkout-input"
                       placeholder="•••"
                       formControlName="cvv"
+                      [class.is-invalid]="isInvalid('cvv')"
                     />
+                    <div class="invalid-feedback">
+                      CVV is required.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -274,21 +323,23 @@
 
               <!-- Order Items -->
               <div class="order-items">
-                <div *ngFor="let item of orderItems" class="order-item">
-                  <div class="item-image-placeholder">
-                    <img [src]="item.image" [alt]="item.name" />
+                @for (item of this.cartService.Cart(); track item) {
+                  <div class="order-item">
+                    <div class="item-image-placeholder">
+                      <img [src]="item.imageSrc" [alt]="item.title" />
+                    </div>
+                    <div class="item-details">
+                      <h6 class="item-name">{{ item.title }}</h6>
+                      <p class="item-subtitle">{{ item.subtitle }}</p>
+                    </div>
+                    <div class="item-qty">
+                      <small>Qty: {{ item.amount }}</small>
+                    </div>
+                    <div class="item-price">
+                      <strong>${{ item.price | number: '1.2-2' }}</strong>
+                    </div>
                   </div>
-                  <div class="item-details">
-                    <h6 class="item-name">{{ item.name }}</h6>
-                    <p class="item-subtitle">{{ item.subtitle }}</p>
-                  </div>
-                  <div class="item-qty">
-                    <small>Qty: {{ item.quantity }}</small>
-                  </div>
-                  <div class="item-price">
-                    <strong>${{ item.price | number: '1.2-2' }}</strong>
-                  </div>
-                </div>
+                }
               </div>
 
               <!-- Divider -->
@@ -298,16 +349,18 @@
               <div class="order-calculation">
                 <div class="calc-row">
                   <span>Subtotal</span>
-                  <span>${{ orderSummary.subtotal | number: '1.2-2' }}</span>
+                  <span>${{ orderSummmary.subtotal | number: '1.2-2' }}</span>
                 </div>
                 <div class="calc-row">
                   <span>Shipping</span>
-                  <span class="text-success">FREE</span>
+                  <span class="text-success">{{ orderSummmary.delivery || 'FREE' }}</span>
                 </div>
-                <div class="calc-row">
+                <!-- <div class="calc-row">
                   <span>Discount (TECH40)</span>
-                  <span class="text-danger">${{ Math.abs(orderSummary.discount) | number: '1.2-2' }}</span>
-                </div>
+                  <span class="text-danger"
+                    >${{ Math.abs(orderSummary.discount) | number: '1.2-2' }}</span
+                  >
+                </div> -->
               </div>
 
               <!-- Divider -->
@@ -356,5 +409,3 @@
     </form>
   </div>
 </main>
-
-
