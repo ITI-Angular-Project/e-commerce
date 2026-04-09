@@ -14,8 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'checkout',
-    loadChildren: () =>
-      import('./features/checkoutPage/checkout.module').then((m) => m.CheckoutModule),
+    loadChildren: () => import('./features/checkout/checkout.module').then((m) => m.CheckoutModule),
   },
   {
     path: 'auth',
