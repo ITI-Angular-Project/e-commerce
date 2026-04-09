@@ -24,7 +24,7 @@ export class BestSeller implements OnInit {
 
             return a.price - b.price;
           })
-          .slice(0, 4);
+          .slice(0, 12);
       },
       error: (err) => {
         console.error('Failed to load best sellers:', err);
