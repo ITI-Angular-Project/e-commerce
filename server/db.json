@@ -5311,63 +5311,25 @@
       "id": 5
     }
   ],
-  "cart": [
-    {
-      "category": "Earbuds",
-      "title": "Elite Pods Pro",
-      "subtitle": "True wireless earbud",
-      "imageSrc": "https://lh3.googleusercontent.com/aida-public/AB6AXuAqJFOmNxHmwQgfeR4i7cMISDZ4Q8uR_77-_e1q5Zgc_qrh2aBQymeGhVEjo1SXfrBoV89HI6S30hfFIh5oAIGQhcTE_hl1obSwFne6BzUQyDRC-lvgt3NfPiVXKqwEwlLqNwlrZI5bvaBdhsRXPvvzM4dZA7zAMHrT3eqXR_HPeAi0KNTHOTtkeZbeb1spZxGau9LjJ26FU9B924md0dOySsddjJx9aNT1sU8aR2Aq6yQlWVyX-pQ_ZjlhHxIlXfeiE6oU47L2dJSm",
-      "amount": 1,
-      "price": 199,
-      "imageAlt": "Elite Pods Pro",
-      "productId": 2,
-      "id": 6,
-      "userId": 4
-    },
-    {
-      "category": "Speakers",
-      "title": "SoundBox Portable",
-      "subtitle": "IP67 waterproof port",
-      "imageSrc": "https://lh3.googleusercontent.com/aida-public/AB6AXuBmBodwUBzHvdyNZSxOB-eNq4NnDsK5jdmjZV9Okhy4u8vXjUn-L2ekMCuDWfq4KVqO225jNr0GaUpf8qLvmcKaw4e2HinYop6faxo-8jThKcu7bY0ZtC9Tpt5-g2X6F0AEZV4Hg8gcCzOe-dnn4sZjET0e970LDoVjnlQq0l0HWY9jtZoExOMDBcQbNJgHvr5q-NkrlmTwOvCKpfRTLdMDxJ__KGVZT7SvD8yRqfak9A9pb_xrbZcwjQY5QBMhoBTnXdgTx-ES8Y9t",
-      "amount": 1,
-      "price": 149,
-      "imageAlt": "SoundBox Portable",
-      "productId": 3,
-      "id": 7,
-      "userId": 4
-    },
-    {
-      "category": "Speakers",
-      "title": "SoundBox Portable",
-      "subtitle": "IP67 waterproof port",
-      "imageSrc": "https://lh3.googleusercontent.com/aida-public/AB6AXuBmBodwUBzHvdyNZSxOB-eNq4NnDsK5jdmjZV9Okhy4u8vXjUn-L2ekMCuDWfq4KVqO225jNr0GaUpf8qLvmcKaw4e2HinYop6faxo-8jThKcu7bY0ZtC9Tpt5-g2X6F0AEZV4Hg8gcCzOe-dnn4sZjET0e970LDoVjnlQq0l0HWY9jtZoExOMDBcQbNJgHvr5q-NkrlmTwOvCKpfRTLdMDxJ__KGVZT7SvD8yRqfak9A9pb_xrbZcwjQY5QBMhoBTnXdgTx-ES8Y9t",
-      "amount": 1,
-      "price": 149,
-      "imageAlt": "SoundBox Portable",
-      "productId": 3,
-      "id": 8,
-      "userId": 4
-    }
-  ],
-  
+  "cart": [],
   "orders": [
     {
       "id": "1",
       "orderNumber": "#TS-884291",
       "datePlaced": "Oct 12, 2023",
-      "totalAmount": 1848.00,
+      "totalAmount": 1848,
       "status": "Delivered",
       "items": [
         {
           "name": "MacBook Air M2 - 15-inch, 512GB (Midnight)",
           "quantity": 1,
-          "price": 1499.00,
+          "price": 1499,
           "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuCk_chmFlq6-VfN9AhUqbMtCD-VML28bb_wW3WN5Fu8Tn8uDstjkFpK8sPSHhY1RCqXYcpoQ8ljc9kn2kOxKxbMZ0UfrBpIpsBIghE6zpVUpQBOrT_Y_2PNSLGnMOT9eEV287B6OrGaFtUhmpmRjn0w1Bb8o-wL2IVgNW-kjXpgDtPIykVlssmVKGSCjQrkPxqQ2xvGMzEhW4d5rPwFSeGkzFWTvK_cPYkYnbTR8Zwyk1uHABR8-Ac13flLXvyRe8hZtmIqz8aa0Q"
         },
         {
           "name": "Pro Audio Z1 Noise Cancelling Headphones",
           "quantity": 1,
-          "price": 349.00,
+          "price": 349,
           "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuATs-NDew0UWTyApBi2r4ooXmmp7D8H08h6NEzKcDm5XJzYGsu-4oEKhd-ashGiswGkmS12AKJsg7_M_fFzdisW4UOSH9TfGxLtexDNQFOoZSil8VhYB0ojdmfsgwIZ_sbOHRIm2FjbTm8je9Dyz-KQffKaerQCjNnUAb40XQUpnVtd5Tkanv44PN4uM2tFdkWLkkSJLTrRIsrx0VpEBF5oNmnAD6GbmR7wN8T_fSOu_NPylacwU7wKS0QTWEOYmcLNNzp9xQpM-A"
         }
       ]
@@ -5376,13 +5338,13 @@
       "id": "2",
       "orderNumber": "#TS-772183",
       "datePlaced": "Oct 10, 2023",
-      "totalAmount": 799.00,
+      "totalAmount": 799,
       "status": "Shipped",
       "items": [
         {
           "name": "iPad Pro 11-inch (M2 Chip, 128GB)",
           "quantity": 1,
-          "price": 799.00,
+          "price": 799,
           "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuCh1mPjqBMLQLEI0lEPWsKtYGEEbgq4FsL5rbUhh4ZM_XcJYQ-5PiduIzPcvf0maQTCpYPCyG8zxm4QOn7sRzdol7OanCuZmKZv6XPOU8azmHjdQEIrfZBuCQG2GSYhzQgISQ7KAzjHXJko6otm2AmWicK-T6dsj6tbhIFL539tFHUNbd8RyXktQiUsKARrJBICTD3s_fi4HM0HK6b5b8FbGmj_WpEPqak48uRYrmT2KU9UXBDC9GgJIV9PT67ksv4-_iQkxxabpA"
         }
       ]
@@ -5391,13 +5353,13 @@
       "id": "3",
       "orderNumber": "#TS-661099",
       "datePlaced": "Sept 28, 2023",
-      "totalAmount": 399.00,
+      "totalAmount": 399,
       "status": "Processing",
       "items": [
         {
           "name": "TechWatch Series 8 - Starlight",
           "quantity": 1,
-          "price": 399.00,
+          "price": 399,
           "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuAAQHTMZ5HG3brAg4xmEN5n5_wFgyNZPvZ85jto1gH14t-wd7dF8PUvU6lYfykE9kTAuS6Wq1Z3iseUaOjC0qglu8Jd19BPCEFz6mP1i-JYeMjN_wbjyBpFO16b1ObQHTVHL6rVv4yg3l0CiC1cu29B4i8MmTYvJ2GCjwVT2gCCrs4XzXnIRzYfe33W_cERJrGtPNy3kkWILayinCHlT_zf4gEd9mihUQnFo2JDI52vwfNiCrZa-i09tF9Kpw1Py3geJmfLEdWxSQ"
         }
       ]
