@@ -24,6 +24,5 @@
       "password": "1234567",
       "id": "6NmRCUQ5dmI"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }

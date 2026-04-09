@@ -5297,6 +5297,12 @@
       "password": "$2a$10$ccSQETuK10/PlWwo/VDL9uVhUsAPqZbNrR.KdEff6Soq/F2YhWOzi",
       "username": "bassel.raafat",
       "id": 3
+    },
+    {
+      "email": "bassel@gmail.com",
+      "password": "$2a$10$0GiguKjHi36VfJECGv1eVO72b1zjtGdZ2G.12CnRb22NNgy0LJLfK",
+      "username": "Bassel.Radwan",
+      "id": 4
     }
   ],
   "cart": [
