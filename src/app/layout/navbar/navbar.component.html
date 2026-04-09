@@ -1,24 +1,31 @@
-<nav class="sticky-top top-0 w-100 z-50 border-bottom  " style="background-color: rgba(255, 255, 255, 0.8);">
-  <div class="container d-flex align-items-center justify-content-between py-3">
+<nav class="navbar navbar-expand-lg sticky-top px-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <h1 class="h4 font-weight-bold text-dark" routerLink="home"><i class="bi bi-microsoft text-primary"></i>
+        TECH-STORE</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="home" routerLinkActive="fw-bold" routerLink="home"
+            routerLinkActive="fw-bold">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="products" routerLinkActive="fw-bold">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="about" routerLinkActive="fw-bold">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="contact" routerLinkActive="fw-bold">Contact Us</a>
+        </li>
+
+      </ul>
     <div class="d-flex align-items-center gap-4">
-      <div class="d-flex align-items-center gap-2">
-        <h1 class="h4 font-weight-bold text-dark" routerLink="home"><i class="bi bi-microsoft text-primary"></i>
-          TECH-STORE</h1>
-      </div>
-      <div class="d-none d-md-flex align-items-center gap-3 text-small font-weight-medium">
-        <a class="link-dark text-decoration-none" routerLink="home" routerLinkActive="fw-bold">Home</a>
-        <a class="link-dark text-decoration-none" routerLinkActive="fw-bold" routerLink="products">Shop</a>
-        <a class="link-dark text-decoration-none" routerLinkActive="fw-bold" routerLink="about">About</a>
-        <a class="link-dark text-decoration-none" routerLinkActive="fw-bold" routerLink="contact">Contact</a>
-      </div>
-    </div>
-    <div class="d-flex align-items-center gap-4">
-      <div class="position-relative d-none d-lg-block">
-        <input class="form-control form-control-sm  rounded-pill pl-4 pr-5" placeholder="Search products..."
-          type="search" style="background-color: rgba(0, 0, 0, 0.05); color: #111827;" />
-      </div>
-      <button class="btn  rounded-circle p-2" style="color: #111827;">
-        <i class="bi bi-heart"></i> </button>
       <button class="btn rounded-circle p-2 position-relative" routerLink="cart" style="color: #111827;">
         <i class="bi bi-cart3"></i> <span
           class="position-absolute  translate-middle badge rounded-pill bg-primary text-white">3</span>
@@ -26,8 +33,15 @@
       <div
         class="rounded-circle bg-primary bg-opacity-10 border border-primary/20 d-flex align-items-center justify-content-center"
         style="width: 40px; height: 40px;">
-        <i class="bi bi-person text-primary fs-3"></i>
+        <i (click)="toglle()" class="bi bi-person text-primary btn fs-3"></i>
       </div>
+      @if(show){
+        <div class="position-absolute auth ">
+          <button class="btn btn-primary" routerLink="auth/login">login</button>
+        </div>
+
+      }
     </div>
   </div>
+</div>
 </nav>
