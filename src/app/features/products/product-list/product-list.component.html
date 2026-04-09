@@ -23,80 +23,72 @@
   <div class="container-xl px-3 px-md-4">
 
 
-
     <div class="mb-4 mb-md-5 ps-3" style="border-left: 3px solid #2563eb">
       <p class="mb-1 fw-bold text-uppercase" style="font-size:0.7rem; letter-spacing:0.14em; color:#2563eb">
         Browse our collection
       </p>
-      <h1 class="fw-bold mb-0" style="font-size:clamp(1.5rem,4vw,2.2rem); letter-spacing:-0.03em; color:#0f172a">
+      <h1 class="fw-bold mb-0" style="font-size:clamp(1.4rem,5vw,2.2rem); letter-spacing:-0.03em; color:#0f172a">
         All Products
       </h1>
     </div>
 
 
-    <div class="row g-3 align-items-center mb-3">
+    <div class="mb-3">
 
 
-      <div class="col-12 col-md-5">
-        <div class="position-relative">
-          <span class="position-absolute" style="left:0.8rem; top:50%; transform:translateY(-50%); color:#94a3b8; pointer-events:none; font-size:0.85rem;">🔍</span>
-          <input
-            type="text"
-            class="form-control rounded-3"
-            placeholder="Search products…"
-            [(ngModel)]="searchText"
-            (ngModelChange)="onSearchChange()"
-            style="background:#fff; border-color:#e2e8f0; color:#0f172a; padding-left:2.4rem;"
-          />
-        </div>
+      <div class="position-relative mb-3">
+        <span class="position-absolute" style="left:0.85rem; top:50%; transform:translateY(-50%); color:#94a3b8; pointer-events:none; font-size:0.85rem;">🔍</span>
+        <input
+          type="text"
+          class="form-control rounded-3 w-100"
+          placeholder="Search products…"
+          [(ngModel)]="searchText"
+          (ngModelChange)="onSearchChange()"
+          style="background:#fff; border-color:#e2e8f0; color:#0f172a; padding-left:2.4rem;"
+        />
       </div>
 
-
-
-      <div class="col-12 col-md-7">
-        <div class="d-flex flex-wrap gap-2">
-          @for (category of categories; track category) {
-            <button
-              class="border fw-semibold"
-              [style]="selectedCategory === category
-                ? 'background:#2563eb; border-color:#2563eb; color:#fff; font-size:0.78rem; font-weight:600; border-radius:50px; padding:5px 16px; cursor:pointer; white-space:nowrap;'
-                : 'background:#fff; border-color:#e2e8f0; color:#64748b; font-size:0.78rem; font-weight:600; border-radius:50px; padding:5px 16px; cursor:pointer; white-space:nowrap;'"
-              (click)="onCategoryChange(category)"
-            >
-              {{ category }}
-            </button>
-          }
-        </div>
+      <div class="d-flex gap-2 pb-1" style="overflow-x:auto; -webkit-overflow-scrolling:touch; flex-wrap:nowrap; scrollbar-width:none;">
+        @for (category of categories; track category) {
+          <button
+            class="border fw-semibold flex-shrink-0"
+            [style]="selectedCategory === category
+              ? 'background:#2563eb; border-color:#2563eb; color:#fff; font-size:0.78rem; border-radius:50px; padding:5px 16px; cursor:pointer; white-space:nowrap;'
+              : 'background:#fff; border-color:#e2e8f0; color:#64748b; font-size:0.78rem; border-radius:50px; padding:5px 16px; cursor:pointer; white-space:nowrap;'"
+            (click)="onCategoryChange(category)"
+          >
+            {{ category }}
+          </button>
+        }
       </div>
 
     </div>
 
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <p class="mb-0" style="font-size:0.83rem; color:#64748b">
+    <div class="d-flex justify-content-between align-items-center gap-2 mb-3 flex-wrap">
+      <p class="mb-0" style="font-size:0.83rem; color:#64748b; min-width:0;">
         Showing <strong style="color:#0f172a">{{ filteredCount }}</strong>
         {{ filteredCount === 1 ? 'product' : 'products' }}
         @if (selectedCategory !== 'All') {
-          <span>in <strong style="color:#0f172a">{{ selectedCategory }}</strong></span>
+          <span> in <strong style="color:#0f172a">{{ selectedCategory }}</strong></span>
         }
         @if (searchText) {
-          <span>for "<strong style="color:#0f172a">{{ searchText }}</strong>"</span>
+          <span> for "<strong style="color:#0f172a">{{ searchText }}</strong>"</span>
         }
       </p>
-      
-      <select 
-        class="form-select form-select-sm rounded-3" 
+
+      <select
+        class="form-select form-select-sm rounded-3 flex-shrink-0"
         [(ngModel)]="sortBy"
         (ngModelChange)="onSortChange()"
-        style="width: auto; border-color:#e2e8f0; font-size:0.85rem;">
+        style="width:auto; max-width:180px; border-color:#e2e8f0; font-size:0.85rem;">
         <option value="default">Default</option>
-        <option value="price-asc">Price: Low to High</option>
-        <option value="price-desc">Price: High to Low</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
       </select>
     </div>
 
 
-
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 mb-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3 g-md-4 mb-4">
       @for (product of displayedProducts; track $index) {
         <div class="col">
           <app-product-card
@@ -108,7 +100,6 @@
     </div>
 
 
-
     @if (displayedProducts.length === 0) {
       <div class="text-center py-5">
         <p class="mb-2" style="font-size:2.5rem">🔎</p>
@@ -118,10 +109,9 @@
     }
 
 
-
     @if (totalPages > 1) {
-      <nav class="d-flex justify-content-center pb-5">
-        <ul class="pagination gap-1">
+      <nav class="d-flex justify-content-center pb-4">
+        <ul class="pagination flex-wrap justify-content-center gap-1 mb-0">
 
           <li class="page-item" [class.disabled]="currentPage === 1">
             <button class="page-link rounded-3 fw-semibold"
@@ -158,10 +148,11 @@
 
 }
 
+
 @if (showToast) {
   <div
     class="position-fixed rounded-3 fw-semibold"
-    style="bottom:20px; right:16px; left:16px; max-width:360px; background:#fff; border:1px solid #e2e8f0; border-left:3px solid #2563eb; color:#0f172a; padding:12px 16px; font-size:0.87rem; font-weight:600; z-index:2000; box-shadow:0 8px 32px rgba(0,0,0,0.08);">
+    style="bottom:16px; left:50%; transform:translateX(-50%); width:calc(100% - 32px); max-width:360px; background:#fff; border:1px solid #e2e8f0; border-left:3px solid #2563eb; color:#0f172a; padding:12px 16px; font-size:0.87rem; z-index:2000; box-shadow:0 8px 32px rgba(0,0,0,0.08);">
     {{ toastMessage }}
   </div>
 }
