@@ -1,116 +1,178 @@
-<div class="py-4 fade-in">
+@if (loading) {
+  <main class="pt-5 mt-4 pb-5" style="min-height:100vh; background:#f8fafc; color:#0f172a;">
+    <div class="container-xl px-3 px-md-4">
+      <div class="text-center py-5">
+        <div class="spinner-border text-primary" role="status"></div>
+        <p class="mt-2">Loading product details...</p>
+      </div>
+    </div>
+  </main>
+} @else {
+
+<main class="pt-5 mt-4 pb-5" style="min-height:100vh; background:#f8fafc; color:#0f172a;">
   <div class="container-xl px-3 px-md-4">
 
+
     <div class="mb-4">
-      <a routerLink="/products" class="back-link">← Back to Products</a>
+      <a routerLink="/products" class="text-decoration-none fw-bold d-inline-flex align-items-center gap-2" style="color:#2563eb; font-size:0.9rem;">← Back to Products</a>
     </div>
 
-    <div *ngIf="notFound" class="text-center py-5">
-      <p style="font-size: 3rem">😕</p>
-      <h4 class="fw-bold mb-2" style="color: var(--color-text)">Product Not Found</h4>
-      <p style="color: var(--color-muted)">The product you're looking for doesn't exist.</p>
-      <a routerLink="/products" class="btn text-white fw-bold rounded-3 mt-2"
-         style="background: var(--color-primary)">Back to Shop</a>
-    </div>
 
-    <div *ngIf="product">
-
-      <nav aria-label="breadcrumb" class="mb-4">
-        <ol class="breadcrumb" style="font-size: 0.82rem">
-          <li class="breadcrumb-item">
-            <a routerLink="/products" style="color: var(--color-primary); text-decoration: none">Shop</a>
-          </li>
-          <li class="breadcrumb-item" style="color: var(--color-muted)">{{ product.category }}</li>
-          <li class="breadcrumb-item active" style="color: var(--color-text)">{{ product.name }}</li>
-        </ol>
-      </nav>
-
-      <div class="row g-5 align-items-start">
-
-        <div class="col-12 col-md-5">
-          <div class="details-img-box position-relative">
-            <img [src]="product.image" [alt]="product.name" />
-            <span
-              *ngIf="product.originalPrice"
-              class="badge bg-danger position-absolute top-0 end-0 m-3"
-              style="font-size: 0.75rem"
-            >
-              -{{ getDiscountPercent() }}%
-            </span>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-7">
-
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <span class="category-chip">{{ product.category }}</span>
-            <span *ngIf="product.badge" class="badge text-white"
-                  style="background: var(--color-primary); font-size: 0.65rem">
-              {{ product.badge }}
-            </span>
-          </div>
-
-          <h1 class="fw-bold mb-2"
-              style="font-size: clamp(1.4rem, 3vw, 2rem); color: var(--color-text)">
-            {{ product.name }}
-          </h1>
-
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <span class="stars" style="font-size: 1rem">{{ getStars(product.rating) }}</span>
-            <span class="fw-bold" style="font-size: 0.88rem; color: var(--color-text)">{{ product.rating }}</span>
-            <span style="font-size: 0.82rem; color: var(--color-muted)">({{ product.reviews }} reviews)</span>
-          </div>
-
-          <p class="mb-4" style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.75">
-            {{ product.description }}
-          </p>
-
-          <ul class="feature-list mb-4">
-            <li>Free shipping on all orders</li>
-            <li>30-day hassle-free returns</li>
-            <li>2-year manufacturer warranty</li>
-            <li>24/7 customer support</li>
-          </ul>
-
-          <hr class="light-divider mb-4" />
-
-          <div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
-            <span class="fw-bold" style="font-size: 2rem; color: var(--color-primary)">
-              ${{ product.price.toFixed(2) }}
-            </span>
-            <span *ngIf="product.originalPrice" class="price-was" style="font-size: 1rem">
-              ${{ product.originalPrice!.toFixed(2) }}
-            </span>
-            <span *ngIf="product.originalPrice" class="saving-badge">
-              Save ${{ getSavings().toFixed(2) }}
-            </span>
-          </div>
-
-          <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
-            <div class="qty-control">
-              <button class="qty-btn" (click)="decreaseQty()">−</button>
-              <span class="qty-value">{{ quantity }}</span>
-              <button class="qty-btn" (click)="increaseQty()">+</button>
-            </div>
-            <button class="btn fw-bold text-white rounded-3 px-4 py-2 flex-grow-1"
-                    style="background: var(--color-primary)"
-                    (click)="addToCart()">
-              Add to Cart
-            </button>
-          </div>
-
-          <p style="font-size: 0.78rem; color: var(--color-muted)">
-            🔒 Secure checkout · SSL Encrypted · Official Partner
-          </p>
-
-        </div>
+    @if (notFound) {
+      <div class="text-center py-5">
+        <p style="font-size:3rem">😕</p>
+        <h4 class="fw-bold mb-2" style="color:#0f172a">Product Not Found</h4>
+        <p style="color:#64748b">The product you're looking for doesn't exist.</p>
+        <a routerLink="/" class="btn btn-sm rounded-3 mt-2 text-white fw-bold" style="background:#2563eb">
+          Back to Shop
+        </a>
       </div>
+    }
 
-    </div>
+    @if (product) {
+      <div style="animation:fadeIn 0.3s ease;">
+
+
+        <nav aria-label="breadcrumb" class="mb-4 d-none d-sm-block">
+          <ol class="breadcrumb" style="font-size:0.82rem">
+            <li class="breadcrumb-item">
+              <a routerLink="/products" style="color:#2563eb; text-decoration:none">Shop</a>
+            </li>
+            <li class="breadcrumb-item" style="color:#64748b">{{ product.category }}</li>
+            <li class="breadcrumb-item active text-truncate" style="color:#0f172a; max-width:200px;">{{ product.name }}</li>
+          </ol>
+        </nav>
+
+
+        <div class="row g-4 g-md-5 align-items-start">
+
+
+          <div class="col-12 col-md-5">
+            <div class="position-relative overflow-hidden rounded-4"
+                 style="background:#f1f5f9; aspect-ratio:4/3;">
+              <img [src]="product.image" [alt]="product.name"
+                   style="width:100%; height:100%; object-fit:cover; display:block;" />
+
+              @if (product.originalPrice) {
+                <span class="badge bg-danger position-absolute top-0 end-0 m-3"
+                      style="font-size:0.75rem">
+                  -{{ getDiscountPercent() }}%
+                </span>
+              }
+            </div>
+          </div>
+
+
+          <div class="col-12 col-md-7">
+
+
+            <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+              <span class="fw-bold text-uppercase d-inline-block"
+                    style="font-size:0.68rem; letter-spacing:0.1em; color:#7c3aed; background:#ede9fe; padding:2px 8px; border-radius:4px;">
+                {{ product.category }}
+              </span>
+              @if (product.badge) {
+                <span class="badge text-white"
+                      style="background:#2563eb; font-size:0.65rem">
+                  {{ product.badge }}
+                </span>
+              }
+            </div>
+
+            <h1 class="fw-bold mb-2" style="font-size:clamp(1.3rem,4vw,2rem); color:#0f172a; line-height:1.25;">
+              {{ product.name }}
+            </h1>
+
+
+            <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+              <span style="color:#f59e0b; font-size:1rem">{{ getStars(product.rating) }}</span>
+              <span class="fw-bold" style="font-size:0.88rem; color:#0f172a">{{ product.rating }}</span>
+              @if (product.reviews) {
+                <span style="font-size:0.82rem; color:#64748b">({{ product.reviews }} reviews)</span>
+              }
+            </div>
+
+            <p class="mb-4" style="color:#64748b; font-size:0.95rem; line-height:1.75">
+              {{ product.description }}
+            </p>
+
+
+            <ul class="list-unstyled p-0 m-0 mb-4">
+              <li class="py-1" style="color:#64748b; font-size:0.88rem;">
+                <span style="color:#2563eb; font-weight:700; margin-right:8px;">✓</span>Free shipping on all orders
+              </li>
+              <li class="py-1" style="color:#64748b; font-size:0.88rem;">
+                <span style="color:#2563eb; font-weight:700; margin-right:8px;">✓</span>30-day hassle-free returns
+              </li>
+              <li class="py-1" style="color:#64748b; font-size:0.88rem;">
+                <span style="color:#2563eb; font-weight:700; margin-right:8px;">✓</span>2-year manufacturer warranty
+              </li>
+              <li class="py-1" style="color:#64748b; font-size:0.88rem;">
+                <span style="color:#2563eb; font-weight:700; margin-right:8px;">✓</span>24/7 customer support
+              </li>
+            </ul>
+
+            <hr style="border-color:#e2e8f0" class="mb-4" />
+
+
+            <div class="d-flex align-items-center gap-2 mb-4 flex-wrap">
+              <span class="fw-bold" style="font-size:clamp(1.6rem,5vw,2rem); color:#2563eb">
+                ${{ product.price.toFixed(2) }}
+              </span>
+              @if (product.originalPrice) {
+                <span style="color:#94a3b8; font-size:1rem; text-decoration:line-through;">
+                  ${{ product.originalPrice!.toFixed(2) }}
+                </span>
+                <span style="background:#dcfce7; color:#16a34a; font-size:0.75rem; font-weight:700; border-radius:5px; padding:2px 8px;">
+                  Save ${{ getSavings().toFixed(2) }}
+                </span>
+              }
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+
+              <div class="d-inline-flex align-items-center gap-3 flex-shrink-0"
+                   style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:50px; padding:4px 8px;">
+                <button (click)="decreaseQty()"
+                        class="d-flex align-items-center justify-content-center border-0"
+                        style="width:32px; height:32px; border-radius:50%; background:#fff; color:#64748b; font-size:1.1rem; cursor:pointer; box-shadow:0 1px 3px rgba(0,0,0,0.08); line-height:1;">
+                  −
+                </button>
+                <span class="fw-bold text-center" style="font-size:0.95rem; min-width:20px;">{{ quantity }}</span>
+                <button (click)="increaseQty()"
+                        class="d-flex align-items-center justify-content-center border-0"
+                        style="width:32px; height:32px; border-radius:50%; background:#fff; color:#64748b; font-size:1.1rem; cursor:pointer; box-shadow:0 1px 3px rgba(0,0,0,0.08); line-height:1;">
+                  +
+                </button>
+              </div>
+
+              <button class="btn fw-bold text-white rounded-3 px-4 py-2 flex-grow-1"
+                      style="background:#2563eb; letter-spacing:0.02em; min-width:140px;"
+                      (click)="addToCart()">
+                Add to Cart
+              </button>
+
+            </div>
+
+            <p style="font-size:0.78rem; color:#64748b">
+              🔒 Secure checkout · SSL Encrypted · Official Partner
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    }
 
   </div>
-</div>
+</main>
 
-<div *ngIf="showToast" class="toast-custom">
-  {{ toastMessage }}
-</div>
+}
+
+@if (showToast) {
+  <div
+    class="position-fixed rounded-3 fw-semibold"
+    style="bottom:16px; left:50%; transform:translateX(-50%); width:calc(100% - 32px); max-width:360px; background:#fff; border:1px solid #e2e8f0; border-left:3px solid #2563eb; color:#0f172a; padding:12px 16px; font-size:0.87rem; z-index:2000; box-shadow:0 8px 32px rgba(0,0,0,0.08);">
+    {{ toastMessage }}
+  </div>
+}

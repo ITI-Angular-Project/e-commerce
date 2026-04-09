@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, ChangeDetectorRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ProductService } from '../../../core/services/product.service';
 import { Product } from '../../../core/Models/Cart/product.model';
@@ -10,34 +10,64 @@ import { Product } from '../../../core/Models/Cart/product.model';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent implements OnInit {
-
   allProducts: Product[] = [];
-
   categories: string[] = [];
-
   displayedProducts: Product[] = [];
-
   searchText: string = '';
   selectedCategory: string = 'All';
-
   currentPage: number = 1;
   productsPerPage: number = 6;
   totalPages: number = 1;
   pageNumbers: number[] = [];
   filteredCount: number = 0;
+  loading = true;
+  error: string | null = null;
+  
+  minPrice: number = 0;
+  maxPrice: number = 0;
+  selectedMinPrice: number = 0;
+  selectedMaxPrice: number = 0;
+  sortBy: string = 'default'; 
 
-  cartCount = signal<number>(3);
 
+  cartCount = signal(3);
   toastMessage: string = '';
   showToast: boolean = false;
   toastTimer: any;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
-    this.allProducts = this.productService.getAllProducts();
-    this.categories  = this.productService.getCategories();
-    this.updateDisplayedProducts();
+    console.log('ProductListComponent initialized');
+    this.productService.getAllProducts().subscribe({
+      next: (products) => {
+        console.log('Products loaded:', products.length);
+        this.allProducts = products;
+        
+        const cats = products.map(p => p.category);
+        this.categories = ['All', ...Array.from(new Set(cats))];
+        
+        const prices = products.map(p => p.price);
+        this.minPrice = Math.floor(Math.min(...prices));
+        this.maxPrice = Math.ceil(Math.max(...prices));
+        this.selectedMinPrice = this.minPrice;
+        this.selectedMaxPrice = this.maxPrice;
+        
+        this.updateDisplayedProducts();
+        this.loading = false;
+        this.cdr.detectChanges();
+        console.log('Loading set to false');
+      },
+      error: (err) => {
+        this.error = err.message;
+        this.loading = false;
+        this.cdr.detectChanges();
+        console.error('Product load error:', err);
+      }
+    });
   }
 
   onSearchChange() {
@@ -51,23 +81,14 @@ export class ProductListComponent implements OnInit {
     this.updateDisplayedProducts();
   }
 
-  goToPage(page: number) {
-    if (page < 1 || page > this.totalPages) return;
-    this.currentPage = page;
+  onPriceChange() {
+    this.currentPage = 1;
     this.updateDisplayedProducts();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  addToCart(product: Product) {
-    this.cartCount.update(count => count + 1);
-    this.showToastMessage(`✓  "${product.name}" added to cart!`);
-  }
-
-  showToastMessage(message: string) {
-    this.toastMessage = message;
-    this.showToast = true;
-    if (this.toastTimer) clearTimeout(this.toastTimer);
-    this.toastTimer = setTimeout(() => { this.showToast = false; }, 3000);
+  onSortChange() {
+    this.currentPage = 1;
+    this.updateDisplayedProducts();
   }
 
   updateDisplayedProducts() {
@@ -77,24 +98,90 @@ export class ProductListComponent implements OnInit {
       filtered = filtered.filter(p => p.category === this.selectedCategory);
     }
 
-    const query = this.searchText.toLowerCase().trim();
-    if (query) {
+    filtered = filtered.filter(p => 
+      p.price >= this.selectedMinPrice && p.price <= this.selectedMaxPrice
+    );
+
+    if (this.searchText.trim()) {
+      const search = this.searchText.toLowerCase();
       filtered = filtered.filter(p =>
-        p.name.toLowerCase().includes(query) ||
-        p.category.toLowerCase().includes(query) ||
-        p.description.toLowerCase().includes(query)
+        p.name.toLowerCase().includes(search) ||
+        p.category.toLowerCase().includes(search) ||
+        p.description.toLowerCase().includes(search)
       );
     }
 
-    this.filteredCount = filtered.length;
-    this.totalPages    = Math.ceil(filtered.length / this.productsPerPage);
 
-    this.pageNumbers = [];
-    for (let i = 1; i <= this.totalPages; i++) {
-      this.pageNumbers.push(i);
+    if (this.sortBy === 'price-asc') {
+      filtered = [...filtered].sort((a, b) => a.price - b.price);
+    } else if (this.sortBy === 'price-desc') {
+      filtered = [...filtered].sort((a, b) => b.price - a.price);
     }
 
+    this.filteredCount = filtered.length;
+    this.totalPages = Math.ceil(filtered.length / this.productsPerPage);
+    this.pageNumbers = this.getVisiblePages();
+
     const start = (this.currentPage - 1) * this.productsPerPage;
-    this.displayedProducts = filtered.slice(start, start + this.productsPerPage);
+    const end = start + this.productsPerPage;
+    this.displayedProducts = filtered.slice(start, end);
+  }
+
+  getVisiblePages(): number[] {
+    const maxVisible = 5; 
+    const pages: number[] = [];
+
+    if (this.totalPages <= maxVisible) {
+
+      return Array.from({ length: this.totalPages }, (_, i) => i + 1);
+    }
+
+    pages.push(1);
+
+    let startPage = Math.max(2, this.currentPage - 1);
+    let endPage = Math.min(this.totalPages - 1, this.currentPage + 1);
+
+    if (startPage > 2) {
+      pages.push(-1);
+        }
+
+    for (let i = startPage; i <= endPage; i++) {
+      pages.push(i);
+    }
+
+    if (endPage < this.totalPages - 1) {
+      pages.push(-1);  
+    }
+
+    if (this.totalPages > 1) {
+      pages.push(this.totalPages);
+    }
+
+    return pages;
+  }
+
+  goToPage(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      this.updateDisplayedProducts();
+    }
+  }
+
+  onAddToCart(product: Product) {
+    this.cartCount.update(count => count + 1);
+    this.toastMessage = `${product.name} added to cart!`;
+    this.showToast = true;
+
+    if (this.toastTimer) {
+      clearTimeout(this.toastTimer);
+    }
+
+    this.toastTimer = setTimeout(() => {
+      this.showToast = false;
+    }, 3000);
+  }
+
+  addToCart(product: Product) {
+    this.onAddToCart(product);
   }
 }

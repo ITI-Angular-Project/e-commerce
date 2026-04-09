@@ -25,6 +25,8 @@ const routes: Routes = [
     Join,
     Home,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule , RouterModule.forChild(routes)],
 })
-export class HomeModule {}
+export class HomeModule {
+  
+}

@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-hero-section',
+  standalone: false,
+  templateUrl: './hero-section.component.html',
+  styleUrl: './hero-section.component.css',
+})
+export class HeroSection {
+  scrollTo(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+}
