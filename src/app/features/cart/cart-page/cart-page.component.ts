@@ -15,14 +15,9 @@ export class CartPageComponent implements OnInit {
     this.cartService.Cart().reduce((sum, item) => sum + item.price * item.amount, 0),
   );
   ngOnInit(): void {
-    this.cartService.getCart().subscribe({
-      next: () => {
-        // Shared cart signal is updated inside CartService.
-      },
-    });
+    this.cartService.getCart().subscribe();
   }
 
-  
   updateItemQuantity(item: CartItem) {
     this.cartService.changeQuantity(item.id!, item.amount).subscribe({
       next: (value) => {
@@ -35,15 +30,6 @@ export class CartPageComponent implements OnInit {
   }
 
   deleteProdcut(id: number) {
-    this.cartService.deleteItemFromCart(id).subscribe({
-      next: (value) => {
-        const test = this.cartService.Cart().findIndex((i) => i.id == id);
-        if (test != -1) this.cartService.Cart().splice(test, 1);
-      },
-
-      error: (err) => {
-        console.log(err);
-      },
-    });
+    this.cartService.deleteItemFromCart(id).subscribe();
   }
 }
