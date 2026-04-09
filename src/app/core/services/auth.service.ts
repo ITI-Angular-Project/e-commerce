@@ -47,4 +47,11 @@ export class AuthService {
       .get<User[]>(`http://localhost:3000/users?email=${email}`)
       .pipe(map((users) => users.length > 0));
   }
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('user') && !!localStorage.getItem('token');
+  }
+  logOut() {
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+  }
 }
