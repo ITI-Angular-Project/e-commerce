@@ -22,7 +22,7 @@ export class FeaturedSection implements OnInit {
       next: (products) => {
         this.featuredProducts = [...products]
           .sort((a, b) => b.rating - a.rating)
-          .slice(0, 3);
+          .slice(0, 6);
       },
       error: (err) => {
         console.error('Failed to load featured products:', err);
